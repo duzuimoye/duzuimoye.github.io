@@ -1,0 +1,10 @@
+body {
+  font-size: 18px;
+  color: #f00;
+}
+p {
+  color: #00f;
+}
+p .green {
+  color: #ff0;
+}
