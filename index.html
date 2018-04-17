@@ -4,17 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./a.css">
-    <title>Document</title>
+    <title>fir.im 中国NO1 App 测试分发</title> 
+    <link rel="stylesheet" href="./ common.css ">
+<style>
+    /* css reset 样式重置
+    让浏览器不收我默认样式影响 */
+     *{
+        margin: 0;
+        padding: 0;
+
+    } 
+    body{
+        background-color:yellow;
+    }
+    .plane-wrapper{
+        /* 定位，向外层找到离它最近的position：relative */
+position: absolute;
+top: 50%;
+     animation: undulate 8s infinite alternate; 
+    }
+    .section-1.animation-out .plane-wrapper{
+    animation: plane-out 1.3s ease-out;
+  /* animation-delay:3s;
+  animotion-fill-mode:forward; */
+    }
+
+    @keyframes plane-out{
+     /* 关键帧 */
+     /* 变形：移动 transform，缩放 scale,旋转 rotate. */
+        0%{
+           transform:scale(1) translateX(0)
+        }
+        30%{
+            transform:scale(.5) translateX(160px)  
+        }
+        100%{
+            transform:scale(1.8) translateX(-2000px)
+        }
+    }
+     /* keyframes 0% -> 100% 
+      100%->0%  8s  */
+      /* animation-direction: alternate; */
+ 
+    
+    @keyframes undulate {
+      0%,100%,50% {
+        transform: translate3d(0, 0, 0);
+      }
+      25% {
+        /* 平移 */
+        transform: translate(-6px, -18px, 0);
+      }
+      75% {
+        transform: translate3d(6px, 10px, 0);
+      }
+    }
+
+    .plane-wrapper .rotate-container{
+position: absolute;
+top: 51.7003%;
+left:13.1%;
+width: 27.42%;
+height: 14.4474%;
+/* 动作导演 动作剧本 
+animation-name:rotating;
+animation-duration:.2s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;*/
+animation: rotating .2s linear infinite;
+    }
+@keyframes rotating{
+    0%{
+transform:rotate(0) rotateY(-20deg) ;
+
+    }
+    50%{
+        transform:rotate(180deg) rotateY(-20deg) ;  
+    }
+    100%{
+        transform:rotate(360deg) rotateY(-20deg) ;
+        
+    }
+}
+
+    </style>
 </head>
 <body>
-    前端有命令行，前端也有编译，现代前端开发
-    <P>
-stylus最好用的css预编译的工具
-后缀是.styl
-自动补全css 的语法
+    <!-- 类名套路
+wrapper 封装器 container 容器
+.wrapper >.container>.box
+html 结构
+着力？
+1 整体 上下运动 wrapper
+2 分开运动
+ 螺旋桨 rotate
+ container
+ img 定位
 
-    </P>
-    <h5 class="green">原谅色主题</h5>
+
+-->
+
+    <div class="section section-1 ready animation-out">
+        <div class="plane-wrapper">
+        <img src="http://fir.im/images/plane.svg" 
+        alt="" class="plane">
+        <div class="rotate-container">
+            <img src="http://fir.im/images/propeller.svg"alt="" class="propeller">
+
+       </div>
+    </div>
+    </div>
+    <script>
+//     window.addEventListener('scroll',function(){
+// document
+// .querySelector('.section-1')
+// .classList
+// .add('animation-out')
+//         console.log('aaa');
+
+//     },false);
+    $(document).ready(function(){
+        $(window).mousewheel(function(){
+document.querySelector('.section-1').classList.add('animotion-out');
+
+        })
+    })
+    </Script>
 </body>
 </html>
