@@ -263,6 +263,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://duzuimoye.github.io/duzuimoye.github.io/duzuimoye.github.io/2018/07/29/vue-music/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="独醉莫邪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xrz9n.com1.z0.glb.clouddn.com/logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢贤飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/duzuimoye.github.io/2018/07/29/vue-music/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T16:36:23+08:00">
+                2018-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://user-gold-cdn.xitu.io/2018/7/29/164e521423426451?w=1024&amp;h=666&amp;f=jpeg&amp;s=213382" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近在自学vue,打算自己仿一个项目来实战一下，由于本人很喜欢听歌，所以就选择了网易云音乐，在这与大家分享一下自己所遇到的问题，其中也有些不足之处也希望大家提一些宝贵的意见，互相学习，一起进步。</p>
+<h2 id="关于项目使用的技术栈"><a href="#关于项目使用的技术栈" class="headerlink" title="关于项目使用的技术栈"></a>关于项目使用的技术栈</h2><ul>
+<li><p>Vue：采用Vue的语法</p>
+</li>
+<li><p>Vuex：实现不同组件之间的状态共享</p>
+</li>
+<li><p>vue-router：单页应用路由管理必备</p>
+</li>
+<li><p>axios：发起http请求</p>
+</li>
+<li><p>SASS(SCSS)：css预处理语言</p>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p>由于时间有限，只是做了个页面的播放功能，其中用到了网易云音乐的API<a href="https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3" target="_blank" rel="noopener">网易云</a>，有兴趣的可以去玩玩，其中也涉及到了一些知识点，在这与大家分享一下。</p>
+<h2 id="上图"><a href="#上图" class="headerlink" title="上图"></a>上图</h2><p>整个效果：<br><img src="https://user-gold-cdn.xitu.io/2018/7/26/164d6ff2ccc6e2f3?w=294&amp;h=510&amp;f=gif&amp;s=708592" alt="">)</p>
+<h2 id="分享做这个单页面的过程"><a href="#分享做这个单页面的过程" class="headerlink" title="分享做这个单页面的过程"></a>分享做这个单页面的过程</h2><p>这就是一个header组件，一个footer组件，一个musicList组件和一个paly组件组成的单页面。</p>
+<h3 id="1-如何获取音乐的数据"><a href="#1-如何获取音乐的数据" class="headerlink" title="1. 如何获取音乐的数据"></a>1. 如何获取音乐的数据</h3><p>我这是从网易云音乐api扒出来的，扒出来之后新建一个文件，把数据放进去，之后通过axios获取，部分代码如下：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123;</span><br><span class="line">    getData(&#123; commit,state &#125;) &#123;</span><br><span class="line">      if (localStorage.musics !== &apos;[]&apos; &amp;&amp; localStorage.musics) &#123;</span><br><span class="line">        state.musicData = JSON.parse(localStorage.musics);</span><br><span class="line">        return;</span><br><span class="line">      &#125;</span><br><span class="line">      return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        Vue.axios.get(&apos;music-data&apos;)</span><br><span class="line">            .then (res =&gt; &#123;</span><br><span class="line">              if (res.data.error === 0) &#123;</span><br><span class="line">                state.musicData = res.data.musicData;</span><br><span class="line">                localStorage.musics = JSON.stringify(state.musicData);</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .then(() =&gt; &#123;</span><br><span class="line">              commit(&apos;toggleMusic&apos;,0)</span><br><span class="line">            &#125;);</span><br><span class="line">        resolve();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-删除功能"><a href="#2-删除功能" class="headerlink" title="2. 删除功能"></a>2. 删除功能</h3><p>我是在这删除这个图标下绑定了一个事件，主要就二句代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-on:click=&quot;del(index)&quot; class=&quot;del-icon&quot;&gt;&lt;/span&gt;</span><br><span class="line">在methods定义del事件就好了</span><br><span class="line">        del(index)&#123;</span><br><span class="line">            this.$store.commit(&apos;del&apos;,index);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-尾部的播放控制"><a href="#3-尾部的播放控制" class="headerlink" title="3. 尾部的播放控制"></a>3. 尾部的播放控制</h3><p>尾部的播放功能我一开始遇到了一个难题就是如何获取歌曲的时间和控制播放的进度。后来通过查找资料和百度解决了</p>
+<p><strong>获取歌曲时间的部分代码如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class=&quot;start&quot;&gt;&#123;&#123;transformTime(now)&#125;&#125;&lt;/span&gt;</span><br><span class="line">js部分代码</span><br><span class="line"> this.nativeAudio = document.querySelector(&apos;audio&apos;);</span><br><span class="line">   this.nativeAudio.addEventListener(&apos;play&apos;, () =&gt; &#123;</span><br><span class="line">     this.totalTime = this.transformTime(this.nativeAudio.duration);</span><br><span class="line">     this.now = this.nativeAudio.currentTime;</span><br><span class="line">     setInterval(() =&gt; &#123;</span><br><span class="line">       this.now = this.nativeAudio.currentTime;</span><br><span class="line">     &#125;, 1000)</span><br><span class="line">   &#125;)</span><br><span class="line">   </span><br><span class="line">   transformTime(seconds) &#123;</span><br><span class="line">     let m, s;</span><br><span class="line">     m = Math.floor(seconds / 60);</span><br><span class="line">     m = m.toString().length == 1 ? (&apos;0&apos; + m) : m;</span><br><span class="line">     s = Math.floor(seconds - 60 * m);</span><br><span class="line">     s = s.toString().length == 1 ? (&apos;0&apos; + s) : s;</span><br><span class="line">     return m + &apos;:&apos; + s;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>控制播放进度的部分代码如下</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">changeTime(event) &#123;</span><br><span class="line">      let progressBar = this.$refs.progressBar;</span><br><span class="line">      let coordStart = progressBar.getBoundingClientRect().left;  //getBoundingClientRect()方法返回元素的大小及其相对于视口的位置</span><br><span class="line">      let coordEnd = event.pageX;</span><br><span class="line">      this.nativeAudio.currentTime = (coordEnd - coordStart) / progressBar.offsetWidth * this.nativeAudio.duration;</span><br><span class="line">      this.now = this.nativeAudio.currentTime;</span><br><span class="line">      this.nativeAudio.play();</span><br><span class="line">      this.$store.commit(&apos;play&apos;, true);</span><br><span class="line">    &#125;,</span><br><span class="line">touchMove(event) &#123;</span><br><span class="line">      let progressBar = this.$refs.progressBar;</span><br><span class="line">      let coordStart = progressBar.getBoundingClientRect().left;</span><br><span class="line">      let coordEnd = event.touches[0].pageX;</span><br><span class="line">      this.$refs.now.style.width = ((coordEnd - coordStart) / progressBar.offsetWidth).toFixed(3) * 100 + &apos;%&apos;;  //toFixed(3)保留小数点后3位</span><br><span class="line">    &#125;,</span><br><span class="line">touchEnd(event) &#123;</span><br><span class="line">      this.nativeAudio.currentTime = this.$refs.now.style.width.replace(&apos;%&apos;, &apos;&apos;)/100 * this.nativeAudio.duration;</span><br><span class="line">      this.now = this.nativeAudio.currentTime;</span><br><span class="line">      this.nativeAudio.play();</span><br><span class="line">      this.$store.commit(&apos;play&apos;, true);</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="4-换肤"><a href="#4-换肤" class="headerlink" title="4. 换肤"></a>4. 换肤</h3><p>换肤主要提供了四种颜色，红色 蓝色 黑色 和绿色，样式使用的是flex布局，主要css代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">.skin &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        display: flex;</span><br><span class="line">        flex-direction: column;</span><br><span class="line">        bottom: 50px;</span><br><span class="line">        right: 15px;</span><br><span class="line">        width: 30px;</span><br><span class="line">        .skin-colors &#123;</span><br><span class="line">          flex: 4;</span><br><span class="line">          width: 100%;</span><br><span class="line">          display: flex;</span><br><span class="line">          justify-content: center;</span><br><span class="line">          align-items: center;</span><br><span class="line">          flex-direction: column;</span><br><span class="line">          .selected &#123;</span><br><span class="line">            border: 1px solid white;</span><br><span class="line">          &#125;</span><br><span class="line">          i &#123;</span><br><span class="line">            flex: 1;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            width: 20px;</span><br><span class="line">            height: 20px;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">            border-radius: 10px;</span><br><span class="line">            margin-bottom: 5px;</span><br><span class="line">          &#125;</span><br><span class="line">          i.one &#123;</span><br><span class="line">            background-color: #B72712;</span><br><span class="line">          &#125;</span><br><span class="line">          i.two &#123;</span><br><span class="line">            background-color: #1565C0;</span><br><span class="line">          &#125;</span><br><span class="line">          i.three &#123;</span><br><span class="line">            background-color: #212121;</span><br><span class="line">          &#125;</span><br><span class="line">          i.four &#123;</span><br><span class="line">            background-color: #1B5E20;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        .icon-skin &#123;</span><br><span class="line">          flex: 1;</span><br><span class="line">          width: 100%;</span><br><span class="line">          height: 30px;</span><br><span class="line">          background-repeat: no-repeat;</span><br><span class="line">          background-size: contain;</span><br><span class="line">          margin-top: 3px;</span><br><span class="line">          cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        .icon-skin-red &#123;</span><br><span class="line">          background-image: url(&apos;./skinRed.svg&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        .icon-skin-green &#123;</span><br><span class="line">          background-image: url(&apos;./skinGreen.svg&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        .icon-skin-blue &#123;</span><br><span class="line">          background-image: url(&apos;./skinBlue.svg&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        .icon-skin-black &#123;</span><br><span class="line">          background-image: url(&apos;./skinBlack.svg&apos;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-控制歌曲的上一首下一首的播放"><a href="#5-控制歌曲的上一首下一首的播放" class="headerlink" title="5. 控制歌曲的上一首下一首的播放"></a>5. 控制歌曲的上一首下一首的播放</h3><p>部分代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">prev() &#123;</span><br><span class="line">  this.audio.index = this.audio.index === 0 ? this.musicData.length - 1 : (--this.audio.index);</span><br><span class="line">  this.$store.commit(&apos;toggleMusic&apos;, this.audio.index);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">next() &#123;</span><br><span class="line">  this.audio.index = this.audio.index === this.musicData.length - 1 ? 0 : (++this.audio.index);</span><br><span class="line">  this.$store.commit(&apos;toggleMusic&apos;, this.audio.index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>总结：通过模仿这个项目更加清楚地了解各组件之前的使用和不同组件的状态共享。当然也遇到了一些坑，文章写到这里，也没有完全写完，只写了一个单页面，但也算是一个小小的总结，接下来附上我的源码：<a href="https://github.com/duzuimoye/vue-music-tool" target="_blank" rel="noopener">项目源码</a>，有兴趣的朋友可以看看顺便帮忙点个star和fork,也希望能帮助到一些朋友。作为一名快要成为大四的学生，时间真的宝贵，对待学习也不敢懈怠，如果大家有什么好的想法的话可以联系我的qq:137032979.码字不容易，希望大家点个赞。前端路漫漫，与君共勉之。</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/29/164e52214f922131?w=424&amp;h=452&amp;f=jpeg&amp;s=13847" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://duzuimoye.github.io/duzuimoye.github.io/duzuimoye.github.io/2018/06/17/furniture/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -726,7 +877,7 @@ getTotalPrice(){
               
                 <a href="/duzuimoye.github.io/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
