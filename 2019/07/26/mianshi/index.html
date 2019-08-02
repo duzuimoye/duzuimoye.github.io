@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-01T07:34:46.969Z">
+<meta property="og:updated_time" content="2019-08-02T10:44:04.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结">
 <meta name="twitter:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
@@ -377,6 +377,7 @@
 <h1 id="3：setstate是同步的还是异步的"><a href="#3：setstate是同步的还是异步的" class="headerlink" title="3：setstate是同步的还是异步的"></a>3：setstate是同步的还是异步的</h1><p>当时毫不犹豫的说了异步的，因为我想的是setstate更新之后不能立马拿到结果。然而并不是。<strong>setState在钩子函数中和在合成事件(onClick、onChange)中是异步的，在setTimeout和原生事件（addEventListener）中是同步的</strong></p>
 <h1 id="4-预加载的原理"><a href="#4-预加载的原理" class="headerlink" title="4: 预加载的原理"></a>4: 预加载的原理</h1><p>预加载：提前加载图片，当用户需要查看是可以直接从本地缓存中渲染<br>      为什么要使用预加载：在网页加载之前，对一些主要内容进行加载，以提供用户更好的体验，减少等待时间。否则，如果一个页面的内容过于庞大，会出现留白。<br>    解决页面留白的方案：1.预加载  2.使用svg站位图片，将一些结构快速搭建起来，等待请求的数据来了之后，替换当前的占位符<br>    实现预加载的方法：<br>             1.使用html标签<br>            2.使用Image对象<br>            3.使用XMLHTTPRequest对象，但会精细控制预加载过程</p>
 <h1 id="5：BFC布局"><a href="#5：BFC布局" class="headerlink" title="5：BFC布局"></a>5：BFC布局</h1><p>BFC是css布局的一个概念，是一块独立的渲染区域，一个环境，里面的元素不会影响到外部的元素<br>满足下面的条件之一就能触发BFC：（脱离文档流）<br>             【1】根元素，即HTML元素（最大的一个BFC）<br>             【2】float的值不为none<br>             【3】position的值为absolute或fixed<br>             【4】overflow的值不为visible（默认值。内容不会被修剪，会呈现在元素框之外）<br>             【5】display的值为inline-block、table-cell、table-caption<br>那你了解过<strong>IFC FFC GFC</strong>吗？当时我一脸懵逼？？？我就说这个还真没听过。<br>之后百度了一下<br>GFC（Grid Formatting Contexts）栅格格式化上下文和FFC（Flex Formatting Contexts）Flex格式化上下文，即分别在元素display为grid和flex、 inline-flex 时触发<br>IFC IFC 只有在一个块级元素中仅包含内联级别元素时才会生成。</p>
+<h1 id="6-你了解过tcp-ip协议吗？"><a href="#6-你了解过tcp-ip协议吗？" class="headerlink" title="6: 你了解过tcp ip协议吗？"></a>6: 你了解过tcp ip协议吗？</h1><p>TCP:<br>　　（Transmission Control Protocol 传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由IETF的RFC 793定义。在简化的计算机网络OSI模型中，它完成第四层传输层所指定的功能，用户数据报协议（UDP）是同一层内 [1]  另一个重要的传输协议。<br>IP:<br>　　网络之间互连的协议（IP）是Internet Protocol的外语缩写<br>　　网络之间互连的协议也就是为计算机网络相互连接进行通信而设计的协议<br>　　如今的IP网络使用32位地址，以点分十进制表示，如192.168.0.1。<br>　　地址格式为：IP地址=网络地址+主机地址或 IP地址=网络地址+子网地址+主机地址。</p>
 
       
     </div>
@@ -577,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><span class="nav-number">1.</span> <span class="nav-text">1：说一下对call、apply、bind三个区别？自己实现一下bind方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：数组求和"><span class="nav-number">2.</span> <span class="nav-text">2：数组求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：setstate是同步的还是异步的"><span class="nav-number">3.</span> <span class="nav-text">3：setstate是同步的还是异步的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预加载的原理"><span class="nav-number">4.</span> <span class="nav-text">4: 预加载的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：BFC布局"><span class="nav-number">5.</span> <span class="nav-text">5：BFC布局</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><span class="nav-number">1.</span> <span class="nav-text">1：说一下对call、apply、bind三个区别？自己实现一下bind方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：数组求和"><span class="nav-number">2.</span> <span class="nav-text">2：数组求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：setstate是同步的还是异步的"><span class="nav-number">3.</span> <span class="nav-text">3：setstate是同步的还是异步的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预加载的原理"><span class="nav-number">4.</span> <span class="nav-text">4: 预加载的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：BFC布局"><span class="nav-number">5.</span> <span class="nav-text">5：BFC布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-你了解过tcp-ip协议吗？"><span class="nav-number">6.</span> <span class="nav-text">6: 你了解过tcp ip协议吗？</span></a></li></ol></div>
             
 
           </div>
@@ -629,7 +630,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.8k字</span>
+  <span class="post-count">博客全站共5k字</span>
 </div>
 
         
