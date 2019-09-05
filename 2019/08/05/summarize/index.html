@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-02T14:43:40.874Z">
+<meta property="og:updated_time" content="2019-09-05T13:46:45.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常总结">
 <meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
@@ -402,6 +402,7 @@
 <h1 id="20-dayJS轻量化工具"><a href="#20-dayJS轻量化工具" class="headerlink" title="20 dayJS轻量化工具"></a>20 dayJS轻量化工具</h1><p>当前时间 dayjs()<br>时间字符串 dayjs(‘2018-06-03’)<br>时间戳 dayjs(1528361259484)<br>Date 对象 dayjs(new Date(2018,8,18))<br>复制 dayjs().clone()<br>检测当前 Dayjs 对象是否是一个有效的时间 dayjs().isValid()<br>获取 年 ： dayjs().year() 月 ： dayjs().month() 日 ： dayjs().date() 星期 ： dayjs().day() 时 ： dayjs().hour() 分 ： dayjs().minute() 秒 ： dayjs().second() 毫秒 ： dayjs().millisecond()<br>设置 dayjs().set(‘year’,2017) dayjs().set(‘month’,9)<br>增加时间并返回一个新的 Dayjs() 对象 dayjs().add(7, ‘day’) dayjs().add(7, ‘year’)<br>减少时间并返回一个新的 Dayjs() 对象 dayjs().subtract(7, ‘year’) dayjs().subtract(7, ‘month’)<br>返回当前时间的开头时间的 Dayjs() 对象，如月份的第一天。 dayjs().startOf(‘year’) dayjs().startOf(‘month’)<br>返回当前时间的末尾时间的 Dayjs() 对象，如月份的最后一天。 dayjs().endOf(‘month’) dayjs().endOf(‘year’)<br>格式化 dayjs().format() dayjs().format(‘YYYY-MM-DD dddd HH:mm:ss.SSS A’)<br>时间差 dayjs(‘2018-06-08’).diff(dayjs(‘2017-06-01’),’years’) dayjs(‘2018-06-08’).diff(dayjs(‘2017-06-01’),’day’) dayjs(‘2018-06-08’).diff(dayjs(‘2017-06-01’),’hour’)<br>Unix 时间戳 (毫秒) dayjs().valueOf()<br>Unix 时间戳 (秒) dayjs().unix()<br>返回月份的天数 dayjs().daysInMonth()<br>返回原生的 Date 对象 dayjs().toDate()<br>返回包含时间数值的数组 dayjs().toArray()<br>当序列化 Dayjs 对象时，会返回 ISO8601 格式的字符串 dayjs().toJSON() //2018-06-08T02:44:30.599Z<br>返回 ISO8601 格式的字符串 dayjs().toISOString() //2018-06-08T02:46:06.554Z<br>返回包含时间数值的对象 dayjs().toObject()<br>字符串 dayjs().toString()<br>检查一个 Dayjs 对象是否在另一个 Dayjs 对象时间之前 dayjs(‘2018-06-01’).isBefore(dayjs(‘2018-06-02’))<br>检查一个 Dayjs 对象是否和另一个 Dayjs 对象时间相同 dayjs().isSame(dayjs())<br>检查一个 Dayjs 对象是否在另一个 Dayjs 对象时间之后 dayjs().isAfter(dayjs())</p>
 <p>#21 Array.from() 五个超好用的用途<br>1：Array.from() 第一个用途：将类数组对象转换成数组。<br>function sumArguments() {<br>    return Array.from(arguments).reduce((sum, num) =&gt; sum + num);<br>}<br>sumArguments(1, 2, 3); // =&gt; 6</p>
 <p>2：Array.from() 可以很容易的实现数组的浅拷贝。<br>const numbers = [3, 6, 9];<br>const numbersCopy = Array.from(numbers);<br>numbers === numbersCopy; // =&gt; false</p>
+<p>#22 this.$router.push<br>1：query 相当于ajax的get传参 在流浪器地址中会带入参数 而params相当于post的传参  不会在浏览器地址中带参数<br>2：query 要通过path来引入路由 而 params则是通过name来</p>
 
       
     </div>
