@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-09T13:53:57.807Z">
+<meta property="og:updated_time" content="2019-09-09T13:58:11.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常总结">
 <meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
@@ -405,7 +405,7 @@
 <p>3：数组去重<br>Array.from() 的入参是可迭代对象，因而我们可以利用其与 Set 结合来实现快速从数组中删除重复项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function unique(array) &#123;</span><br><span class="line">  return Array.from(new Set(array));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">unique([1, 1, 2, 3, 3]); // =&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
 <p>4：使用值填充数组<br>如果你需要使用相同的值来初始化数组，那么 Array.from() 将是不错的选择。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const length = 3;</span><br><span class="line">const init   = 0;</span><br><span class="line">const result = Array.from(&#123; length &#125;, () =&gt; init);</span><br><span class="line">result; // =&gt; [0, 0, 0]</span><br></pre></td></tr></table></figure></p>
 <h1 id="22-this-router-push"><a href="#22-this-router-push" class="headerlink" title="22 this.$router.push"></a>22 this.$router.push</h1><p>1：query 相当于ajax的get传参 在流浪器地址中会带入参数 而params相当于post的传参  不会在浏览器地址中带参数<br>2：query 要通过path来引入路由 而 params则是通过name来</p>
-<h1 id="23-vue中ref的作用"><a href="#23-vue中ref的作用" class="headerlink" title="23 vue中ref的作用"></a>23 vue中ref的作用</h1><p>ref除了可以获取本页面的dom元素，还可以拿到子组件中的data和去调用子组件中的方法</p>
+<h1 id="23-vue中ref的作用"><a href="#23-vue中ref的作用" class="headerlink" title="23 vue中ref的作用"></a>23 vue中ref的作用</h1><p>ref除了可以获取本页面的dom元素，还可以拿到子组件中的data和去调用子组件中的方法<br><strong>this.$router.back()可以返回上一层</strong></p>
 
       
     </div>
