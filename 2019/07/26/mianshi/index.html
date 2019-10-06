@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-23T14:08:02.773Z">
+<meta property="og:updated_time" content="2019-10-06T15:18:22.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结">
 <meta name="twitter:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
@@ -382,6 +382,7 @@
 <p>双飞翼布局<br>left、center、right三种都设置左浮动<br>设置center宽度为100%<br>设置负边距，left设置负边距为100%，right设置负边距为自身宽度<br>设置content的margin值为左右两个侧栏留出空间，margin值大小为left和right宽度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#left, #right, #center &#123;</span><br><span class="line">   float: left;</span><br><span class="line"> &#125;</span><br><span class="line"> #center &#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   background: rgb(206, 201, 201);</span><br><span class="line"> &#125;</span><br><span class="line"> #left &#123;</span><br><span class="line">   width: 200px;</span><br><span class="line">   margin-left: -100%;</span><br><span class="line">   background: rgba(95, 179, 235, 0.972);</span><br><span class="line"> &#125;</span><br><span class="line"> #right &#123;</span><br><span class="line">   width: 150px;</span><br><span class="line">   margin-left: -150px;</span><br><span class="line">   background: rgb(231, 105, 2);</span><br><span class="line"> &#125;</span><br><span class="line"> .content &#123;</span><br><span class="line">   margin: 0 150px 0 200px;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="8：get请求传参长度的误区、get和post请求在缓存方面的区别"><a href="#8：get请求传参长度的误区、get和post请求在缓存方面的区别" class="headerlink" title="8：get请求传参长度的误区、get和post请求在缓存方面的区别"></a>8：get请求传参长度的误区、get和post请求在缓存方面的区别</h1><p>  误区：我们经常说get请求参数的大小存在限制，而post请求的参数大小是无限制的。<br>  实际上HTTP 协议从未规定 GET/POST 的请求长度限制是多少。对get请求参数的限制是来源与浏览器或web服务器，浏览器或web服务器限制了url的长度。为了明确这个概念，我们必须再次强调下面几点:</p>
 <p>  HTTP 协议 未规定 GET 和POST的长度限制<br>  GET的最大长度显示是因为 <strong>浏览器和 web服务器限制了 URI的长度</strong><br>  不同的浏览器和WEB服务器，限制的最大长度不一样<br>  要支持IE，则最大长度为2083byte，若只支持Chrome，则最大长度 8182byte<br>  补充补充一个get和post在缓存方面的区别：<br>  get请求类似于查找的过程，用户获取数据，可以不用每次都与数据库连接，所以可以使用缓存。<br>  post不同，post做的一般是修改和删除的工作，所以必须与数据库交互，所以不能使用缓存。因此get请求适合于请求缓存。</p>
+<h1 id="9-ES6特性"><a href="#9-ES6特性" class="headerlink" title="9: ES6特性"></a>9: ES6特性</h1><p>  Math.trunc方法用于去除一个数的小数部分，返回整数部分<br>  Math.cbrt方法用于计算一个数的立方根</p>
 
       
     </div>
@@ -586,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><span class="nav-number">1.</span> <span class="nav-text">1：说一下对call、apply、bind三个区别？自己实现一下bind方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：数组求和"><span class="nav-number">2.</span> <span class="nav-text">2：数组求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：setstate是同步的还是异步的"><span class="nav-number">3.</span> <span class="nav-text">3：setstate是同步的还是异步的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预加载的原理"><span class="nav-number">4.</span> <span class="nav-text">4: 预加载的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：BFC布局"><span class="nav-number">5.</span> <span class="nav-text">5：BFC布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-你了解过tcp-ip协议吗？"><span class="nav-number">6.</span> <span class="nav-text">6: 你了解过tcp ip协议吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7：-圣杯双飞翼布局"><span class="nav-number">7.</span> <span class="nav-text">7： 圣杯双飞翼布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8：get请求传参长度的误区、get和post请求在缓存方面的区别"><span class="nav-number">8.</span> <span class="nav-text">8：get请求传参长度的误区、get和post请求在缓存方面的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><span class="nav-number">1.</span> <span class="nav-text">1：说一下对call、apply、bind三个区别？自己实现一下bind方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：数组求和"><span class="nav-number">2.</span> <span class="nav-text">2：数组求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：setstate是同步的还是异步的"><span class="nav-number">3.</span> <span class="nav-text">3：setstate是同步的还是异步的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预加载的原理"><span class="nav-number">4.</span> <span class="nav-text">4: 预加载的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：BFC布局"><span class="nav-number">5.</span> <span class="nav-text">5：BFC布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-你了解过tcp-ip协议吗？"><span class="nav-number">6.</span> <span class="nav-text">6: 你了解过tcp ip协议吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7：-圣杯双飞翼布局"><span class="nav-number">7.</span> <span class="nav-text">7： 圣杯双飞翼布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8：get请求传参长度的误区、get和post请求在缓存方面的区别"><span class="nav-number">8.</span> <span class="nav-text">8：get请求传参长度的误区、get和post请求在缓存方面的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-ES6特性"><span class="nav-number">9.</span> <span class="nav-text">9: ES6特性</span></a></li></ol></div>
             
 
           </div>
@@ -638,7 +639,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.8k字</span>
+  <span class="post-count">博客全站共8.9k字</span>
 </div>
 
         
