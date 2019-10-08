@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-07T14:25:47.807Z">
+<meta property="og:updated_time" content="2019-10-08T14:24:34.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结">
 <meta name="twitter:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
@@ -384,6 +384,7 @@
 <p>  HTTP 协议 未规定 GET 和POST的长度限制<br>  GET的最大长度显示是因为 <strong>浏览器和 web服务器限制了 URI的长度</strong><br>  不同的浏览器和WEB服务器，限制的最大长度不一样<br>  要支持IE，则最大长度为2083byte，若只支持Chrome，则最大长度 8182byte<br>  补充补充一个get和post在缓存方面的区别：<br>  get请求类似于查找的过程，用户获取数据，可以不用每次都与数据库连接，所以可以使用缓存。<br>  post不同，post做的一般是修改和删除的工作，所以必须与数据库交互，所以不能使用缓存。因此get请求适合于请求缓存。</p>
 <h1 id="9-ES6特性"><a href="#9-ES6特性" class="headerlink" title="9: ES6特性"></a>9: ES6特性</h1><p>  Math.trunc方法用于去除一个数的小数部分，返回整数部分<br>  Math.cbrt方法用于计算一个数的立方根</p>
 <h1 id="10-什么是CDN和CDN的好处"><a href="#10-什么是CDN和CDN的好处" class="headerlink" title="10 什么是CDN和CDN的好处"></a>10 什么是CDN和CDN的好处</h1><p> CDN:CDN是将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。<br>好处：<br>1、多域名加载资源<br>一般情况下，浏览器都会对单个域名下的并发请求数（文件加载）进行限制，通常最多有4个，那么第5个加载项将会被阻塞，直到前面的某一个文件加载完毕。<br>因为CDN文件是存放在不同区域（不同IP）的，所以对浏览器来说是可以同时加载页面所需的所有文件（远不止4个），从而提高页面加载速度。<br>2、文件可能已经被加载过并保存有缓存<br>一些通用的js库或者是css样式库，如jQuery，在网络中的使用是非常普遍的。当一个用户在浏览你的某一个网页的时候，很有可能他已经通过你网站使用的CDN访问过了其他的某一个网站，恰巧这个网站同样也使用了jQuery，那么此时用户浏览器已经缓存有该jQuery文件（同IP的同名文件如果有缓存，浏览器会直接使用缓存文件，不会再进行加载），所以就不会再加载一次了，从而间接的提高了网站的访问速度<br>3、高效率<br>你的网站做的再NB也不会NB过百度NB过Google吧？一个好的CDNs会提供更高的效率，更低的网络延时和更小的丢包率。<br>4、分布式的数据中心<br>假如你的站点布置在北京，当一个香港或者更远的用户访问你的站点的时候，他的数据请求势必会很慢很慢。而CDNs则会让用户从离他最近的节点去加载所需的文件，所以加载速度提升就是理所当然的了。<br>5、使用情况分析<br>一般情况下CDNs提供商（如百度云加速）都会提供数据统计功能，可以了解更多关于用户访问自己网站的情况，可以根据统计数据对自己的站点适时适当的做出些许调整。<br>6、有效防止网站被攻击<br>一般情况下CDNs提供商也是会提供网站安全服务的</p>
+<h1 id="11-如何提高首频加载速度"><a href="#11-如何提高首频加载速度" class="headerlink" title="11 如何提高首频加载速度"></a>11 如何提高首频加载速度</h1><p>1.js外联文件放到body底部，css外联文件放到head内<br>2.http静态资源尽量用多个子域名<br>3.服务器端提供html和http静态资源时最好开启gzip<br>4.在js,css,img等资源响应的http headers里设置expires,last-modified<br>5.尽量减少http requests的数量<br>6.js/css/html/img资源压缩<br>7.使用css spirtes，可以减少img请求次数<br>8.大图使用lazyload懒加载<br>9.避免404，减少外联js<br>10.减少cookie大小可以提高获得响应的时间<br>11.减少dom elements的数量<br>12.使用异步脚本，动态创建脚本</p>
 
       
     </div>
@@ -588,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><span class="nav-number">1.</span> <span class="nav-text">1：说一下对call、apply、bind三个区别？自己实现一下bind方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：数组求和"><span class="nav-number">2.</span> <span class="nav-text">2：数组求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：setstate是同步的还是异步的"><span class="nav-number">3.</span> <span class="nav-text">3：setstate是同步的还是异步的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预加载的原理"><span class="nav-number">4.</span> <span class="nav-text">4: 预加载的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：BFC布局"><span class="nav-number">5.</span> <span class="nav-text">5：BFC布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-你了解过tcp-ip协议吗？"><span class="nav-number">6.</span> <span class="nav-text">6: 你了解过tcp ip协议吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7：-圣杯双飞翼布局"><span class="nav-number">7.</span> <span class="nav-text">7： 圣杯双飞翼布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8：get请求传参长度的误区、get和post请求在缓存方面的区别"><span class="nav-number">8.</span> <span class="nav-text">8：get请求传参长度的误区、get和post请求在缓存方面的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-ES6特性"><span class="nav-number">9.</span> <span class="nav-text">9: ES6特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-什么是CDN和CDN的好处"><span class="nav-number">10.</span> <span class="nav-text">10 什么是CDN和CDN的好处</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><span class="nav-number">1.</span> <span class="nav-text">1：说一下对call、apply、bind三个区别？自己实现一下bind方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：数组求和"><span class="nav-number">2.</span> <span class="nav-text">2：数组求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：setstate是同步的还是异步的"><span class="nav-number">3.</span> <span class="nav-text">3：setstate是同步的还是异步的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预加载的原理"><span class="nav-number">4.</span> <span class="nav-text">4: 预加载的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：BFC布局"><span class="nav-number">5.</span> <span class="nav-text">5：BFC布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-你了解过tcp-ip协议吗？"><span class="nav-number">6.</span> <span class="nav-text">6: 你了解过tcp ip协议吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7：-圣杯双飞翼布局"><span class="nav-number">7.</span> <span class="nav-text">7： 圣杯双飞翼布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8：get请求传参长度的误区、get和post请求在缓存方面的区别"><span class="nav-number">8.</span> <span class="nav-text">8：get请求传参长度的误区、get和post请求在缓存方面的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-ES6特性"><span class="nav-number">9.</span> <span class="nav-text">9: ES6特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-什么是CDN和CDN的好处"><span class="nav-number">10.</span> <span class="nav-text">10 什么是CDN和CDN的好处</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-如何提高首频加载速度"><span class="nav-number">11.</span> <span class="nav-text">11 如何提高首频加载速度</span></a></li></ol></div>
             
 
           </div>
@@ -640,7 +641,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.5k字</span>
+  <span class="post-count">博客全站共9.7k字</span>
 </div>
 
         
