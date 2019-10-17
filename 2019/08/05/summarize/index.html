@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-17T14:09:11.900Z">
+<meta property="og:updated_time" content="2019-10-17T14:12:02.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常总结">
 <meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
@@ -422,7 +422,7 @@
 <h1 id="31-对于从后端取过来的数据优化"><a href="#31-对于从后端取过来的数据优化" class="headerlink" title="31 对于从后端取过来的数据优化"></a>31 对于从后端取过来的数据优化</h1><p><strong>this.orderList = res.result ? res.result.list : []</strong></p>
 <p>【Vuex】mapGetters 辅助函数<br>mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：<br>1：mapState工具函数会将store中的state映射到局部计算属性中<br>        …mapState({<br>          add: state =&gt; state.add,<br>          counts: state =&gt; state.counts<br>        })<br>2：mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：<br> …mapGetters([‘userInfo’])<br>3：mapMutations将 store 中的 action 映射到局部计算属性<br>…mapMutations({<br>        ‘ADD’: ‘ADD’<br>      })<br>…展开运算符<br>1.展开函数在多个参数的地方使用 。意指用于函数传参<br>2.多个元素的地方使用，意指用于数组字面量<br>3.多个边框的地方使用，意指用于解构赋值<br>…this.$route.query,</p>
 <h1 id="32-手机号隐藏中间四位"><a href="#32-手机号隐藏中间四位" class="headerlink" title="32 手机号隐藏中间四位"></a>32 手机号隐藏中间四位</h1><p>一般都会用正则表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var tel = &quot;13122223333&quot;;</span><br><span class="line">var reg = /^(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)$/;</span><br><span class="line">tel = tel.replace(reg, &quot;$1****$2&quot;);</span><br></pre></td></tr></table></figure></p>
-<h1 id="33-v-model"><a href="#33-v-model" class="headerlink" title="33 v-model"></a>33 v-model</h1><p> 如果是输入框 , 可以直接使用 v-model=”” , 注意这里的<br> .trim 表示去除输入内容的收尾空格<br> .number 表示将输入的字符串转换为数值类型<br> .lazy 表示让数据的更新在输入改变时进行.</p>
+<h1 id="33-v-model"><a href="#33-v-model" class="headerlink" title="33 v-model"></a>33 v-model</h1><p> 如果是输入框 , 可以直接使用 v-model=””.<br> .trim 表示去除输入内容的收尾空格<br> .number 表示将输入的字符串转换为数值类型<br> .lazy 表示让数据的更新在输入改变时进行.</p>
 
       
     </div>
