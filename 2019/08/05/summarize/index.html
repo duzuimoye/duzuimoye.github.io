@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-05T15:44:50.864Z">
+<meta property="og:updated_time" content="2019-11-05T15:47:17.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常总结">
 <meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
@@ -428,7 +428,8 @@
 <h1 id="36"><a href="#36" class="headerlink" title="36 !!"></a>36 !!</h1><p>！！常常用来做类型判断，在第一步!（变量）之后再做逻辑取反运算<br>不好的写法<br>var a;<br>if(a!=null&amp;&amp;typeof(a)!=undefined&amp;&amp;a!=’’){<br>    //a有内容才执行的代码<br>}<br>最佳写法<br>if(!!a){<br>    //a有内容才执行的代码…<br>}</p>
 <h1 id="37-padStart-padEnd"><a href="#37-padStart-padEnd" class="headerlink" title="37 padStart padEnd"></a>37 padStart padEnd</h1><p>padStart()用于头部补全，padEnd()用于尾部补全。padStart()和padStart()一共接受两个参数，第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串。<br>x’.padStart(5, ‘ab’) // ‘ababx’<br>如果原字符串的长度，等于或大于指定的最小长度，则返回原字符串。<br>‘xxx’.padStart(2, ‘ab’) // ‘xxx’</p>
 <h1 id="38-vuex数据异步造成初始化的时候没值报错"><a href="#38-vuex数据异步造成初始化的时候没值报错" class="headerlink" title="38 vuex数据异步造成初始化的时候没值报错"></a>38 vuex数据异步造成初始化的时候没值报错</h1><p>1: 在computed赋值该数据 并且在dom渲染的时候做非空的判断<br>isShow() {<br>  return this.customerInfo ? true : false<br>}<br>2: 通过watch和mouted监听并且初始化vuex数据<br><strong>在mounted的时候初始化该数据 并且watch该数据(不推荐)</strong><br>3: 使用拓展运算符<br><a href="https://blog.csdn.net/ink_if/article/details/86076720" target="_blank" rel="noopener">具体可看</a></p>
-<h1 id="39-flex-布局会让position-absolute-bottom-0-失效？？？？"><a href="#39-flex-布局会让position-absolute-bottom-0-失效？？？？" class="headerlink" title="39 flex 布局会让position absolute bottom 0 失效？？？？"></a>39 flex 布局会让position absolute bottom 0 失效？？？？</h1>
+<h1 id="39-flex-布局会让position-absolute-bottom-0-失效？？？？"><a href="#39-flex-布局会让position-absolute-bottom-0-失效？？？？" class="headerlink" title="39 flex 布局会让position absolute bottom 0 失效？？？？"></a>39 flex 布局会让position absolute bottom 0 失效？？？？</h1><p>是的</p>
+
       
     </div>
     
