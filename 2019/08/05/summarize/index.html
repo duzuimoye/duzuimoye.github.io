@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-18T12:58:28.012Z">
+<meta property="og:updated_time" content="2019-12-19T15:24:31.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常总结">
 <meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
@@ -443,6 +443,7 @@
 <p>  Mixins：则是在引入组件之后与组件中的对象和方法进行合并，相当于扩展了父组件的对象与方法，可以理解为形成了一个新的组件。</p>
 <h1 id="45-cursor-pointer"><a href="#45-cursor-pointer" class="headerlink" title="45 cursor: pointer"></a>45 cursor: pointer</h1><p>鼠标属性 只在pc端生效 在app 设置了无效。</p>
 <h1 id="46-link和-import的区别？"><a href="#46-link和-import的区别？" class="headerlink" title="46 link和@import的区别？"></a>46 link和@import的区别？</h1><p>1.页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载。<br>2.@import是css提供的语法，因此只可以引入css文件。而link是html提供的语法，除了css文件还可以引入其他文件。<br>3.@import会有兼容性问题，只有IE5+才能使用。而link没有兼容性问题。<br>4.可以通过 JS 操作DOM，插入link标签来改变样式；由于 DOM 方法是基于文档的，无法使用@import的方式插入样式。<br>5.link引入的样式权重大于@import引入的样式。</p>
+<p>#47 什么时候使用keep-alive元素？<br>当由于数据属性或其他某种响应状态而动态切换组件时，每次将它们切换到渲染状态时，都会被重新渲染。尽管你可能需要这种行为，但在某些情况下重新渲染可能是不合适的。例如在创建时从 API 调用中引入数据的组件。你可能不希望每次动态切换这个组件进行渲染时都调用此 API。这时你可以将组件包含在 keep-alive 元素中。keep-alive 元素缓存该组件并从那里获取它，而不是每次都重新渲染它</p>
 
       
     </div>
@@ -695,7 +696,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.7k字</span>
+  <span class="post-count">博客全站共11.8k字</span>
 </div>
 
         
