@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-22T15:24:28.082Z">
+<meta property="og:updated_time" content="2019-12-23T13:53:55.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常总结">
 <meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
@@ -445,7 +445,8 @@
 <h1 id="46-link和-import的区别？"><a href="#46-link和-import的区别？" class="headerlink" title="46 link和@import的区别？"></a>46 link和@import的区别？</h1><p>1.页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载。<br>2.@import是css提供的语法，因此只可以引入css文件。而link是html提供的语法，除了css文件还可以引入其他文件。<br>3.@import会有兼容性问题，只有IE5+才能使用。而link没有兼容性问题。<br>4.可以通过 JS 操作DOM，插入link标签来改变样式；由于 DOM 方法是基于文档的，无法使用@import的方式插入样式。<br>5.link引入的样式权重大于@import引入的样式。</p>
 <p>#47 什么时候使用keep-alive元素？<br>当由于数据属性或其他某种响应状态而动态切换组件时，每次将它们切换到渲染状态时，都会被重新渲染。尽管你可能需要这种行为，但在某些情况下重新渲染可能是不合适的。例如在创建时从 API 调用中引入数据的组件。你可能不希望每次动态切换这个组件进行渲染时都调用此 API。这时你可以将组件包含在 keep-alive 元素中。keep-alive 元素缓存该组件并从那里获取它，而不是每次都重新渲染它</p>
 <h1 id="48-父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow-hidden，但是却失效？"><a href="#48-父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow-hidden，但是却失效？" class="headerlink" title="48 父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow:hidden，但是却失效？"></a>48 父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow:hidden，但是却失效？</h1><p>// 给父元素设置<br>{<br>  position:relative;<br>  z-index:1;<br>}</p>
-<h1 id="49-content-type"><a href="#49-content-type" class="headerlink" title="49 content-type"></a>49 content-type</h1>
+<h1 id="49-content-type"><a href="#49-content-type" class="headerlink" title="49 content-type"></a>49 content-type</h1><p>isJson: true  json格式的入参<br>computed: {<br>  apiParams () {<br>    let params = {<br>    id: ‘’,<br>    name:’’,<br>    age: ‘’,<br>    telephone:’’<br>  }<br>  params.sex = sex<br>  }<br>}<br>this.$http.post(api.getUserInfo, this.apiParams, {isJson: true})<br>把isjson 去掉 则格式为form-data</p>
+
       
     </div>
     
