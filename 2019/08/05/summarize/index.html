@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢贤飞的博客">
 <meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-26T14:59:55.367Z">
+<meta property="og:updated_time" content="2020-03-30T13:08:43.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常总结">
 <meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
@@ -485,7 +485,7 @@
 <p>使用的时候，也是直接对类使用new命令，跟构造函数的用法完全一致。</p>
 <h1 id="79-dialog组件扩展"><a href="#79-dialog组件扩展" class="headerlink" title="79 dialog组件扩展"></a>79 dialog组件扩展</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;title&quot; slot=&quot;title&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;text&quot;&gt;按日排班&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;info&quot;&gt;选择空白格子进行排班&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="80-获取url的参数"><a href="#80-获取url的参数" class="headerlink" title="80 获取url的参数"></a>80 获取url的参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;*&#125; name</span><br><span class="line"> * @param &#123;*&#125; origin</span><br><span class="line"> */</span><br><span class="line">export function getUrlParams(name, origin = null) &#123;</span><br><span class="line">    let url = location.href;</span><br><span class="line">    let temp1 = url.split(&apos;?&apos;);</span><br><span class="line">    let pram = temp1[1];</span><br><span class="line">    let keyValue = pram.split(&apos;&amp;&apos;);</span><br><span class="line">    let obj = &#123;&#125;;</span><br><span class="line">    for (let i = 0; i &lt; keyValue.length; i++) &#123;</span><br><span class="line">        let item = keyValue[i].split(&apos;=&apos;);</span><br><span class="line">        let key = item[0];</span><br><span class="line">        let value = item[1];</span><br><span class="line">        obj[key] = value;</span><br><span class="line">    &#125;</span><br><span class="line">    return obj[name];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="81-location-包含当前URL的信息"><a href="#81-location-包含当前URL的信息" class="headerlink" title="81 location 包含当前URL的信息"></a>81 location 包含当前URL的信息</h1><p>window.location.reload()</p>
+<h1 id="81-location-包含当前URL的信息"><a href="#81-location-包含当前URL的信息" class="headerlink" title="81 location 包含当前URL的信息"></a>81 location 包含当前URL的信息</h1><p>window.location.reload()重新刷新页面</p>
 
       
     </div>
@@ -742,7 +742,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共16.7k字</span>
+  <span class="post-count">博客全站共16.8k字</span>
 </div>
 
         
