@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://duzuimoye.github.io/duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/img/typeof.png">
 <meta property="og:image" content="https://image.fundebug.com/2019-06-26-01.png">
-<meta property="og:updated_time" content="2021-03-05T13:51:38.897Z">
+<meta property="og:updated_time" content="2021-03-06T06:06:24.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结">
 <meta name="twitter:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
@@ -399,6 +399,8 @@
 <h1 id="18-关于对象的api"><a href="#18-关于对象的api" class="headerlink" title="18 关于对象的api"></a>18 关于对象的api</h1><p>object.keys() object.prototype.toString()  object.values() object.entries() Object.is(val1,val2): 是确定两个值是否是相同的值,</p>
 <h1 id="19-Vue2-x响应式数据原理"><a href="#19-Vue2-x响应式数据原理" class="headerlink" title="19 Vue2.x响应式数据原理"></a>19 Vue2.x响应式数据原理</h1><p>Vue在初始化数据时，会使用Object.defineProperty重新定义data中的所有属性，当页面使用对应属性时，首先会进行依赖收集(收集当前组件的watcher)如果属性发生变化会通知相关依赖进行更新操作(发布订阅)。</p>
 <h1 id="20-Vue3-x响应式数据原理"><a href="#20-Vue3-x响应式数据原理" class="headerlink" title="20 Vue3.x响应式数据原理"></a>20 Vue3.x响应式数据原理</h1><p>Vue3.x改用Proxy替代Object.defineProperty。因为Proxy可以直接监听对象和数组的变化，并且有多达13种拦截方法。</p>
+<p>proxy只会代理对象的第一层，那么Vue3.0是怎么处理的呢？<br>1：判断当前返回值是不是object,<br>2: 如果是的话就通过reactive方法做代理</p>
+<p>衍生2：检测数组的时候，可能会多次触发get/set事件。怎么防止呢？<br>第一：判断key是否为当前对象的自身属性<br>第二：判断新值跟旧值是否相等</p>
 <h1 id="21-position有哪些属性？"><a href="#21-position有哪些属性？" class="headerlink" title="21 position有哪些属性？"></a>21 position有哪些属性？</h1><p>absolute relative fixed sticky(粘性定位，是fixed和relative的结合体) static（默认值 没有定位）inherit(从父元素中间继承)</p>
 <h1 id="22-typeOf-原理？"><a href="#22-typeOf-原理？" class="headerlink" title="22 typeOf 原理？"></a>22 typeOf 原理？</h1><p>js在底层存储变量的时候，为了性能考虑用低位来存储变量类型信息。<br>typeof ‘hello’ // string<br>typeof new String(‘hello’) // Object<br>为什么typeof null 时object，是因为 null 全部为0  而typeof判断机器码的前三位。<br><img src="/duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/img/typeof.png" alt="图片"></p>
 <h1 id="23-0-1-0-2-0-3-吗？-为什么？"><a href="#23-0-1-0-2-0-3-吗？-为什么？" class="headerlink" title="23 0.1 + 0.2 === 0.3 吗？ 为什么？"></a>23 0.1 + 0.2 === 0.3 吗？ 为什么？</h1><p>计算机的底层都是由二进制来表示的，对于 0.1和 0.2 这种数字在用二进制储存的时候会有精度误差</p>
@@ -707,7 +709,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.1k字</span>
+  <span class="post-count">博客全站共22.2k字</span>
 </div>
 
         
