@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/duzuimoye.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/duzuimoye.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/duzuimoye.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/duzuimoye.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/duzuimoye.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/duzuimoye.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/duzuimoye.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="总结," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
+<meta name="keywords" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日常总结">
+<meta property="og:url" content="https://duzuimoye.github.io/duzuimoye.github.io/2019/08/05/summarize/index.html">
+<meta property="og:site_name" content="谢贤飞的博客">
+<meta property="og:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-09-13T11:52:02.938Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="日常总结">
+<meta name="twitter:description" content="1: router-view路由匹配到的组件将显示在这里  2: 三位逗号分开1234567891011121314Vue.filter(&amp;apos;numFix&amp;apos;, num =&amp;gt; &amp;#123;  let result = &amp;apos;&amp;apos;,    nums = []  num = (num || 0).toString()  nums = num.split(&amp;apos;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/duzuimoye.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://duzuimoye.github.io/duzuimoye.github.io/2019/08/05/summarize/"/>
+
+
+
+
+
+  <title>日常总结 | 谢贤飞的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+   <a href="https://github.com/duzuimoye" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/duzuimoye.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谢贤飞的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">愿代码没有bug</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/duzuimoye.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/duzuimoye.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/duzuimoye.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/duzuimoye.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/duzuimoye.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://duzuimoye.github.io/duzuimoye.github.io/duzuimoye.github.io/2019/08/05/summarize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="独醉莫邪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1339527586,531210284&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢贤飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">日常总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T21:57:00+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+
+      
+        <h1 id="1-router-view"><a href="#1-router-view" class="headerlink" title="1: router-view"></a>1: router-view</h1><p>路由匹配到的组件将显示在这里 </p>
+<h1 id="2-三位逗号分开"><a href="#2-三位逗号分开" class="headerlink" title="2: 三位逗号分开"></a>2: 三位逗号分开</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(&apos;numFix&apos;, num =&gt; &#123;</span><br><span class="line">  let result = &apos;&apos;,</span><br><span class="line">    nums = []</span><br><span class="line">  num = (num || 0).toString()</span><br><span class="line">  nums = num.split(&apos;.&apos;)</span><br><span class="line">  while (nums[0].length &gt; 3) &#123;</span><br><span class="line">    result = &apos;,&apos; + nums[0].slice(-3) + result</span><br><span class="line">    nums[0] = nums[0].slice(0, nums[0].length - 3)</span><br><span class="line">  &#125;</span><br><span class="line">  if (nums[0]) &#123;</span><br><span class="line">    result = nums[0] + result + (nums[1] ? &apos;.&apos; + nums[1] : &apos;&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  return result</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">formatNumber(num)&#123;</span><br><span class="line">  num = num.toFixed(2);</span><br><span class="line">  num = parseFloat(num)</span><br><span class="line">  num = num.toLocaleString();</span><br><span class="line">  return num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-isNotZero函数"><a href="#3-isNotZero函数" class="headerlink" title="3: isNotZero函数"></a>3: isNotZero函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.isNotZero = value =&gt; &#123;</span><br><span class="line">  if ([null, undefined, &apos;&apos;].includes(value)) &#123;</span><br><span class="line">    return false</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="4-位运算符"><a href="#4-位运算符" class="headerlink" title="4: |位运算符"></a>4: |位运算符</h1><p>6.66| hundred | priceFixed<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function(value) &#123;</span><br><span class="line">  return parseFloat(value) * 100</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> function(value) &#123;</span><br><span class="line">  return (value / 100).toFixed(2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="5：http-协议状态码"><a href="#5：http-协议状态码" class="headerlink" title="5：http 协议状态码"></a>5：http 协议状态码</h1><p>200：请求成功<br>201：请求成功并且服务器创建了新的资源<br>302：服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来响应以后的请求。<br>304：自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。<br>400：服务器不理解请求的语法。<br>401：未经授权 访问被拒绝。<br>404：请求的资源（网页等）不存在<br>500：内部服务器错误<br>503： 服务器错误</p>
+<h1 id="6：ios-input输入时白屏"><a href="#6：ios-input输入时白屏" class="headerlink" title="6：ios input输入时白屏"></a>6：ios input输入时白屏</h1><p>在input的父元素添加相对定位就行了 style=”position:relative”</p>
+<h1 id="7：input获取焦点时-页面被放大"><a href="#7：input获取焦点时-页面被放大" class="headerlink" title="7：input获取焦点时 页面被放大"></a>7：input获取焦点时 页面被放大</h1><p>设置meta标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="8：防抖节流"><a href="#8：防抖节流" class="headerlink" title="8：防抖节流"></a>8：防抖节流</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const debounce = (fn, delay) =&gt; &#123;</span><br><span class="line">  let timer = null;</span><br><span class="line">  return (...args) =&gt; &#123;</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    timer = setTimeout(() =&gt; &#123;</span><br><span class="line">      fn.apply(this, args);</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 节流函数</span><br><span class="line">const throttle = (fn, delay = 500) =&gt; &#123;</span><br><span class="line">  let flag = true;</span><br><span class="line">  return (...args) =&gt; &#123;</span><br><span class="line">    if (!flag) return;</span><br><span class="line">    flag = false;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      fn.apply(this, args);</span><br><span class="line">      flag = true;</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="9instanceof-原理"><a href="#9instanceof-原理" class="headerlink" title="9instanceof 原理"></a>9instanceof 原理</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">模拟 instanceof</span><br><span class="line">function instance_of(L, R) &#123;</span><br><span class="line">  //L 表示左表达式，R 表示右表达式</span><br><span class="line">  var O = R.prototype; // 取 R 的显示原型</span><br><span class="line">  L = L.__proto__; // 取 L 的隐式原型</span><br><span class="line">  while (true) &#123;</span><br><span class="line">    if (L === null) return false;</span><br><span class="line">    if (O === L)</span><br><span class="line">      // 这里重点：当 O 严格等于 L 时，返回 true</span><br><span class="line">      return true;</span><br><span class="line">    L = L.__proto__;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="10mapGetter"><a href="#10mapGetter" class="headerlink" title="10mapGetter"></a>10mapGetter</h1><p>mapGetter函数是将store中的getter映射到局部计算属性</p>
+<h1 id="11-computed和methods"><a href="#11-computed和methods" class="headerlink" title="11 computed和methods"></a>11 computed和methods</h1><p>我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，不同的是计算属性是基于它们的响应式依赖进行缓存的。只在相关响应式依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</p>
+<h1 id="12-vue-cloak"><a href="#12-vue-cloak" class="headerlink" title="12 vue-cloak"></a>12 vue-cloak</h1><p>vue-cloak 可以防止页面闪烁<br>active-class是vue-router模块的router-link组件中的属性，用来做选中样式的切换</p>
+<h1 id="13elementUI-render-header显示问题"><a href="#13elementUI-render-header显示问题" class="headerlink" title="13elementUI render-header显示问题"></a>13elementUI render-header显示问题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">renderSequence(h, &#123; column &#125;) &#123;</span><br><span class="line">  return h(&apos;span&apos;, [</span><br><span class="line">    h(&apos;span&apos;, &#123;</span><br><span class="line">      domProps: &#123;</span><br><span class="line">        innerHTML: column.label</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;),</span><br><span class="line">    h(</span><br><span class="line">      &apos;el-tooltip&apos;,</span><br><span class="line">      &#123;</span><br><span class="line">        props: &#123;</span><br><span class="line">          effect: &apos;dark&apos;,</span><br><span class="line">          placement: &apos;bottom-start&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        style: &#123;</span><br><span class="line">          position: &apos;relative&apos;,</span><br><span class="line">          left: &apos;5px&apos;,</span><br><span class="line">          opacity: 0.6</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      [</span><br><span class="line">        h(&apos;i&apos;, &#123;</span><br><span class="line">          class: &apos;el-icon-question&apos;,</span><br><span class="line">          style: &#123;</span><br><span class="line">            cursor: &apos;pointer&apos;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;),</span><br><span class="line">        h(&apos;span&apos;, &#123;</span><br><span class="line">          domProps: &#123;</span><br><span class="line">            innerHTML: &apos;数字越小，售卖展示越靠前&apos;</span><br><span class="line">          &#125;,</span><br><span class="line">          slot: &apos;content&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">      ]</span><br><span class="line">    )</span><br><span class="line">  ])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="14-关于upload-action的问题"><a href="#14-关于upload-action的问题" class="headerlink" title="14 关于upload action的问题"></a>14 关于upload action的问题</h1><p>一般会做一下处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-form-item required label=&quot;上传图片：&quot;&gt;</span><br><span class="line">          &lt;div v-if=&quot;form.cardFaceImg&quot; class=&quot;card-img&quot;&gt;</span><br><span class="line">            &lt;img :src=&quot;form.cardFaceImg&quot; alt /&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">          &lt;div style=&quot;display: inline-block;&quot;&gt;</span><br><span class="line">            &lt;el-upload action=&quot;//up.qbox.me/&quot; :show-file-list=&quot;true&quot; :file-list=&quot;form.fileList&quot; :on-success=&quot;AvatarSuccess&quot; :before-upload=&quot;AvatarUpload&quot; :data=&quot;imgData&quot;&gt;</span><br><span class="line">              &lt;el-button :plain=&quot;true&quot; type=&quot;info&quot;&gt;上传图片&lt;/el-button&gt;</span><br><span class="line">            &lt;/el-upload&gt;</span><br><span class="line">            &lt;p style=&quot;color: #9b9b9b;margin-top: 5px;&quot;&gt;建议尺寸240*105，不超过500kb&lt;/p&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">AvatarSuccess(res, file) &#123;</span><br><span class="line">     this.$set(this.form, &apos;cardFaceImg&apos;, &apos;https://asset.imuge.net/&apos; + res.key)</span><br><span class="line">     this.form.fileList.push(&#123;</span><br><span class="line">       name: &apos;https://asset.imuge.net/&apos; + res.key</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;,</span><br><span class="line">   AvatarUpload(file) &#123;</span><br><span class="line">     let _this = this</span><br><span class="line">     const isLt2M = file.size / 1024 / 1024 &lt; 0.5</span><br><span class="line"></span><br><span class="line">     if (!isLt2M) &#123;</span><br><span class="line">       this.$message.error(&apos;上传礼品图片大小不能超过 500KB!&apos;)</span><br><span class="line">       return false</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     return _this.$http.post(apiRoutes.GET_UPLOAD_TOKEN).then(</span><br><span class="line">       res =&gt; &#123;</span><br><span class="line">         _this.imgData = &#123;</span><br><span class="line">           token: res.data.uptoken</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;,</span><br><span class="line">       res =&gt; &#123;&#125;</span><br><span class="line">     )</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="15-js-字符串两边截取空白的-trim-的原型方法的实现"><a href="#15-js-字符串两边截取空白的-trim-的原型方法的实现" class="headerlink" title="15 js 字符串两边截取空白的 trim 的原型方法的实现"></a>15 js 字符串两边截取空白的 trim 的原型方法的实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 删除左右两端的空格</span><br><span class="line">function trim(str)&#123;</span><br><span class="line"> return str.replace(/(^\s*)|(\s*$)/g, &quot;&quot;);</span><br><span class="line">&#125;</span><br><span class="line">// 删除左边的空格 /(^\s*)/g</span><br><span class="line">// 删除右边的空格 /(\s*$)/g</span><br></pre></td></tr></table></figure>
+<h1 id="16-vue总结"><a href="#16-vue总结" class="headerlink" title="16 vue总结"></a>16 vue总结</h1><p>首先，我们知道vue实现的单页应用中一般不会去刷新页面，因为刷新之后页面中的vuex数据就不见了。<br>其次，我们也知道一般情况下，url变更的时候，比如指定location.href、history.push、replace等，页面就会刷新。<br>那么问题来了，vue页面的页面跳转时怎么实现的？没刷新页面么？没刷新页面，又要改变url，加载新内容怎么做的？<br>vue-router就是利用pushState这个属性，在页面前进的时候动态改变history的内容，添加一条记录，接着location跟着改变。同时根据router前往的路由获取对应的js资源文件并挂载到目标dom上实现页面内容的更新，但是页面本身并没有刷新。</p>
+<p>可以在钩子函数 created、beforeMount、mounted 中进行调用，因为在这三个钩子函数中，data 已经创建，可以将服务端端返回的数据进行赋值。但是推荐在 created 钩子函数中调用异步请求，因为在 created 钩子函数中调用异步请求有以下优点：</p>
+<p>能更快获取到服务端数据，减少页面 loading 时间；<br>ssr 不支持 beforeMount 、mounted 钩子函数，所以放在 created 中有助于一致性；</p>
+<h1 id="17-vue路由的钩子函数"><a href="#17-vue路由的钩子函数" class="headerlink" title="17 vue路由的钩子函数"></a>17 vue路由的钩子函数</h1><p>首页可以控制导航跳转，beforeEach，afterEach等，一般用于页面title的修改。一些需要登录才能调整页面的重定向功能。</p>
+<p>beforeEach主要有3个参数to，from，next：</p>
+<p>to：route即将进入的目标路由对象，</p>
+<p>from：route当前导航正要离开的路由</p>
+<p>next：function一定要调用该方法resolve这个钩子。执行效果依赖next方法的调用参数。可以控制网页的跳转。</p>
+<h1 id="18手机号验证"><a href="#18手机号验证" class="headerlink" title="18手机号验证"></a>18手机号验证</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function checkPhone()&#123; </span><br><span class="line">    var phone = document.getElementById(&apos;phone&apos;).value;</span><br><span class="line">    if(!(/^1(3|4|5|7|8)\d&#123;9&#125;$/.test(phone)))&#123; </span><br><span class="line">        alert(&quot;手机号码有误，请重填&quot;);  </span><br><span class="line">        return false; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>^1(3|4|5|7|8)d{9}$，表示以 1 开头，第二位可能是 3/4/5/7/8 等的任意一个，在加上后面的 d 表示数字 [0-9] 的 9 位，总共加起来 11 位结束。</p>
+<p><strong>手机号码格式验证方法(正则表达式验证)支持最新电信 199， 移动 198， 联通 166</strong></p>
+<p>let valid_rule = /^(13[0-9]|14[5-9]|15[012356789]|166|17[0-8]|18[0-9]|19[8-9])[0-9]{8}$/;</p>
+<p>if ( ! valid_rule.test(phone_number)) {<br>     alert(‘手机号码格式有误’);<br>     return false;<br>}</p>
+<h1 id="19-new操作符做了什么"><a href="#19-new操作符做了什么" class="headerlink" title="19  new操作符做了什么"></a>19  new操作符做了什么</h1><p>1、创建一个空对象，并且 this 变量引用该对象，// lat target = {};<br>2、继承了函数的原型。// target.proto = func.prototype;<br>3、属性和方法被加入到 this 引用的对象中。并执行了该函数func// func.call(target);<br>4、新创建的对象由 this 所引用，并且最后隐式的返回 this 。// 如果func.call(target)返回的res是个对象或者function 就返回它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function new(func) &#123;</span><br><span class="line">	lat target = &#123;&#125;;</span><br><span class="line">	target.__proto__ = func.prototype;</span><br><span class="line">	let res = func.call(target);</span><br><span class="line">	if (typeof(res) == &quot;object&quot; || typeof(res) == &quot;function&quot;) &#123;</span><br><span class="line">		return res;</span><br><span class="line">	&#125;</span><br><span class="line">	return target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="20-dayJS轻量化工具"><a href="#20-dayJS轻量化工具" class="headerlink" title="20 dayJS轻量化工具"></a>20 dayJS轻量化工具</h1><p>当前时间 dayjs()<br>时间字符串 dayjs(‘2018-06-03’)<br>时间戳 dayjs(1528361259484)<br>Date 对象 dayjs(new Date(2018,8,18))<br>复制 dayjs().clone()<br>检测当前 Dayjs 对象是否是一个有效的时间 dayjs().isValid()<br>获取 年 ： dayjs().year() 月 ： dayjs().month() 日 ： dayjs().date() 星期 ： dayjs().day() 时 ： dayjs().hour() 分 ： dayjs().minute() 秒 ： dayjs().second() 毫秒 ： dayjs().millisecond()<br>设置 dayjs().set(‘year’,2017) dayjs().set(‘month’,9)<br>增加时间并返回一个新的 Dayjs() 对象 dayjs().add(7, ‘day’) dayjs().add(7, ‘year’)<br>减少时间并返回一个新的 Dayjs() 对象 dayjs().subtract(7, ‘year’) dayjs().subtract(7, ‘month’)<br>返回当前时间的开头时间的 Dayjs() 对象，如月份的第一天。 dayjs().startOf(‘year’) dayjs().startOf(‘month’)<br>返回当前时间的末尾时间的 Dayjs() 对象，如月份的最后一天。 dayjs().endOf(‘month’) dayjs().endOf(‘year’)<br>格式化 dayjs().format() dayjs().format(‘YYYY-MM-DD dddd HH:mm:ss.SSS A’)<br>时间差 dayjs(‘2018-06-08’).diff(dayjs(‘2017-06-01’),’years’) dayjs(‘2018-06-08’).diff(dayjs(‘2017-06-01’),’day’) dayjs(‘2018-06-08’).diff(dayjs(‘2017-06-01’),’hour’)<br>Unix 时间戳 (毫秒) dayjs().valueOf()<br>Unix 时间戳 (秒) dayjs().unix()<br>返回月份的天数 dayjs().daysInMonth()<br>返回原生的 Date 对象 dayjs().toDate()<br>返回包含时间数值的数组 dayjs().toArray()<br>当序列化 Dayjs 对象时，会返回 ISO8601 格式的字符串 dayjs().toJSON() //2018-06-08T02:44:30.599Z<br>返回 ISO8601 格式的字符串 dayjs().toISOString() //2018-06-08T02:46:06.554Z<br>返回包含时间数值的对象 dayjs().toObject()<br>字符串 dayjs().toString()<br>检查一个 Dayjs 对象是否在另一个 Dayjs 对象时间之前 dayjs(‘2018-06-01’).isBefore(dayjs(‘2018-06-02’))<br>检查一个 Dayjs 对象是否和另一个 Dayjs 对象时间相同 dayjs().isSame(dayjs())<br>检查一个 Dayjs 对象是否在另一个 Dayjs 对象时间之后 dayjs().isAfter(dayjs())</p>
+<h1 id="21-Array-from-五个超好用的用途"><a href="#21-Array-from-五个超好用的用途" class="headerlink" title="21 Array.from() 五个超好用的用途"></a>21 Array.from() 五个超好用的用途</h1><p>1：Array.from() 第一个用途：将类数组对象转换成数组。<br>function sumArguments() {<br>    return Array.from(arguments).reduce((sum, num) =&gt; sum + num);<br>}<br>sumArguments(1, 2, 3); // =&gt; 6</p>
+<p>2：Array.from() 可以很容易的实现数组的浅拷贝。<br>const numbers = [3, 6, 9];<br>const numbersCopy = Array.from(numbers);<br>numbers === numbersCopy; // =&gt; false</p>
+<p>3：数组去重<br>Array.from() 的入参是可迭代对象，因而我们可以利用其与 Set 结合来实现快速从数组中删除重复项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function unique(array) &#123;</span><br><span class="line">  return Array.from(new Set(array));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">unique([1, 1, 2, 3, 3]); // =&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<p>4：使用值填充数组<br>如果你需要使用相同的值来初始化数组，那么 Array.from() 将是不错的选择。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const length = 3;</span><br><span class="line">const init   = 0;</span><br><span class="line">const result = Array.from(&#123; length &#125;, () =&gt; init);</span><br><span class="line">result; // =&gt; [0, 0, 0]</span><br></pre></td></tr></table></figure></p>
+<p>5：生成数字范围<br>使用 Array.from() 生成值范围。例如，下面的 range 函数生成一个数组，从0开始到 end - 1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function range(end) &#123;</span><br><span class="line">    return Array.from(&#123; length: end &#125;, (_, index) =&gt; index);</span><br><span class="line">&#125;</span><br><span class="line">range(4); // =&gt; [0, 1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<h1 id="22-this-router-push"><a href="#22-this-router-push" class="headerlink" title="22 this.$router.push"></a>22 this.$router.push</h1><p>1：query 相当于ajax的get传参 在流浪器地址中会带入参数 而params相当于post的传参  不会在浏览器地址中带参数<br>2：query 要通过path来引入路由 而 params则是通过name来</p>
+<h1 id="23-vue中ref的作用"><a href="#23-vue中ref的作用" class="headerlink" title="23 vue中ref的作用"></a>23 vue中ref的作用</h1><p>ref除了可以获取本页面的dom元素，还可以拿到子组件中的data和去调用子组件中的方法<br><strong>this.$router.back()可以返回上一层</strong></p>
+<h1 id="24-border-bottom如何指定它的宽度"><a href="#24-border-bottom如何指定它的宽度" class="headerlink" title="24 border-bottom如何指定它的宽度"></a>24 border-bottom如何指定它的宽度</h1><p>利用伪元素after<br>.type-list-item{<br>            font-size:26px;<br>            font-weight:400;<br>            width:100px;<br>            height:23px;<br>            color:rgba(0,0,0,1);<br>            text-align: center;<br>            position: relative;<br>          }<br>          .active{<br>            color: #E4262D;<br>            &amp;:after {<br>              content: ‘’;<br>              position: absolute;<br>              bottom: -15px;<br>              top: auto;<br>              left: 40px;<br>              height: 3px;<br>              width: 22px;<br>              background-color: #E4262D;<br>            }<br>          }</p>
+<h1 id="25-Object-keys-Object-values-Object-entries-区别"><a href="#25-Object-keys-Object-values-Object-entries-区别" class="headerlink" title="25 Object.keys(),Object.values(),Object.entries()区别"></a>25 Object.keys(),Object.values(),Object.entries()区别</h1><p>Object.keys方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123; a: 1, b: 2, c: 3 &#125;;</span><br><span class="line">for (let key of Object.keys(obj)) &#123;</span><br><span class="line">  console.log(key); // &apos;a&apos;, &apos;b&apos;, &apos;c&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Object.values() 返回数组，成员是参数对象自身的（不含继承的）所有可遍历(enumerable)属性的键值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123; a: 1, b: 2, c: 3 &#125;;</span><br><span class="line">for (let key of Object.values(obj)) &#123;</span><br><span class="line">  console.log(key); // 1, 2, 3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>entries()函数会将 key 和 value 以数组的形式都返回。这样，使用循环或则将对象转为 Map 就很方便了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123; a: 1, b: 2, c: 3 &#125;;</span><br><span class="line">for (let [key, value] of Object.entries(obj)) &#123;</span><br><span class="line">  console.log([key, value]); // [&apos;a&apos;, 1], [&apos;b&apos;, 2], [&apos;c&apos;, 3]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="26return和return-false的区别"><a href="#26return和return-false的区别" class="headerlink" title="26return和return false的区别"></a>26return和return false的区别</h1><ol>
+<li>return返回null，起到中断方法执行的效果，事件处理函数将会继续执行，表单将提交</li>
+<li>return false，事件处理函数会取消事件，不再继续向下执行。比如表单将终止提交。</li>
+</ol>
+<h1 id="27-v-lazy"><a href="#27-v-lazy" class="headerlink" title="27 v-lazy"></a>27 v-lazy</h1><p>npm install vue-lazyload 有这个插件</p>
+<h1 id="28-怎么解决iconfont图标不能为渐变色"><a href="#28-怎么解决iconfont图标不能为渐变色" class="headerlink" title="28 怎么解决iconfont图标不能为渐变色"></a>28 怎么解决iconfont图标不能为渐变色</h1><p>用background-clip text可以解决 但是现在只有chrome 支持，所以通常想使用它，需要 -webkit-background-clip:text<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">background linear-gradient(90deg, rgba(253, 110, 88, 1) 0%, rgba(255, 63, 78, 1) 100%)</span><br><span class="line">background-clip text</span><br><span class="line">-webkit-background-clip text</span><br><span class="line">-webkit-text-fill-color transparent //text-fill-color打造镂空文字</span><br></pre></td></tr></table></figure></p>
+<h1 id="29-dayjs如何把时间戳转化为标准时间"><a href="#29-dayjs如何把时间戳转化为标准时间" class="headerlink" title="29 dayjs如何把时间戳转化为标准时间"></a>29 dayjs如何把时间戳转化为标准时间</h1><p>  引入dayjs dayjs是一个轻量的处理时间和日期的JavaScript 库<br>    formateTime(time) {<br>      return dayjs.unix(time).format(‘YYYY-MM-DD HH:mm:ss’)<br>    }</p>
+<h1 id="30-对于价格的优化"><a href="#30-对于价格的优化" class="headerlink" title="30 对于价格的优化"></a>30 对于价格的优化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class=&quot;integer&quot;&gt;&#123;&#123; (item.price + &apos;&apos;).split(&apos;.&apos;)[0] &#125;&#125;&lt;/span&gt; //+ &apos;&apos;是把价格变成字符串</span><br><span class="line">&lt;span class=&quot;decimal&quot; v-if=&quot;(item.price + &apos;&apos;).split(&apos;.&apos;).length &gt; 1&quot;&gt;.&#123;&#123; (item.price + &apos;&apos;).split(&apos;.&apos;)[1] &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="31-对于从后端取过来的数据优化"><a href="#31-对于从后端取过来的数据优化" class="headerlink" title="31 对于从后端取过来的数据优化"></a>31 对于从后端取过来的数据优化</h1><p><strong>this.orderList = res.result ? res.result.list : []</strong></p>
+<p>【Vuex】mapGetters 辅助函数<br>mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：<br>1：mapState工具函数会将store中的state映射到局部计算属性中<br>        …mapState({<br>          add: state =&gt; state.add,<br>          counts: state =&gt; state.counts<br>        })<br>2：mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：<br> …mapGetters([‘userInfo’])<br>3：mapMutations将 store 中的 action 映射到局部计算属性<br>…mapMutations({<br>        ‘ADD’: ‘ADD’<br>      })<br>…展开运算符<br>1.展开函数在多个参数的地方使用 。意指用于函数传参<br>2.多个元素的地方使用，意指用于数组字面量<br>3.多个边框的地方使用，意指用于解构赋值<br>…this.$route.query,</p>
+<h1 id="32-手机号隐藏中间四位"><a href="#32-手机号隐藏中间四位" class="headerlink" title="32 手机号隐藏中间四位"></a>32 手机号隐藏中间四位</h1><p>一般都会用正则表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var tel = &quot;13122223333&quot;;</span><br><span class="line">var reg = /^(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)$/;</span><br><span class="line">tel = tel.replace(reg, &quot;$1****$2&quot;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="33-v-model"><a href="#33-v-model" class="headerlink" title="33 v-model"></a>33 v-model</h1><p> 如果是输入框 , 可以直接使用 v-model=””.<br> .trim 表示去除输入内容的收尾空格<br> .number 表示将输入的字符串转换为数值类型<br> .lazy 表示让数据的更新在输入改变时进行.</p>
+<h1 id="34-tab点击切换时一大一小？"><a href="#34-tab点击切换时一大一小？" class="headerlink" title="34 tab点击切换时一大一小？"></a>34 tab点击切换时一大一小？</h1><p>记得给不是active的盒子一个border就可以了</p>
+<h1 id="35-substring-substr-slice-splice区别"><a href="#35-substring-substr-slice-splice区别" class="headerlink" title="35 substring substr slice splice区别"></a>35 substring substr slice splice区别</h1><p>1:substring(start,stop)表示返回从start开始到stop处之间的新字符串，其长度为stop减 start。包含start，但不包含stop，且不修改原字符串。<br>2: substr（index，length）index：表示起始位置   length：表示截取内容长度  且不修改原字符串<br>3:slice可操作数组和字符串，但substring和substr只能操作字符串.<br>slice(start,stop)表示截取从下标start 到下标stop（不包括stop）的之间的元素，并返回新数组/新字符串，并不修改原数组/原字符串.<br>4:splice(start,length,items)表示从下标start处截取length长度（与substr有点像）的元素后，在start处为原数组添加items，并返回被截取的新数组，splice会直接修改原数组<br><a href="https://www.cnblogs.com/echolun/p/7646025.html" target="_blank" rel="noopener">具体可看</a></p>
+<h1 id="36-js中-和-的区别及用法"><a href="#36-js中-和-的区别及用法" class="headerlink" title="36 js中!和!!的区别及用法"></a>36 js中!和!!的区别及用法</h1><p>js中!的用法是比较灵活的，它除了做逻辑运算常常会用！做类型判断，可以用！与上对象来求得一个布尔值<br>！可将变量转换成boolean类型，null、undefined和空字符串取反都为false，其余都为true。<br>!null = true<br>！！常常用来做类型判断，在第一步!（变量）之后再做逻辑取反运算<br>不好的写法<br>var a;<br>if(a!=null&amp;&amp;typeof(a)!=undefined&amp;&amp;a!=’’){<br>    //a有内容才执行的代码<br>}<br>最佳写法<br>if(!!a){<br>    //a有内容才执行的代码…<br>}</p>
+<h1 id="37-padStart-padEnd"><a href="#37-padStart-padEnd" class="headerlink" title="37 padStart padEnd"></a>37 padStart padEnd</h1><p>padStart()用于头部补全，padEnd()用于尾部补全。padStart()和padStart()一共接受两个参数，第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串。<br>x’.padStart(5, ‘ab’) // ‘ababx’<br>如果原字符串的长度，等于或大于指定的最小长度，则返回原字符串。<br>‘xxx’.padStart(2, ‘ab’) // ‘xxx’</p>
+<h1 id="38-vuex数据异步造成初始化的时候没值报错"><a href="#38-vuex数据异步造成初始化的时候没值报错" class="headerlink" title="38 vuex数据异步造成初始化的时候没值报错"></a>38 vuex数据异步造成初始化的时候没值报错</h1><p>1: 在computed赋值该数据 并且在dom渲染的时候做非空的判断<br>isShow() {<br>  return this.customerInfo ? true : false<br>}<br>2: 通过watch和mouted监听并且初始化vuex数据<br><strong>在mounted的时候初始化该数据 并且watch该数据(不推荐)</strong><br>3: 使用拓展运算符<br><a href="https://blog.csdn.net/ink_if/article/details/86076720" target="_blank" rel="noopener">具体可看</a></p>
+<h1 id="39-flex-布局会让position-absolute-bottom-0-失效？？？？"><a href="#39-flex-布局会让position-absolute-bottom-0-失效？？？？" class="headerlink" title="39 flex 布局会让position absolute bottom 0 失效？？？？"></a>39 flex 布局会让position absolute bottom 0 失效？？？？</h1><h1 id="40-this-nextTick"><a href="#40-this-nextTick" class="headerlink" title="40 this.nextTick()"></a>40 this.nextTick()</h1><p>this.$nextTick()在页面交互，尤其是从后台获取数据后重新生成dom对象之后的操作有很大的优势，这里只是简单的例子，实际应用中更为好用.<br>使用this.$nextTick()可以等待dom生成以后再来获取dom对象</p>
+<h1 id="41-跳转"><a href="#41-跳转" class="headerlink" title="41 跳转"></a>41 跳转</h1><p>在vue中使用 this.$router.push（{ path:  ‘/home’ }） 默认是替代本窗口<br>如果想新开一个窗口，可以使用下面的方式：this.$router.resolve<br>link to :to={name: cart}</p>
+<h1 id="42-使用navigator-userAgent-toLowerCase-判断登陆端是pc还是手机"><a href="#42-使用navigator-userAgent-toLowerCase-判断登陆端是pc还是手机" class="headerlink" title="42 使用navigator.userAgent.toLowerCase()判断登陆端是pc还是手机"></a>42 使用navigator.userAgent.toLowerCase()判断登陆端是pc还是手机</h1><pre><code><figure class="highlight plain"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  let ua = navigator.userAgent.toLowerCase()</span><br><span class="line">  this.timer = setInterval(() =&gt; &#123;</span><br><span class="line">    /* global androidToJs,bsg */</span><br><span class="line">    /* eslint no-undef: &quot;error&quot; */</span><br><span class="line">    try &#123;</span><br><span class="line">      if (/iphone|ipad|ipod/.test(ua)) &#123;</span><br><span class="line">        if (bsg) &#123;</span><br><span class="line">          //获取pushId, 用于极光推送</span><br><span class="line">          this.getPushId &amp;&amp; this.getPushId()</span><br><span class="line">          //获取app品牌（定制登录）</span><br><span class="line">          this.getAppBrand &amp;&amp; this.getAppBrand()</span><br><span class="line">          clearInterval(this.timer)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else if (/android/.test(ua)) &#123;</span><br><span class="line">        if (androidToJs) &#123;</span><br><span class="line">          //获取pushId, 用于极光推送</span><br><span class="line">          this.getPushId &amp;&amp; this.getPushId()</span><br><span class="line">          //获取app品牌（定制登录）</span><br><span class="line">          this.getAppBrand &amp;&amp; this.getAppBrand()</span><br><span class="line">          clearInterval(this.timer)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; catch (error) &#123;</span><br><span class="line">      return error</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 10)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="43-JSON-stringfy"><a href="#43-JSON-stringfy" class="headerlink" title="43 JSON.stringfy()"></a>43 JSON.stringfy()</h1><p>  undefined、任意的函数以及 symbol 作为对象属性值时 JSON.stringify() 将跳过（忽略）对它们进行序列化<br>  undefined、任意的函数以及 symbol 作为数组元素值时，JSON.stringify() 会将它们序列化为 null<br>  undefined、任意的函数以及 symbol 被 JSON.stringify() 作为单独的值进行序列化时都会返回 undefined</p>
+<h1 id="44-mixins的特点："><a href="#44-mixins的特点：" class="headerlink" title="44 mixins的特点："></a>44 mixins的特点：</h1><p>  1、方法和参数在各组件中不共享  比如混入对象中有一个 cont:1 的变量,在组件A中改变cont值为5，这时候在组件B中获取这个值，拿到的还是1，还是混入对象里的初始值，数据不共享</p>
+<p>  2、值为对象的选项，如methods,components等，选项会被合并，键冲突的组件会覆盖混入对象的，比如混入对象里有个方法A，组件里也有方法A，这时候在组件里调用的话，执行的是组件里的A方法</p>
+<p>  3、值为函数的选项，如created,mounted等，就会被合并调用，混合对象里的钩子函数在组件里的钩子函数之前调用，同一个钩子函数里，会先执行混入对象的东西，再执行本组件的</p>
+<p>  3、与vuex的区别</p>
+<p>  vuex：用来做状态管理的，里面定义的变量在每个组件中均可以使用和修改，在任一组件中修改此变量的值之后，其他组件中此变量的值也会随之修改。<br>  衍生：vuex中为什么把把异步操作封装在action，把同步操作放在mutations？如果action里面有同步操作会有什么影响？<br>  在 mutation 中混合异步调用会导致你的程序很难调试。不知道哪个先回调。</p>
+<p>  Mixins：可以定义共用的变量，在每个组件中使用，引入组件中之后，各个变量是相互独立的，值的修改在组件中不会相互影响。</p>
+<p>  4、与公共组件的区别</p>
+<p>  组件：在父组件中引入组件，相当于在父组件中给出一片独立的空间供子组件使用，然后根据props来传值，但本质上两者是相对独立的。</p>
+<p>  Mixins：则是在引入组件之后与组件中的对象和方法进行合并，相当于扩展了父组件的对象与方法，可以理解为形成了一个新的组件。</p>
+<h1 id="45-cursor-pointer"><a href="#45-cursor-pointer" class="headerlink" title="45 cursor: pointer"></a>45 cursor: pointer</h1><p>鼠标属性 只在pc端生效 在app 设置了无效。</p>
+<h1 id="46-link和-import的区别？"><a href="#46-link和-import的区别？" class="headerlink" title="46 link和@import的区别？"></a>46 link和@import的区别？</h1><p>1.页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载。<br>2.@import是css提供的语法，因此只可以引入css文件。而link是html提供的语法，除了css文件还可以引入其他文件。<br>3.@import会有兼容性问题，只有IE5+才能使用。而link没有兼容性问题。<br>4.可以通过 JS 操作DOM，插入link标签来改变样式；由于 DOM 方法是基于文档的，无法使用@import的方式插入样式。<br>5.link引入的样式权重大于@import引入的样式。</p>
+<p>#47 什么时候使用keep-alive元素？<br>当由于数据属性或其他某种响应状态而动态切换组件时，每次将它们切换到渲染状态时，都会被重新渲染。尽管你可能需要这种行为，但在某些情况下重新渲染可能是不合适的。例如在创建时从 API 调用中引入数据的组件。你可能不希望每次动态切换这个组件进行渲染时都调用此 API。这时你可以将组件包含在 keep-alive 元素中。keep-alive 元素缓存该组件并从那里获取它，而不是每次都重新渲染它</p>
+<h1 id="48-父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow-hidden，但是却失效？"><a href="#48-父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow-hidden，但是却失效？" class="headerlink" title="48 父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow:hidden，但是却失效？"></a>48 父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow:hidden，但是却失效？</h1><p>// 给父元素设置<br>{<br>  position:relative;<br>  z-index:1;<br>}</p>
+<h1 id="49-content-type"><a href="#49-content-type" class="headerlink" title="49 content-type"></a>49 content-type</h1><p>isJson: true  json格式的入参<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  apiParams () &#123;</span><br><span class="line">    let params = &#123;</span><br><span class="line">    id: &apos;&apos;,</span><br><span class="line">    name:&apos;&apos;,</span><br><span class="line">    age: &apos;&apos;,</span><br><span class="line">    telephone:&apos;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">  params.sex = sex</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">this.$http.post(api.getUserInfo, this.apiParams, &#123;isJson: true&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>把isjson 去掉 则格式为form-data</p>
+<h1 id="50-addEventListener和attachEvent介绍-原生js和jquery的兼容性写法"><a href="#50-addEventListener和attachEvent介绍-原生js和jquery的兼容性写法" class="headerlink" title="50 addEventListener和attachEvent介绍, 原生js和jquery的兼容性写法"></a>50 addEventListener和attachEvent介绍, 原生js和jquery的兼容性写法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">this.$nextTick(() =&gt; &#123;</span><br><span class="line">  let el = document.getElementById(&apos;userAgreement&apos;)</span><br><span class="line">  if(el.addEventListener) &#123;</span><br><span class="line">    el.addEventListener(&apos;click&apos;,() =&gt; &#123;</span><br><span class="line">      this.goUserAgreement()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; else if(el.attachEvent) &#123;</span><br><span class="line">    el.attachEvent(&apos;onclick&apos;,() =&gt; &#123;</span><br><span class="line">      this.goUserAgreement()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="51-如何调用安卓的方法"><a href="#51-如何调用安卓的方法" class="headerlink" title="51 如何调用安卓的方法"></a>51 如何调用安卓的方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">export const closeApp = &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getCloseApp() &#123;</span><br><span class="line">      let ua = navigator.userAgent.toLowerCase() //判断登录端是pc还是手机端</span><br><span class="line">      try &#123;</span><br><span class="line">        if (/iphone|ipad|ipod/.test(ua)) &#123;</span><br><span class="line">          //closeApp() 就是安卓暴露出来的事件</span><br><span class="line">          bsg.closeApp() </span><br><span class="line">        &#125; else if (/android/.test(ua)) &#123;</span><br><span class="line">          androidToJs.closeApp()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; catch (error) &#123;</span><br><span class="line">        return error</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>安卓如何调用web的方法。在methods定义<br>mounted: {<br>  window.setShowSecret = this.setShowSecret<br>}<br>在methods定义setShowSecret方法就可以了。</p>
+<h1 id="52-对于复杂的表单校验"><a href="#52-对于复杂的表单校验" class="headerlink" title="52 对于复杂的表单校验"></a>52 对于复杂的表单校验</h1><p>verifyItemExtConfigList 为数组对象 校验的是goodsId<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> &lt;el-form-item</span><br><span class="line">    class=&quot;shopGoods&quot;</span><br><span class="line">    :prop=&quot;&apos;verifyItemExtConfigList.&apos; + index + &apos;.goodsId&apos;&quot;</span><br><span class="line">    :rules=&quot;[</span><br><span class="line">      &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        message: &apos;请选择核销的商品&apos;,</span><br><span class="line">        trigger: &apos;blur&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    ]&quot;</span><br><span class="line">  &gt;</span><br><span class="line">&lt;/el=form-item&gt;</span><br></pre></td></tr></table></figure></p>
+<p>一定不能忘记callback<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let validPercent = (rule, value, callback) =&gt; &#123;</span><br><span class="line">      if (value === &apos;&apos; || value === undefined || value === null) &#123;</span><br><span class="line">        callback(new Error(&apos;输⼊不能为空&apos;))</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        var reg = /^[1-9]\d*$/g</span><br><span class="line">        if (!reg.test(value)) &#123;</span><br><span class="line">          callback(new Error(&apos;请输⼊大于0的正整数&apos;))</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          callback()  //这个也不能忘记 否则触发不了保存事件</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="53-flex-0-0-40-圣杯布局"><a href="#53-flex-0-0-40-圣杯布局" class="headerlink" title="53 flex 0 0 40% 圣杯布局"></a>53 flex 0 0 40% 圣杯布局</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.text</span><br><span class="line">  font-size 12px</span><br><span class="line">  color #555</span><br><span class="line">  &amp;:nth-child(1)</span><br><span class="line">    flex 0 0 40% //占总宽度的40%</span><br><span class="line">  &amp;:nth-child(2)</span><br><span class="line">    flex 0 0 40% //占总宽度的40%</span><br><span class="line">  &amp;.operate</span><br><span class="line">    flex 0 0 20% //占总宽度的20%</span><br></pre></td></tr></table></figure>
+<h1 id="54-当后台返回的字段名跟前端一些框架绑定的键名不一致时，需要手动转换一下"><a href="#54-当后台返回的字段名跟前端一些框架绑定的键名不一致时，需要手动转换一下" class="headerlink" title="54 当后台返回的字段名跟前端一些框架绑定的键名不一致时，需要手动转换一下"></a>54 当后台返回的字段名跟前端一些框架绑定的键名不一致时，需要手动转换一下</h1><p>JSON.parse(JSON.stringify(data).replace(/keyName/g, ‘name’))<br>data为数组，keyName为修改前的键名，name为修改后的键名<br>另一种方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let newData = [];</span><br><span class="line">  let obj = &#123;&#125;;</span><br><span class="line">  this.data.map(item =&gt; &#123;</span><br><span class="line">  	obj = item;</span><br><span class="line">    obj[&apos;name&apos;] = item[&apos;keyName&apos;];  </span><br><span class="line">    delete obj[&apos;keyName&apos;];</span><br><span class="line">    newData.push(obj)   </span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
+<h1 id="55-Vue组件data为什么必须是函数"><a href="#55-Vue组件data为什么必须是函数" class="headerlink" title="55 Vue组件data为什么必须是函数"></a>55 Vue组件data为什么必须是函数</h1><p>因为组件是可以复用的,JS里对象是引用关系,如果组件data是一个对象,那么子组件中的 data属性值会互相污染,产生副作用。<br>所以一个组件的 data 选项必须是一个函数,因此每个实例可以维护一份被返回对象的独立的拷贝。new Vue 的实例是不会被复用的,因此不存在以上问题.</p>
+<h1 id="56-div内置img元素，底部总有间距"><a href="#56-div内置img元素，底部总有间距" class="headerlink" title="56 div内置img元素，底部总有间距"></a>56 div内置img元素，底部总有间距</h1><p>用一个div包裹一个img，会出现img不能完全覆盖div空间，总会在底边留下一点空隙。<br>解决方法<br>1:div设置font-size: 0或line-height: 0，进而行高为0；<br>2:img设置 vertical-align: top 或者 middle/，使其不再以默认基线为对齐方式；<br>3:img设置 display:block，使其变成块级元素。<br>推荐用第三种</p>
+<h1 id="57-什么是-Cookie"><a href="#57-什么是-Cookie" class="headerlink" title="57 什么是 Cookie"></a>57 什么是 Cookie</h1><p>HTTP 是无状态的协议（对于事务处理没有记忆能力，每次客户端和服务端会话完成时，服务端不会保存任何会话信息）：每个请求都是完全独立的，服务端无法确认当前访问者的身份信息，无法分辨上一次的请求发送者和这一次的发送者是不是同一个人。所以服务器与浏览器为了进行会话跟踪（知道是谁在访问我），就必须主动的去维护一个状态，这个状态用于告知服务端前后两个请求是否来自同一浏览器。而这个状态需要通过 cookie 或者 session 去实现。<br>cookie 存储在客户端： cookie 是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。<br>cookie 是不可跨域的： 每个 cookie 都会绑定单一的域名，无法在别的域名下获取使用，一级域名和二级域名之间是允许共享使用的（靠的是 domain）</p>
+<h1 id="58-环境的切换"><a href="#58-环境的切换" class="headerlink" title="58 环境的切换"></a>58 环境的切换</h1><p>我们的项目环境可能有开发环境、测试环境和生产环境。我们通过node的环境变量来匹配我们的默认的接口url前缀。axios.defaults.baseURL可以设置axios的默认请求地址就不多说了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 环境的切换</span><br><span class="line">if (process.env.NODE_ENV == &apos;development&apos;) &#123;    </span><br><span class="line">  axios.defaults.baseURL = &apos;https://www.baidu.com&apos;;&#125; </span><br><span class="line">else if (process.env.NODE_ENV == &apos;debug&apos;) &#123;    </span><br><span class="line">  axios.defaults.baseURL = &apos;https://www.ceshi.com&apos;;</span><br><span class="line">&#125; </span><br><span class="line">else if (process.env.NODE_ENV == &apos;production&apos;) &#123;    </span><br><span class="line">  axios.defaults.baseURL = &apos;https://www.production.com&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="59-有关于部分oppo-华为手机的兼容性问题"><a href="#59-有关于部分oppo-华为手机的兼容性问题" class="headerlink" title="59 有关于部分oppo 华为手机的兼容性问题"></a>59 有关于部分oppo 华为手机的兼容性问题</h1><p>部分手机（oppo 华为）span 不给inline-block 大小会出现异常.</p>
+<h1 id="60-兼容ipad样式"><a href="#60-兼容ipad样式" class="headerlink" title="60 兼容ipad样式"></a>60 兼容ipad样式</h1><p>有的页面没有给overflow-y: scroll 导致在ipad样式出现问题</p>
+<h1 id="61-字符串转数字"><a href="#61-字符串转数字" class="headerlink" title="61 字符串转数字"></a>61 字符串转数字</h1><p>parseInt()和parseFloat()两个转换函数，将字符串转换成相应的数字。<br>利用js变量弱类型转换 比如+ - * /</p>
+<h1 id="62-vue的注意规范之v-if-与-v-for-一起使用"><a href="#62-vue的注意规范之v-if-与-v-for-一起使用" class="headerlink" title="62 vue的注意规范之v-if 与 v-for 一起使用"></a>62 vue的注意规范之v-if 与 v-for 一起使用</h1><p>当它们处于同一dom节点，v-for的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。</p>
+<h1 id="63-vue数据源？怎么操作数据？"><a href="#63-vue数据源？怎么操作数据？" class="headerlink" title="63 vue数据源？怎么操作数据？"></a>63 vue数据源？怎么操作数据？</h1><p>不要局限于this.$set()赛 数据，还可以在获取接口数据时进行数据操作。</p>
+<h1 id="64-如何管理你的路由"><a href="#64-如何管理你的路由" class="headerlink" title="64 如何管理你的路由"></a>64 如何管理你的路由</h1><p>使用 vue-router，使用import() 生成异步路由，只有在访问时候才会加载模块。<br>为什么使用 import() 会异步加载模块？<br>MDN：在您希望按照一定的条件或者按需加载模块的时候，动态import() 是非常有用的。而静态型的import是初始化加载依赖项的最优选择，使用静态import更容易从代码静态分析工具和 tree shaking 中受益。</p>
+<h1 id="65-ref-与通过类名来获取dom节点的区别"><a href="#65-ref-与通过类名来获取dom节点的区别" class="headerlink" title="65 ref 与通过类名来获取dom节点的区别"></a>65 ref 与通过类名来获取dom节点的区别</h1><p>一般来讲，获取DOM元素，需document.querySelector（”.input1”）获取这个dom节点，然后在获取input1的值。<br>但是用ref绑定之后，我们就不需要在获取dom节点了，直接在上面的input上绑定input1，然后$refs里面调用就行。<br>然后在javascript里面这样调用：this.$refs.input1  这样就可以减少获取dom节点的消耗了<br>this.$refs.leftScroll.scrollTo(0, 0)</p>
+<h1 id="66-input标签"><a href="#66-input标签" class="headerlink" title="66 input标签"></a>66 input标签</h1><p>input 标签可以接受的类型button checkbox file hidden image password radio reset submit text</p>
+<p><input type="file" class="file" accept="image/*" v-if="!multiple" :capture="capture" @change="uploadBox" name="imageFile" ref="imageFile">上传图片</p>
+<h1 id="67-合理借用dayjs"><a href="#67-合理借用dayjs" class="headerlink" title="67 合理借用dayjs"></a>67 合理借用dayjs</h1><p>今天之前的日期置灰<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let disabled = false</span><br><span class="line">let nowTime = dayjs().unix()</span><br><span class="line">let nowTimeText = dayjs().format(&apos;MM.DD&apos;) + `$&#123;&apos;今天&apos;&#125;`</span><br><span class="line">if(item.day &lt; nowTime) &#123;</span><br><span class="line">  disabled = true</span><br><span class="line">&#125;</span><br><span class="line">if(item.text == nowTimeText) &#123;</span><br><span class="line">  disabled = false</span><br><span class="line">&#125;</span><br><span class="line">return disabled</span><br></pre></td></tr></table></figure></p>
+<p>优雅写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return dayjs.unix(item.day).isBefore(dayjs(), &apos;date&apos;)</span><br></pre></td></tr></table></figure></p>
+<h1 id="68-position-sticky-粘性定位"><a href="#68-position-sticky-粘性定位" class="headerlink" title="68 position sticky 粘性定位"></a>68 position sticky 粘性定位</h1><p>sticky是position:relative和position:fixed的结合体.<br>特性<br>1.sticky不会触发BFC，<br>2.z-index无效，<br>3.当父元素的height：100%时，页面滑动到一定高度之后sticky属性会失效。<br>4.父元素不能有overflow:hidden或者overflow:auto属性。<br>5.父元素高度不能低于sticky高度，必须指定top、bottom、left、right4个值之一。</p>
+<h1 id="69获取表头数据"><a href="#69获取表头数据" class="headerlink" title="69获取表头数据"></a>69获取表头数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for (let dayObj of dayList) &#123;</span><br><span class="line">  if (statusList.includes(dayObj.name)) &#123;</span><br><span class="line">    break</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    statusList.push(dayObj.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="70-日期加星期几-合理利用dayjs"><a href="#70-日期加星期几-合理利用dayjs" class="headerlink" title="70 日期加星期几 合理利用dayjs"></a>70 日期加星期几 合理利用dayjs</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">export function filterYTT(time, format = &quot;M.DD&quot;, isFormatWeek = false) &#123;</span><br><span class="line">  if (</span><br><span class="line">    dayjs()</span><br><span class="line">      .subtract(1, &quot;day&quot;)</span><br><span class="line">      .format(&quot;YYYY-MM-DD&quot;) === dayjs(time).format(&quot;YYYY-MM-DD&quot;)</span><br><span class="line">  ) &#123;</span><br><span class="line">    return &quot;昨天&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  if (dayjs().format(&quot;YYYY-MM-DD&quot;) === dayjs(time).format(&quot;YYYY-MM-DD&quot;)) &#123;</span><br><span class="line">    return &quot;今天&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  if (</span><br><span class="line">    dayjs()</span><br><span class="line">      .add(1, &quot;day&quot;)</span><br><span class="line">      .format(&quot;YYYY-MM-DD&quot;) === dayjs(time).format(&quot;YYYY-MM-DD&quot;)</span><br><span class="line">  ) &#123;</span><br><span class="line">    return &quot;明天&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  if (isFormatWeek) &#123;</span><br><span class="line">    let weeks = [&quot;日&quot;, &quot;一&quot;, &quot;二&quot;, &quot;三&quot;, &quot;四&quot;, &quot;五&quot;, &quot;六&quot;];</span><br><span class="line">    return &quot;周&quot; + weeks[dayjs(time).day()];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return dayjs(time).format(format);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="71下载报表"><a href="#71下载报表" class="headerlink" title="71下载报表"></a>71下载报表</h1><p>在开发后台管理系统的时候，很多地方都要用到导出excel 表格，比如将table中的数据导出到本地，那么实现这种需求往往有两种方案：<br>一、后端开发一个下载链接，前端将这个链接放到 a 标签的 href 中，一点就能下载。<br>　　优点：对于前端来说实现简单，不用写过多的代码，也不依赖第三方库，兼容性好<br>　　缺点：如果前端操作数据更改了，需要发给后端才能导出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">downLoadFile(FileName) &#123;</span><br><span class="line">  if (!FileName) &#123;</span><br><span class="line">    return false</span><br><span class="line">  &#125;</span><br><span class="line">  var link = document.createElement(&apos;a&apos;)</span><br><span class="line">  link.href = window.location.origin + &apos;/beauty/export/download/门店业绩/&apos; + FileName</span><br><span class="line">  link.style = &apos;visibility:hidden&apos;</span><br><span class="line">  link.download = FileName + &apos;.xls&apos;</span><br><span class="line">  document.body.appendChild(link)</span><br><span class="line">  link.click()</span><br><span class="line">  document.body.removeChild(link)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二、前端借助一些第三方库实现。</p>
+<h1 id="72-el-scrollbar"><a href="#72-el-scrollbar" class="headerlink" title="72 el-scrollbar"></a>72 el-scrollbar</h1><p>element-ui官网的文档时，发现其左侧导航和右边的内容超出屏幕时，滚动条的样式比较小巧，通过浏览器审查工具查看，发现它是使用了el-scrollbar的样式，跟element-ui的组件样式命名一致。但文档中并没有关于这个 scrollbar组件的使用文档，搜索一番得知这是一个隐藏组件，官方在 github 的 issues 中表示不会写在文档中，需要用的自己看源码进行调用。<br><strong>有时很出现横向滚动条</strong><br>得处理一下<br>  &amp;/deep/<br>    &gt;.el-scrollbar__wrap<br>        overflow-x hidden<br>        overflow-y scroll</p>
+<h1 id="73-富文本编辑器-vue2editor"><a href="#73-富文本编辑器-vue2editor" class="headerlink" title="73 富文本编辑器 vue2editor"></a>73 富文本编辑器 vue2editor</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;vue-editor</span><br><span class="line">  class=&quot;editor&quot;</span><br><span class="line">  :class=&quot;&#123; disabled : form.isDetail &#125;&quot;</span><br><span class="line">  :disabled=&quot;form.isDetail&quot;</span><br><span class="line">  useCustomImageHandler</span><br><span class="line">  @imageAdded=&quot;addImage&quot;</span><br><span class="line">  v-model=&quot;form.detail&quot;</span><br><span class="line">&gt;&lt;/vue-editor&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="74-loacalStorage使用"><a href="#74-loacalStorage使用" class="headerlink" title="74 loacalStorage使用"></a>74 loacalStorage使用</h1><p>在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同。<br> storage.setItem(“c”,3)<br> <strong>localStorage的优势</strong><br>1、localStorage拓展了cookie的4K限制<br>2、localStorage会可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的<br>localStorage的局限<br>1、浏览器的大小不统一，并且在IE8以上的IE版本才支持localStorage这个属性<br>2、目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换<br>3、localStorage在浏览器的隐私模式下面是不可读取的<br>4、localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡<br>5、localStorage不能被爬虫抓取到<br>localStorage与sessionStorage的唯一一点区别就是localStorage属于永久性存储，而sessionStorage属于当会话结束的时候，sessionStorage中的键值对会被清空<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *localStorage 存贮</span><br><span class="line"> * @param &#123; String &#125; key  属性</span><br><span class="line"> * @param &#123; string &#125; value 值</span><br><span class="line"> */</span><br><span class="line">export const localStorageSet = (key, value) =&gt; &#123;</span><br><span class="line">    if (typeof (value) === &apos;object&apos;) value = JSON.stringify(value);</span><br><span class="line">    localStorage.setItem(key, value)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *localStorage 获取</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line">export const localStorageGet = (key) =&gt; &#123;</span><br><span class="line">    return localStorage.getItem(key)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * localStorage 移除ss</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line">export const localStorageRemove = (key) =&gt; &#123;</span><br><span class="line">    localStorage.removeItem(key)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="75-nuxt"><a href="#75-nuxt" class="headerlink" title="75 nuxt"></a>75 nuxt</h1><p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。<br>通过对客户端/服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 UI渲染。</p>
+<h1 id="76-微信网页扫码登陆"><a href="#76-微信网页扫码登陆" class="headerlink" title="76 微信网页扫码登陆"></a>76 微信网页扫码登陆</h1><h1 id="77-将base64转换为文件"><a href="#77-将base64转换为文件" class="headerlink" title="77 将base64转换为文件"></a>77 将base64转换为文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dataURLtoFile(dataurl, filename) &#123;</span><br><span class="line">    var arr = dataurl.split(&apos;,&apos;), mime = arr[0].match(/:(.*?);/)[1],</span><br><span class="line">        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);</span><br><span class="line">    while(n--)&#123;</span><br><span class="line">        u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">    &#125;</span><br><span class="line">    return new File([u8arr], filename, &#123;type:mime&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="78-class"><a href="#78-class" class="headerlink" title="78 class"></a>78 class</h1><p>ES6的class可以看作只是一个语法糖。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Polygon &#123;</span><br><span class="line">  constructor(height, width) &#123;</span><br><span class="line">    this.area = height * width;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(new Polygon(4,3).area);</span><br><span class="line">// expected output: 12</span><br><span class="line">class 是严格模式(strict)</span><br></pre></td></tr></table></figure></p>
+<p>使用的时候，也是直接对类使用new命令，跟构造函数的用法完全一致。</p>
+<p>如果设置border-radius失效，可以在盒子里设置overflow：hidden</p>
+<h1 id="79-dialog组件扩展"><a href="#79-dialog组件扩展" class="headerlink" title="79 dialog组件扩展"></a>79 dialog组件扩展</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;title&quot; slot=&quot;title&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;text&quot;&gt;按日排班&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;info&quot;&gt;选择空白格子进行排班&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="80-获取url的参数"><a href="#80-获取url的参数" class="headerlink" title="80 获取url的参数"></a>80 获取url的参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;*&#125; name</span><br><span class="line"> * @param &#123;*&#125; origin</span><br><span class="line"> */</span><br><span class="line">export function getUrlParams(name, origin = null) &#123;</span><br><span class="line">    let url = location.href;</span><br><span class="line">    let temp1 = url.split(&apos;?&apos;);</span><br><span class="line">    let pram = temp1[1];</span><br><span class="line">    let keyValue = pram.split(&apos;&amp;&apos;);</span><br><span class="line">    let obj = &#123;&#125;;</span><br><span class="line">    for (let i = 0; i &lt; keyValue.length; i++) &#123;</span><br><span class="line">        let item = keyValue[i].split(&apos;=&apos;);</span><br><span class="line">        let key = item[0];</span><br><span class="line">        let value = item[1];</span><br><span class="line">        obj[key] = value;</span><br><span class="line">    &#125;</span><br><span class="line">    return obj[name];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="81-location-包含当前URL的信息"><a href="#81-location-包含当前URL的信息" class="headerlink" title="81 location 包含当前URL的信息"></a>81 location 包含当前URL的信息</h1><p>window.location.reload()重新刷新页面</p>
+<h1 id="82-vue-cookies"><a href="#82-vue-cookies" class="headerlink" title="82 vue-cookies"></a>82 vue-cookies</h1><p>this.$cookie.set(key，value,expireTime)</p>
+<h1 id="83-vue监听组件生命周期"><a href="#83-vue监听组件生命周期" class="headerlink" title="83 vue监听组件生命周期"></a>83 vue监听组件生命周期</h1><p>通常我们监听组件生命周期会使用this.$emit(‘’)来通知父组件。其实还有一种简洁的方法 使用<strong>@hook</strong>即可监听组件生命周期.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">子组件</span><br><span class="line">export default() &#123;</span><br><span class="line">  mounted( ) &#123;</span><br><span class="line">    this.$emit(&apos;listenMounted&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">父组件</span><br><span class="line">&lt;list @listenMounted=&quot;listenMounted&quot;&gt;&lt;/list&gt;</span><br><span class="line">优雅写法</span><br><span class="line">&lt;list @hook:mounted=&quot;listenMounted&quot;&gt;&lt;/list&gt;</span><br><span class="line">翻了一遍源码 组件调用了$on监听的事件名符合以hook开头，当前实例的vm._hasHookEvent会为true,如果hasHookEvent为true，组件会在对应生命周期的时候 通过$emit触发对应的vm.$emit(&apos;hook&apos; + hook)</span><br></pre></td></tr></table></figure></p>
+<h1 id="84-js-eventLoop机制"><a href="#84-js-eventLoop机制" class="headerlink" title="84 js eventLoop机制"></a>84 js eventLoop机制</h1><p>js异步执行机制：<br>1：所有的任务都有一个主线程，形成一个执行栈。<br>2：主线程之外，还有一个任务队列，只要异步任务有了结果，就在任务队列放置一个事件<br>3：执行栈的同步任务完成之后，就会读取任务队列执行异步任务。<br>4：主线程不断重复三步。</p>
+<h1 id="85-elementUI-popver组件-v-if-放里面和外面的区别？？"><a href="#85-elementUI-popver组件-v-if-放里面和外面的区别？？" class="headerlink" title="85 elementUI popver组件 v-if 放里面和外面的区别？？"></a>85 elementUI popver组件 v-if 放里面和外面的区别？？</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-popover placement=&quot;top-start&quot; width=&quot;200&quot; trigger=&quot;hover&quot; :content=&quot;scope.row.remark&quot; v-if=&quot;scope.row.remark !==null&quot;&gt;</span><br><span class="line">  &lt;i slot=&quot;reference&quot; class=&quot;iconfont icon-xingzhuang2&quot; style=&quot;font-size: 13px; color:rgba(221,221,221,1);margin-left: 5px;cursor:pointer&quot;&gt;&lt;/i&gt;</span><br><span class="line">&lt;/el-popover&gt;</span><br></pre></td></tr></table></figure>
+<p>如果把v-if放i标签里面 则会导致填完信息之后刷新列表时 弹出框不弹出。</p>
+<h1 id="86-样式总结"><a href="#86-样式总结" class="headerlink" title="86 样式总结"></a>86 样式总结</h1><p>:class=”{ disabled: checkDayIsCurrentMonth(item.day), active: index === activeDayIndex }”可用，分开来对应不同的样式。<br>:style=”{color: getTimeBoxStyle(time).iconColor}<br>设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。<br>如果发现div的宽度高度没上去，给div设置：display:inline-block。<br>原因：块级对象元素会单独占一行显示，多个block元素会各自新起一行，并且可以设置width,height属性。<br>而内联对象元素前后不会产生换行，一系列inline元素都在一行内显示，直到该行排满，对inline元素设置width,height属性无效。</p>
+<h1 id="87-cancelToken-用来取消ajax请求的"><a href="#87-cancelToken-用来取消ajax请求的" class="headerlink" title="87 cancelToken 用来取消ajax请求的"></a>87 cancelToken 用来取消ajax请求的</h1><p>在真实项目中，当路由已经跳转，而上一页的请求还在pending状态，如果数据量小还好，数据量大时，跳到新页面，旧的请求依旧没有停止，这将会十分损耗性能，这时我们应该先取消掉之前还没有获得相应的请求，再跳转页面。这里axios给我们提供了一个方法：cancelToken.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">this.$http</span><br><span class="line">     .post(apiRoutes.BEAUTY_GOODS_COMMON_LIST, params, &#123;</span><br><span class="line">       cancelToken: new CancelToken(function executor(c) &#123;</span><br><span class="line">         self.cancel = c</span><br><span class="line">         // 这个参数 c 就是CancelToken构造函数里面自带的取消请求的函数，这里把该函数当参数用</span><br><span class="line">       &#125;)</span><br><span class="line">     &#125;)</span><br><span class="line">     .then(res =&gt; &#123;</span><br><span class="line">       if (res.data.status === 1) &#123;</span><br><span class="line">         let result = res.data.result</span><br><span class="line">         this.goodsList = [...this.goodsList, ...result.data]</span><br><span class="line">         if (this.goodsList.length &lt; result.total) </span><br><span class="line">           this.busy = false</span><br><span class="line">         &#125; else &#123;</span><br><span class="line">           this.busy = true</span><br><span class="line">         &#125;</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">         this.$message.error(res.data.message)</span><br><span class="line">       &#125;</span><br><span class="line">       this.loading = false</span><br><span class="line">     &#125;)</span><br><span class="line">     .catch(err =&gt; &#123;</span><br><span class="line">       if (err.constructor &amp;&amp; err.constructor.name === &apos;Cancel&apos;) &#123;</span><br><span class="line">         return</span><br><span class="line">       &#125;</span><br><span class="line">       this.loading = false</span><br><span class="line">       console.log(err)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure></p>
+<h1 id="88-小程序公众号开发"><a href="#88-小程序公众号开发" class="headerlink" title="88 小程序公众号开发"></a>88 小程序公众号开发</h1><p><strong>公众号小程序开发</strong> 使用的是kbone框架<br>1：为了兼容小程序的开发 style里面不要用scoped 命名的时候注意一下<br>2：img标签图片要显示圆形的话 除了设置border-radius: 50% 还要用mode=”aspectFill”</p>
+<h1 id="89-今日总结"><a href="#89-今日总结" class="headerlink" title="89 今日总结"></a>89 今日总结</h1><p>alert([‘10’,’20’])  ‘10’,’20’ alert输出的内容都会默认转化为字符串<br>7.7777toFixed(2) // ‘7.77’ toFixed 最后得到的结果是一个字符串<br>console.log(NaN==NaN) NaN和任何值都不相等 包括它本身 NaN == NaN  //false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setDayOperateList(list = []) &#123;&#125;</span><br><span class="line">list = []表示如果opts没传就设为[]，防止报错，ES6语法</span><br></pre></td></tr></table></figure></p>
+<p><strong>为什么computed的数据不能双向绑定？？</strong><br>computed里的return,实际上是一个get方法，<br>就是每次vm.someComputed或者页面相应变化的时候，实际上访问的是它的get方法<br>如果只有return的话，是无法实现双向数据绑定的，因为并没有set数据啊，<br>这样永远获得的都是return里面的值，如果响应依赖的话就get依赖进行运算的值，如果是个常量就会一直返回常量<br>我们可以增加一个可以做中转的依赖属性，重写计算属性的set和get方法，这样就能实现计算属性的双向绑定。</p>
+<h1 id="90-vue-实现图片拖动换顺序"><a href="#90-vue-实现图片拖动换顺序" class="headerlink" title="90 vue 实现图片拖动换顺序"></a>90 vue 实现图片拖动换顺序</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;draggable :list=&quot;form.M06.itemList&quot; style=&quot;display: flex;&quot;&gt;</span><br><span class="line">  &lt;div v-for=&quot;(item, index) in form.M06.itemList&quot; :key=&quot;index&quot; class=&quot;m03-col&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;img-box&quot;&gt;</span><br><span class="line">      &lt;img :src=&quot;item.goodsIcon || item.goodsCover&quot; alt /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;i class=&quot;iconfont avatar-remove&quot; @click=&quot;removeItem(&apos;M06&apos;, index)&quot;&gt;&amp;#xe6b7;&lt;/i&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/draggable&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="91-axios封装"><a href="#91-axios封装" class="headerlink" title="91 axios封装"></a>91 axios封装</h1><p>axios 中，提供是否允许跨域的属性——withCredentials，以及配置超时时间的属性——timeout，通过这两个属性，可以轻松处理跨域和超时的问题。<br>axios.defaults.timeout = 10000<br>axios.defaults.withCredentials = true</p>
+<h1 id="92-word-wrap"><a href="#92-word-wrap" class="headerlink" title="92 word-wrap"></a>92 word-wrap</h1><p>1、word-wrap对行内元素是没有效果的</p>
+<p>2、一般情况下，元素拥有默认的white-space:normal（自动换行，不换行是white-space:nowrap），可能是元素中设置的white-space是norwrap导致，无法换行。所以需要<br>white-space normal<br>word-break break-all<br>3、table里面的td设置word-wrap也是没有效果</p>
+<h1 id="93-el-table-infinite-scroll"><a href="#93-el-table-infinite-scroll" class="headerlink" title="93 el-table-infinite-scroll"></a>93 el-table-infinite-scroll</h1><p>插件是结合了element的infinite-scroll做的滚动加载 踩的坑<br>1 为什么滚动加载事件没有出来？ 先看看div的高度 有可能是高度影响的</p>
+<h1 id="94-公众号二维码太密集-放大才能扫码识别？"><a href="#94-公众号二维码太密集-放大才能扫码识别？" class="headerlink" title="94 公众号二维码太密集 放大才能扫码识别？"></a>94 公众号二维码太密集 放大才能扫码识别？</h1><p>把二维码携带的信息通过scene转化。</p>
+<h1 id="95-watch-和computed的区别"><a href="#95-watch-和computed的区别" class="headerlink" title="95 watch 和computed的区别"></a>95 watch 和computed的区别</h1><p>computed：<br>1：支持缓存，只有依赖数据发生改变，才会重新进行计算。<br>2：不支持异步，当computed有异步操作时，无法监听数据变化。<br>watch:<br>1: 不支持缓存，当数据发生改变，就会重新计算。<br>2：支持异步。<br>3：接受二个参数，第一个是最新的值，第二个是之前的值。</p>
+<h1 id="96-复制到粘贴板"><a href="#96-复制到粘贴板" class="headerlink" title="96 复制到粘贴板"></a>96 复制到粘贴板</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.execCommand(&apos;copy&apos;)</span><br><span class="line">copyinput.select()   点击这个例子的按钮以选中所有在&lt;input&gt;元素中的文字</span><br><span class="line">document.execCommand(&apos;Copy&apos;)  复制到粘贴板</span><br></pre></td></tr></table></figure>
+<h1 id="97-非指定结合？？"><a href="#97-非指定结合？？" class="headerlink" title="97 非指定结合？？"></a>97 非指定结合？？</h1><h1 id="98-DOM0-DOM1-DOM2-DOM3"><a href="#98-DOM0-DOM1-DOM2-DOM3" class="headerlink" title="98 DOM0 DOM1 DOM2 DOM3"></a>98 DOM0 DOM1 DOM2 DOM3</h1><p>  DOM0 :未形成标准的实验性质的初级阶段的DOM<br>  DOM1: DOM1级主要定义了HTML和XML文档的底层结构。<br>  DOM2:DOM2级在原来DOM的基础上又扩充了鼠标、用户界面事件、范围、遍历等细分模块，而且通过对象接口增加了对CSS的支持。<br>  DOM3:DOM3进一步扩展了DOM</p>
+<h1 id="99-今日总结"><a href="#99-今日总结" class="headerlink" title="99 今日总结"></a>99 今日总结</h1><p>  offsetParent: 返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素或者最近的 table,td,th,body元素。当元素的 style.display 设置为 “none” 时，offsetParent 返回 null。<br>  offsetTop： 返回的是当前元素相对于offsetParent元素的顶部内边距距离。</p>
+<p>  document.title.Document 对象是 Window 对象的一部分，可通过 window.document 属性对其进行访问</p>
+<p>  .popper-class[x-placement^=’bottom’]有个elementUI一定要这样覆盖样式才有用</p>
+<p>  watch() {ss<br>    value(newVal, oldVal) {<br>      this.getConfig()<br>    }<br>  }<br>  相当于<br>  this.$watch(‘panpel.shopId’, (newVal, oldVal) =&gt; {<br>    this.getConfig()<br>  })</p>
+<h1 id="100-今日总结"><a href="#100-今日总结" class="headerlink" title="100 今日总结"></a>100 今日总结</h1><p>为什么0.1+0.2 !== 0.3? 精确度问题？<br>那么0.2+0.3 === 0.5呢？</p>
+<h1 id="110-v-if、v-show、v-html-的原理是什么，它是如何封装的？"><a href="#110-v-if、v-show、v-html-的原理是什么，它是如何封装的？" class="headerlink" title="110 v-if、v-show、v-html 的原理是什么，它是如何封装的？"></a>110 v-if、v-show、v-html 的原理是什么，它是如何封装的？</h1><p>v-if会调用addIfCondition方法，生成vnode的时候会忽略对应节点，render的时候就不会渲染； v-show会生成vnode，render的时候也会渲染成真实节点，只是在render过程中会在节点的属性中修改属性display值； v-html会先移除节点下的所有节点，调用html方法，通过addProp添加innerHTML属性，归根结底还是设置innerHTML为v-html的值</p>
+<h1 id="111-清除form里面的某一项校验"><a href="#111-清除form里面的某一项校验" class="headerlink" title="111 清除form里面的某一项校验"></a>111 清除form里面的某一项校验</h1><p>this.$refs[‘form’].clearValidate(‘name’);</p>
+<h1 id="112-代码规范"><a href="#112-代码规范" class="headerlink" title="112 代码规范"></a>112 代码规范</h1><p>:prop=”‘verifyItemExtConfigList.’ + index + ‘.isFirstVerify’”<br>:prop=”<code>verifyItemExtConfigList.${index}.isFirstVerify</code>“<br>感觉后面那个更加规范一点</p>
+<h1 id="113-sort"><a href="#113-sort" class="headerlink" title="113 sort"></a>113 sort</h1><p>[‘安徽’,’河南’,’北京’].sort((a,b)=&gt;a.localeCompare(b,’zh-CN’))，汉字，如果直接减法的话，得到的是NaN，对数组不进行任何排序</p>
+<h1 id="114-日期（周几）"><a href="#114-日期（周几）" class="headerlink" title="114 日期（周几）"></a>114 日期（周几）</h1><p>import ‘dayjs/locale/zh-cn’</p>
+<p>dayjs(time) .locale(‘zh-cn’) .format(‘周dd’)</p>
+<h1 id="115-vue3-0学习"><a href="#115-vue3-0学习" class="headerlink" title="115 vue3.0学习"></a>115 vue3.0学习</h1><p>1:setup 函数的用法，可以代替vue2.0中的data和methods属性，直接把逻辑写在set里就可以。<br>2:ref函数的使用，在template中使用的变量必须要用ref包装一下。<br>3：return 出去的方法 才能在template中使用，这样可以控制暴漏的变量和方法。</p>
+<h1 id="116-history和hash区别"><a href="#116-history和hash区别" class="headerlink" title="116 history和hash区别"></a>116 history和hash区别</h1><p>1：H5的history<br>依靠pushState保存历史记录、监听浏览器在历史记录上前进后退。history模式不是依靠url改变来切换路由的，因为url改变不会触发任何事件（除了hash），所以需要依赖内部实现的subscription，在点击a标签时，阻止默认事件，然后调用subscription.dispatch通知对应的Route组件。React Router中是利用setState做事件派发，子组件从props中获取currentPath然后做匹配判定（判定规则与exact属性有关，以及Switch组件用于「就近匹配」）。<br>控制台输入history.pushState({title: ‘b’}, ‘bbb’, ‘bbbb’)。<br>会立刻发现导航栏的地址改变了，但是当前页面内容不变。如果此时再刷新浏览器的话，会发现404，因为服务器并不能响应该地址。</p>
+<p>2：hash<br>修改hash然后回车不会发请求，hash只用于页面定位，也不会发到后台。React Router里有两种模式（还有Memory Mode先不讨论），HashHistory就是利用页面定位实现的不刷新跳转（传统的a标签默认get请求，target为当前tab），本质就是一个浏览器内置的发布订阅（只是能在url上用hash体现出来），改变hash会广播hashchange事件。你在JSX里使用Link组件，它本质是继承了原生a标签（接口继承），在onClick handler中将超链接默认事件阻止，避免了页面重定向。</p>
+<h1 id="117-git提交规范"><a href="#117-git提交规范" class="headerlink" title="117 git提交规范"></a>117 git提交规范</h1><p>feat：新功能（feature）</p>
+<p>fix：修补bug</p>
+<p>docs：文档（documentation）</p>
+<p>style： 格式（不影响代码运行的变动）</p>
+<p>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</p>
+<p>test：增加测试</p>
+<p>chore：构建过程或辅助工具的变动</p>
+<h1 id="118-QRCode"><a href="#118-QRCode" class="headerlink" title="118  QRCode"></a>118  QRCode</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var React = require(&apos;react&apos;);</span><br><span class="line">var QRCode = require(&apos;qrcode.react&apos;);</span><br><span class="line"></span><br><span class="line">React.render(</span><br><span class="line">  &lt;QRCode value=&quot;http://facebook.github.io/react/&quot; /&gt;,</span><br><span class="line">  mountNode</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>链接：<a href="https://www.npmjs.com/package/qrcode.react" target="_blank" rel="noopener">https://www.npmjs.com/package/qrcode.react</a></p>
+<h1 id="119-css总结"><a href="#119-css总结" class="headerlink" title="119 css总结"></a>119 css总结</h1><p>对于后台上传的图片可能不统一的图片处理。设置img的宽高，如果使用object-fit属性还会压缩图片。可以在套一层div 使用绝对定位来截取。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.logo &#123;</span><br><span class="line">    height: 70px;</span><br><span class="line">    width: 70px;</span><br><span class="line">    margin-right: 15px;</span><br><span class="line">    background-color: #F9FAFB;</span><br><span class="line">    border-radius: 8px;ss</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .pic &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    height: 70px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    right: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="120-react-className库"><a href="#120-react-className库" class="headerlink" title="120 react className库"></a>120 react className库</h1><pre><code>className={classNames(&apos;tabbar-item&apos;, {
+  &apos;tabbar-item-current&apos;: current === item.index,
+  &apos;tabbar-item-1&apos;: item.index === 0,
+  &apos;tabbar-item-2&apos;: item.index === 1,
+  &apos;tabbar-item-3&apos;: item.index === 2,
+})}
+</code></pre><h1 id="121-css样式总结"><a href="#121-css样式总结" class="headerlink" title="121 css样式总结"></a>121 css样式总结</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person-list&#123;</span><br><span class="line">  overflow-x: scroll</span><br><span class="line">  -webkit-overflow-scrolling:touch </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果不想要滚动条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">person-list::webkit-scrollbar &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="122-antd-4-x"><a href="#122-antd-4-x" class="headerlink" title="122 antd 4.x"></a>122 antd 4.x</h1><p>1：table column 有个ellipsis 可设置省略号。不用自己实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ellipsis: true,</span><br><span class="line">ellipsis: &#123;</span><br><span class="line">  showTitle: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2： antd form表单有 add remove方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">&lt;Form.List name=&quot;ruleList&quot;&gt;</span><br><span class="line">  &#123;(fields, &#123; add, remove &#125;, &#123; errors &#125;) =&gt; (</span><br><span class="line">      &lt;div className=&quot;level-box&quot;&gt;</span><br><span class="line">          &#123;fields.map((&#123; key, name, fieldKey, ...field &#125;) =&gt; (</span><br><span class="line">              &lt;div className=&quot;level-list&quot; key=&#123;key&#125;&gt;</span><br><span class="line">                  &lt;div className=&quot;level-list-item&quot;&gt;</span><br><span class="line">                      &lt;Form.Item shouldUpdate noStyle&gt;</span><br><span class="line">                          &#123;(&#123; getFieldValue &#125;) =&gt; &#123;</span><br><span class="line">                              const levelIdList =</span><br><span class="line">                                  getFieldValue([&apos;ruleList&apos;, name, &apos;levelIdList&apos;]) || []</span><br><span class="line">                              return (</span><br><span class="line">                                  &lt;Form.Item</span><br><span class="line">                                      &#123;...field&#125;</span><br><span class="line">                                      label=&quot;适用层级&quot;</span><br><span class="line">                                      name=&#123;[name, &apos;levelIdList&apos;]&#125;</span><br><span class="line">                                      fieldKey=&#123;[fieldKey, &apos;levelIdList&apos;]&#125;</span><br><span class="line">                                      rules=&#123;[&#123; required: true, message: &apos;请选择层级&apos; &#125;]&#125;</span><br><span class="line">                                      labelCol=&#123;&#123; span: 7 &#125;&#125;</span><br><span class="line">                                  &gt;</span><br><span class="line">                                      &lt;Select</span><br><span class="line">                                          placeholder=&quot;请选择&quot;</span><br><span class="line">                                          style=&#123;&#123; width: 228 &#125;&#125;</span><br><span class="line">                                          mode=&quot;multiple&quot;</span><br><span class="line">                                          optionFilterProp=&quot;children&quot;</span><br><span class="line">                                          filterOption=&#123;(input, option) =&gt; &#123;</span><br><span class="line">                                              const result =</span><br><span class="line">                                                  option.children</span><br><span class="line">                                                      .toLowerCase()</span><br><span class="line">                                                      .indexOf(input.toLowerCase()) &gt;= 0</span><br><span class="line">                                              return result</span><br><span class="line">                                          &#125;&#125;</span><br><span class="line">                                      &gt;</span><br><span class="line">                                          &#123;levelData.map((item) =&gt; (</span><br><span class="line">                                              &lt;Option</span><br><span class="line">                                                  value=&#123;item.levelId&#125;</span><br><span class="line">                                                  key=&#123;item.levelId&#125;</span><br><span class="line">                                                  disabled=&#123;</span><br><span class="line">                                                      levelIdIsSelected(item.levelId) &amp;&amp;</span><br><span class="line">                                                      !levelIdList.includes(item.levelId)</span><br><span class="line">                                                  &#125;</span><br><span class="line">                                              &gt;</span><br><span class="line">                                                  &#123;item.levelName&#125;</span><br><span class="line">                                              &lt;/Option&gt;</span><br><span class="line">                                          ))&#125;</span><br><span class="line">                                      &lt;/Select&gt;</span><br><span class="line">                                  &lt;/Form.Item&gt;</span><br><span class="line">                              )</span><br><span class="line">                          &#125;&#125;</span><br><span class="line">                      &lt;/Form.Item&gt;</span><br><span class="line">                      &lt;Form.Item</span><br><span class="line">                          &#123;...field&#125;</span><br><span class="line">                          label=&quot;获取分值&quot;</span><br><span class="line">                          name=&#123;[name, &apos;addScore&apos;]&#125;</span><br><span class="line">                          fieldKey=&#123;[fieldKey, &apos;addScore&apos;]&#125;</span><br><span class="line">                          rules=&#123;[</span><br><span class="line">                              &#123;</span><br><span class="line">                                  required: true,</span><br><span class="line">                                  message: &apos;请输入分值&apos;</span><br><span class="line">                              &#125;,</span><br><span class="line">                              &#123;</span><br><span class="line">                                  validateTrigger: &apos;onBlur&apos;,</span><br><span class="line">                                  message: &apos;请合并相同的分值项&apos;,</span><br><span class="line">                                  validator: validateTitlePass</span><br><span class="line">                              &#125;</span><br><span class="line">                          ]&#125;</span><br><span class="line">                          labelCol=&#123;&#123; span: 7 &#125;&#125;</span><br><span class="line">                      &gt;</span><br><span class="line">                          &lt;InputNumber placeholder=&quot;请输入&quot; style=&#123;&#123; width: 120 &#125;&#125; min=&#123;1&#125; /&gt;</span><br><span class="line">                      &lt;/Form.Item&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &lt;div className=&quot;level-list-item&quot;&gt;</span><br><span class="line">                      &lt;Form.Item</span><br><span class="line">                          &#123;...field&#125;</span><br><span class="line">                          label=&quot;获取限制&quot;</span><br><span class="line">                          name=&#123;[name, &apos;interval&apos;]&#125;</span><br><span class="line">                          fieldKey=&#123;[fieldKey, &apos;interval&apos;]&#125;</span><br><span class="line">                          rules=&#123;[&#123; required: true, message: &apos;请选择限制&apos; &#125;]&#125;</span><br><span class="line">                          labelCol=&#123;&#123; span: 7 &#125;&#125;</span><br><span class="line">                          initialValue=&#123;4&#125;</span><br><span class="line">                      &gt;</span><br><span class="line">                          &lt;Select placeholder=&quot;请选择&quot; style=&#123;&#123; width: 228 &#125;&#125;&gt;</span><br><span class="line">                              &#123;limitList.map((item) =&gt; (</span><br><span class="line">                                  &lt;Option value=&#123;item.id&#125; key=&#123;item.id&#125;&gt;</span><br><span class="line">                                      &#123;item.name&#125;</span><br><span class="line">                                  &lt;/Option&gt;</span><br><span class="line">                              ))&#125;</span><br><span class="line">                          &lt;/Select&gt;</span><br><span class="line">                      &lt;/Form.Item&gt;</span><br><span class="line">                      &lt;Form.Item</span><br><span class="line">                          &#123;...field&#125;</span><br><span class="line">                          name=&#123;[name, &apos;limitCount&apos;]&#125;</span><br><span class="line">                          fieldKey=&#123;[fieldKey, &apos;limitCount&apos;]&#125;</span><br><span class="line">                          rules=&#123;[&#123; required: true, type: &apos;number&apos;, message: &apos;请输入限制次数&apos; &#125;]&#125;</span><br><span class="line">                          initialValue=&#123;1&#125;</span><br><span class="line">                      &gt;</span><br><span class="line">                          &lt;Form.Item name=&#123;[name, &apos;limitCount&apos;]&#125; noStyle&gt;</span><br><span class="line">                              &lt;InputNumber placeholder=&quot;请输入&quot; style=&#123;&#123; width: 120 &#125;&#125; min=&#123;1&#125; /&gt;</span><br><span class="line">                          &lt;/Form.Item&gt;</span><br><span class="line">                          &lt;span className=&quot;ant-form-text&quot;&gt; 次&lt;/span&gt;</span><br><span class="line">                      &lt;/Form.Item&gt;</span><br><span class="line">                  &lt;/div&gt;</span><br><span class="line">                  &#123;key !== 0 &amp;&amp; (</span><br><span class="line">                      &lt;div className=&quot;del-item&quot; onClick=&#123;() =&gt; remove(name)&#125;&gt;</span><br><span class="line">                          &lt;img</span><br><span class="line">                              src=&quot;//cdn.myweimai.com/images/3babb557cbb6de45f3b56c7484ceb211_32x32.png&quot;</span><br><span class="line">                              alt=&quot;&quot;</span><br><span class="line">                          /&gt;</span><br><span class="line">                      &lt;/div&gt;</span><br><span class="line">                  )&#125;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line">          ))&#125;</span><br><span class="line">          &lt;Form.Item &#123;...btnLayout&#125;&gt;</span><br><span class="line">              &lt;Button icon=&#123;&lt;PlusOutlined /&gt;&#125; onClick=&#123;() =&gt; add()&#125;&gt;</span><br><span class="line">                  新增适用层级</span><br><span class="line">              &lt;/Button&gt;</span><br><span class="line">          &lt;/Form.Item&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">  )&#125;</span><br><span class="line">&lt;/Form.List&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="123-获取url-上的参数"><a href="#123-获取url-上的参数" class="headerlink" title="123 获取url 上的参数"></a>123 获取url 上的参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export const getUrlParam = (name: string) =&gt; &#123;</span><br><span class="line">  const reg = new RegExp(&apos;(^|&amp;)&apos; + name + &apos;=([^&amp;]*)(&amp;|$)&apos;); // 构造一个含有目标参数的正则表达式对象</span><br><span class="line">  const r = window.location.search.substr(1).match(reg); // 匹配目标参数</span><br><span class="line">  if (r != null) &#123;</span><br><span class="line">    return unescape(r[2]);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return null; // 返回参数值</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/duzuimoye.github.io/tags/总结/" rel="tag"><i class="fa fa-tag"></i> 总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/duzuimoye.github.io/2019/07/26/mianshi/" rel="next" title="面试总结">
+                <i class="fa fa-chevron-left"></i> 面试总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/duzuimoye.github.io/2020/03/29/wechatLogin/" rel="prev" title="微信扫码登录">
+                微信扫码登录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+
+  
+  
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1339527586,531210284&fm=26&gp=0.jpg"
+                alt="独醉莫邪" />
+            
+              <p class="site-author-name" itemprop="name">独醉莫邪</p>
+              <p class="site-description motion-element" itemprop="description">coder learning</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/duzuimoye.github.io/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/duzuimoye.github.io/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/duzuimoye" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/xiexianfei" target="_blank" title="SegmentFault">
+                      
+                        <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5ac1806c5188255c887bc8d1" target="_blank" title="Juejin">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/mo-xie-47-94/activities" target="_blank" title="ZhiHu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-router-view"><span class="nav-number">1.</span> <span class="nav-text">1: router-view</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-三位逗号分开"><span class="nav-number">2.</span> <span class="nav-text">2: 三位逗号分开</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-isNotZero函数"><span class="nav-number">3.</span> <span class="nav-text">3: isNotZero函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-位运算符"><span class="nav-number">4.</span> <span class="nav-text">4: |位运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：http-协议状态码"><span class="nav-number">5.</span> <span class="nav-text">5：http 协议状态码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6：ios-input输入时白屏"><span class="nav-number">6.</span> <span class="nav-text">6：ios input输入时白屏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7：input获取焦点时-页面被放大"><span class="nav-number">7.</span> <span class="nav-text">7：input获取焦点时 页面被放大</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8：防抖节流"><span class="nav-number">8.</span> <span class="nav-text">8：防抖节流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9instanceof-原理"><span class="nav-number">9.</span> <span class="nav-text">9instanceof 原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10mapGetter"><span class="nav-number">10.</span> <span class="nav-text">10mapGetter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-computed和methods"><span class="nav-number">11.</span> <span class="nav-text">11 computed和methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-vue-cloak"><span class="nav-number">12.</span> <span class="nav-text">12 vue-cloak</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13elementUI-render-header显示问题"><span class="nav-number">13.</span> <span class="nav-text">13elementUI render-header显示问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-关于upload-action的问题"><span class="nav-number">14.</span> <span class="nav-text">14 关于upload action的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-js-字符串两边截取空白的-trim-的原型方法的实现"><span class="nav-number">15.</span> <span class="nav-text">15 js 字符串两边截取空白的 trim 的原型方法的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-vue总结"><span class="nav-number">16.</span> <span class="nav-text">16 vue总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-vue路由的钩子函数"><span class="nav-number">17.</span> <span class="nav-text">17 vue路由的钩子函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18手机号验证"><span class="nav-number">18.</span> <span class="nav-text">18手机号验证</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-new操作符做了什么"><span class="nav-number">19.</span> <span class="nav-text">19  new操作符做了什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-dayJS轻量化工具"><span class="nav-number">20.</span> <span class="nav-text">20 dayJS轻量化工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-Array-from-五个超好用的用途"><span class="nav-number">21.</span> <span class="nav-text">21 Array.from() 五个超好用的用途</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-this-router-push"><span class="nav-number">22.</span> <span class="nav-text">22 this.$router.push</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-vue中ref的作用"><span class="nav-number">23.</span> <span class="nav-text">23 vue中ref的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-border-bottom如何指定它的宽度"><span class="nav-number">24.</span> <span class="nav-text">24 border-bottom如何指定它的宽度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25-Object-keys-Object-values-Object-entries-区别"><span class="nav-number">25.</span> <span class="nav-text">25 Object.keys(),Object.values(),Object.entries()区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26return和return-false的区别"><span class="nav-number">26.</span> <span class="nav-text">26return和return false的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27-v-lazy"><span class="nav-number">27.</span> <span class="nav-text">27 v-lazy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28-怎么解决iconfont图标不能为渐变色"><span class="nav-number">28.</span> <span class="nav-text">28 怎么解决iconfont图标不能为渐变色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#29-dayjs如何把时间戳转化为标准时间"><span class="nav-number">29.</span> <span class="nav-text">29 dayjs如何把时间戳转化为标准时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#30-对于价格的优化"><span class="nav-number">30.</span> <span class="nav-text">30 对于价格的优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31-对于从后端取过来的数据优化"><span class="nav-number">31.</span> <span class="nav-text">31 对于从后端取过来的数据优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32-手机号隐藏中间四位"><span class="nav-number">32.</span> <span class="nav-text">32 手机号隐藏中间四位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#33-v-model"><span class="nav-number">33.</span> <span class="nav-text">33 v-model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34-tab点击切换时一大一小？"><span class="nav-number">34.</span> <span class="nav-text">34 tab点击切换时一大一小？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#35-substring-substr-slice-splice区别"><span class="nav-number">35.</span> <span class="nav-text">35 substring substr slice splice区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#36-js中-和-的区别及用法"><span class="nav-number">36.</span> <span class="nav-text">36 js中!和!!的区别及用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#37-padStart-padEnd"><span class="nav-number">37.</span> <span class="nav-text">37 padStart padEnd</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#38-vuex数据异步造成初始化的时候没值报错"><span class="nav-number">38.</span> <span class="nav-text">38 vuex数据异步造成初始化的时候没值报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#39-flex-布局会让position-absolute-bottom-0-失效？？？？"><span class="nav-number">39.</span> <span class="nav-text">39 flex 布局会让position absolute bottom 0 失效？？？？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#40-this-nextTick"><span class="nav-number">40.</span> <span class="nav-text">40 this.nextTick()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#41-跳转"><span class="nav-number">41.</span> <span class="nav-text">41 跳转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#42-使用navigator-userAgent-toLowerCase-判断登陆端是pc还是手机"><span class="nav-number">42.</span> <span class="nav-text">42 使用navigator.userAgent.toLowerCase()判断登陆端是pc还是手机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#43-JSON-stringfy"><span class="nav-number">43.</span> <span class="nav-text">43 JSON.stringfy()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#44-mixins的特点："><span class="nav-number">44.</span> <span class="nav-text">44 mixins的特点：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#45-cursor-pointer"><span class="nav-number">45.</span> <span class="nav-text">45 cursor: pointer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#46-link和-import的区别？"><span class="nav-number">46.</span> <span class="nav-text">46 link和@import的区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#48-父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow-hidden，但是却失效？"><span class="nav-number">47.</span> <span class="nav-text">48 父元素设置了border-radius，子元素应用了transform，并且父元素设置了overflow:hidden，但是却失效？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#49-content-type"><span class="nav-number">48.</span> <span class="nav-text">49 content-type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#50-addEventListener和attachEvent介绍-原生js和jquery的兼容性写法"><span class="nav-number">49.</span> <span class="nav-text">50 addEventListener和attachEvent介绍, 原生js和jquery的兼容性写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#51-如何调用安卓的方法"><span class="nav-number">50.</span> <span class="nav-text">51 如何调用安卓的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#52-对于复杂的表单校验"><span class="nav-number">51.</span> <span class="nav-text">52 对于复杂的表单校验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#53-flex-0-0-40-圣杯布局"><span class="nav-number">52.</span> <span class="nav-text">53 flex 0 0 40% 圣杯布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#54-当后台返回的字段名跟前端一些框架绑定的键名不一致时，需要手动转换一下"><span class="nav-number">53.</span> <span class="nav-text">54 当后台返回的字段名跟前端一些框架绑定的键名不一致时，需要手动转换一下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#55-Vue组件data为什么必须是函数"><span class="nav-number">54.</span> <span class="nav-text">55 Vue组件data为什么必须是函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#56-div内置img元素，底部总有间距"><span class="nav-number">55.</span> <span class="nav-text">56 div内置img元素，底部总有间距</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#57-什么是-Cookie"><span class="nav-number">56.</span> <span class="nav-text">57 什么是 Cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#58-环境的切换"><span class="nav-number">57.</span> <span class="nav-text">58 环境的切换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#59-有关于部分oppo-华为手机的兼容性问题"><span class="nav-number">58.</span> <span class="nav-text">59 有关于部分oppo 华为手机的兼容性问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#60-兼容ipad样式"><span class="nav-number">59.</span> <span class="nav-text">60 兼容ipad样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#61-字符串转数字"><span class="nav-number">60.</span> <span class="nav-text">61 字符串转数字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#62-vue的注意规范之v-if-与-v-for-一起使用"><span class="nav-number">61.</span> <span class="nav-text">62 vue的注意规范之v-if 与 v-for 一起使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#63-vue数据源？怎么操作数据？"><span class="nav-number">62.</span> <span class="nav-text">63 vue数据源？怎么操作数据？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#64-如何管理你的路由"><span class="nav-number">63.</span> <span class="nav-text">64 如何管理你的路由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#65-ref-与通过类名来获取dom节点的区别"><span class="nav-number">64.</span> <span class="nav-text">65 ref 与通过类名来获取dom节点的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#66-input标签"><span class="nav-number">65.</span> <span class="nav-text">66 input标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#67-合理借用dayjs"><span class="nav-number">66.</span> <span class="nav-text">67 合理借用dayjs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#68-position-sticky-粘性定位"><span class="nav-number">67.</span> <span class="nav-text">68 position sticky 粘性定位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#69获取表头数据"><span class="nav-number">68.</span> <span class="nav-text">69获取表头数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#70-日期加星期几-合理利用dayjs"><span class="nav-number">69.</span> <span class="nav-text">70 日期加星期几 合理利用dayjs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#71下载报表"><span class="nav-number">70.</span> <span class="nav-text">71下载报表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#72-el-scrollbar"><span class="nav-number">71.</span> <span class="nav-text">72 el-scrollbar</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#73-富文本编辑器-vue2editor"><span class="nav-number">72.</span> <span class="nav-text">73 富文本编辑器 vue2editor</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#74-loacalStorage使用"><span class="nav-number">73.</span> <span class="nav-text">74 loacalStorage使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#75-nuxt"><span class="nav-number">74.</span> <span class="nav-text">75 nuxt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#76-微信网页扫码登陆"><span class="nav-number">75.</span> <span class="nav-text">76 微信网页扫码登陆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#77-将base64转换为文件"><span class="nav-number">76.</span> <span class="nav-text">77 将base64转换为文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#78-class"><span class="nav-number">77.</span> <span class="nav-text">78 class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#79-dialog组件扩展"><span class="nav-number">78.</span> <span class="nav-text">79 dialog组件扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#80-获取url的参数"><span class="nav-number">79.</span> <span class="nav-text">80 获取url的参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#81-location-包含当前URL的信息"><span class="nav-number">80.</span> <span class="nav-text">81 location 包含当前URL的信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#82-vue-cookies"><span class="nav-number">81.</span> <span class="nav-text">82 vue-cookies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#83-vue监听组件生命周期"><span class="nav-number">82.</span> <span class="nav-text">83 vue监听组件生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#84-js-eventLoop机制"><span class="nav-number">83.</span> <span class="nav-text">84 js eventLoop机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#85-elementUI-popver组件-v-if-放里面和外面的区别？？"><span class="nav-number">84.</span> <span class="nav-text">85 elementUI popver组件 v-if 放里面和外面的区别？？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#86-样式总结"><span class="nav-number">85.</span> <span class="nav-text">86 样式总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#87-cancelToken-用来取消ajax请求的"><span class="nav-number">86.</span> <span class="nav-text">87 cancelToken 用来取消ajax请求的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#88-小程序公众号开发"><span class="nav-number">87.</span> <span class="nav-text">88 小程序公众号开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#89-今日总结"><span class="nav-number">88.</span> <span class="nav-text">89 今日总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#90-vue-实现图片拖动换顺序"><span class="nav-number">89.</span> <span class="nav-text">90 vue 实现图片拖动换顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#91-axios封装"><span class="nav-number">90.</span> <span class="nav-text">91 axios封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#92-word-wrap"><span class="nav-number">91.</span> <span class="nav-text">92 word-wrap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#93-el-table-infinite-scroll"><span class="nav-number">92.</span> <span class="nav-text">93 el-table-infinite-scroll</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#94-公众号二维码太密集-放大才能扫码识别？"><span class="nav-number">93.</span> <span class="nav-text">94 公众号二维码太密集 放大才能扫码识别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#95-watch-和computed的区别"><span class="nav-number">94.</span> <span class="nav-text">95 watch 和computed的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#96-复制到粘贴板"><span class="nav-number">95.</span> <span class="nav-text">96 复制到粘贴板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#97-非指定结合？？"><span class="nav-number">96.</span> <span class="nav-text">97 非指定结合？？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#98-DOM0-DOM1-DOM2-DOM3"><span class="nav-number">97.</span> <span class="nav-text">98 DOM0 DOM1 DOM2 DOM3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#99-今日总结"><span class="nav-number">98.</span> <span class="nav-text">99 今日总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#100-今日总结"><span class="nav-number">99.</span> <span class="nav-text">100 今日总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#110-v-if、v-show、v-html-的原理是什么，它是如何封装的？"><span class="nav-number">100.</span> <span class="nav-text">110 v-if、v-show、v-html 的原理是什么，它是如何封装的？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#111-清除form里面的某一项校验"><span class="nav-number">101.</span> <span class="nav-text">111 清除form里面的某一项校验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#112-代码规范"><span class="nav-number">102.</span> <span class="nav-text">112 代码规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#113-sort"><span class="nav-number">103.</span> <span class="nav-text">113 sort</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#114-日期（周几）"><span class="nav-number">104.</span> <span class="nav-text">114 日期（周几）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#115-vue3-0学习"><span class="nav-number">105.</span> <span class="nav-text">115 vue3.0学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#116-history和hash区别"><span class="nav-number">106.</span> <span class="nav-text">116 history和hash区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#117-git提交规范"><span class="nav-number">107.</span> <span class="nav-text">117 git提交规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#118-QRCode"><span class="nav-number">108.</span> <span class="nav-text">118  QRCode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#119-css总结"><span class="nav-number">109.</span> <span class="nav-text">119 css总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#120-react-className库"><span class="nav-number">110.</span> <span class="nav-text">120 react className库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#121-css样式总结"><span class="nav-number">111.</span> <span class="nav-text">121 css样式总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#122-antd-4-x"><span class="nav-number">112.</span> <span class="nav-text">122 antd 4.x</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#123-获取url-上的参数"><span class="nav-number">113.</span> <span class="nav-text">123 获取url 上的参数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">独醉莫邪</span>
+
+  
+</div>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共25.1k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/duzuimoye.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/duzuimoye.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

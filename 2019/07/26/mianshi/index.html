@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/duzuimoye.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/duzuimoye.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/duzuimoye.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/duzuimoye.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/duzuimoye.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/duzuimoye.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/duzuimoye.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结">
+<meta property="og:url" content="https://duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/index.html">
+<meta property="og:site_name" content="谢贤飞的博客">
+<meta property="og:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://duzuimoye.github.io/duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/img/typeof.png">
+<meta property="og:image" content="https://image.fundebug.com/2019-06-26-01.png">
+<meta property="og:updated_time" content="2021-11-15T11:53:48.292Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试总结">
+<meta name="twitter:description" content="1：说一下对call、apply、bind三个区别？自己实现一下bind方法在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。call、apply、bind方法的共同点和区别：  三者都是用来改变函数的this对象的指向的； 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——">
+<meta name="twitter:image" content="https://duzuimoye.github.io/duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/img/typeof.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/duzuimoye.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/"/>
+
+
+
+
+
+  <title>面试总结 | 谢贤飞的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+   <a href="https://github.com/duzuimoye" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/duzuimoye.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谢贤飞的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">愿代码没有bug</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/duzuimoye.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/duzuimoye.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/duzuimoye.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/duzuimoye.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/duzuimoye.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://duzuimoye.github.io/duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="独醉莫邪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1339527586,531210284&fm=26&gp=0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢贤飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T10:13:53+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+
+      
+        <h1 id="1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><a href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法" class="headerlink" title="1：说一下对call、apply、bind三个区别？自己实现一下bind方法"></a>1：说一下对call、apply、bind三个区别？自己实现一下bind方法</h1><p>在JS中，call、apply和bind是Function对象自带的三个方法，这三个方法的主要作用是改变函数中的this指向。<br>call、apply、bind方法的共同点和区别：</p>
+<ol>
+<li>三者都是用来改变函数的this对象的指向的；</li>
+<li>三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本次调用的上下文（context）——这就是this关键字的值。）；</li>
+<li>三者都可以利用后续参数传参；<br><strong>bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用</strong><br>apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样.apply最多只能有两个参数,而call可以接受多个参数。<br><strong>实现一个bind方法</strong><br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    Function.prototype.bind2 = function (context) &#123;</span><br><span class="line">        if (typeof this !== &quot;function&quot;) &#123;</span><br><span class="line">          throw new Error(&quot;Function.prototype.bind - what is trying to be bound is not callable&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        var self = this;</span><br><span class="line">        var args = Array.prototype.slice.call(arguments, 1);</span><br><span class="line">        var fNOP = function () &#123;&#125;;</span><br><span class="line">        var fBound = function () &#123;</span><br><span class="line">            var bindArgs = Array.prototype.slice.call(arguments);</span><br><span class="line">            return self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs));</span><br><span class="line">        &#125;</span><br><span class="line">        fNOP.prototype = this.prototype;</span><br><span class="line">        fBound.prototype = new fNOP();</span><br><span class="line">        return fBound;</span><br><span class="line">    &#125;</span><br><span class="line">​</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="2：数组求和"><a href="#2：数组求和" class="headerlink" title="2：数组求和"></a>2：数组求和</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4,5];</span><br><span class="line">eval(arr.join(&apos;+&apos;))</span><br></pre></td></tr></table></figure>
+<p>eval可计算某个字符串的，其中含有要计算的 JavaScript 表达式或要执行的语句。</p>
+<h1 id="3：setstate是同步的还是异步的"><a href="#3：setstate是同步的还是异步的" class="headerlink" title="3：setstate是同步的还是异步的"></a>3：setstate是同步的还是异步的</h1><p>当时毫不犹豫的说了异步的，因为我想的是setstate更新之后不能立马拿到结果。然而并不是。<strong>setState在钩子函数中和在合成事件(onClick、onChange)中是异步的，在setTimeout和原生事件（addEventListener）中是同步的</strong></p>
+<h1 id="4-预加载的原理"><a href="#4-预加载的原理" class="headerlink" title="4: 预加载的原理"></a>4: 预加载的原理</h1><p>预加载：提前加载图片，当用户需要查看是可以直接从本地缓存中渲染<br>      为什么要使用预加载：在网页加载之前，对一些主要内容进行加载，以提供用户更好的体验，减少等待时间。否则，如果一个页面的内容过于庞大，会出现留白。<br>    解决页面留白的方案：1.预加载  2.使用svg站位图片，将一些结构快速搭建起来，等待请求的数据来了之后，替换当前的占位符<br>    实现预加载的方法：<br>             1.使用html标签<br>            2.使用Image对象<br>            3.使用XMLHTTPRequest对象，但会精细控制预加载过程</p>
+<h1 id="5：BFC布局"><a href="#5：BFC布局" class="headerlink" title="5：BFC布局"></a>5：BFC布局</h1><p>BFC是css布局的一个概念，是一块独立的渲染区域，一个环境，里面的元素不会影响到外部的元素<br>满足下面的条件之一就能触发BFC：（脱离文档流）<br>             【1】根元素，即HTML元素（最大的一个BFC）<br>             【2】float的值不为none<br>             【3】position的值为absolute或fixed<br>             【4】overflow的值不为visible（默认值。内容不会被修剪，会呈现在元素框之外）<br>             【5】display的值为inline-block、table-cell、table-caption<br>那你了解过<strong>IFC FFC GFC</strong>吗？当时我一脸懵逼？？？我就说这个还真没听过。<br>之后百度了一下<br>GFC（Grid Formatting Contexts）栅格格式化上下文和FFC（Flex Formatting Contexts）Flex格式化上下文，即分别在元素display为grid和flex、 inline-flex 时触发<br>IFC IFC 只有在一个块级元素中仅包含内联级别元素时才会生成。</p>
+<h1 id="6-你了解过tcp-ip协议吗？"><a href="#6-你了解过tcp-ip协议吗？" class="headerlink" title="6: 你了解过tcp ip协议吗？"></a>6: 你了解过tcp ip协议吗？</h1><p>TCP:<br>　　（Transmission Control Protocol 传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由IETF的RFC 793定义。在简化的计算机网络OSI模型中，它完成第四层传输层所指定的功能，用户数据报协议（UDP）是同一层内 [1]  另一个重要的传输协议。<br>IP:<br>　　网络之间互连的协议（IP）是Internet Protocol的外语缩写<br>　　网络之间互连的协议也就是为计算机网络相互连接进行通信而设计的协议<br>　　如今的IP网络使用32位地址，以点分十进制表示，如192.168.0.1。<br>　　地址格式为：IP地址=网络地址+主机地址或 IP地址=网络地址+子网地址+主机地址。</p>
+<h1 id="7：-圣杯双飞翼布局"><a href="#7：-圣杯双飞翼布局" class="headerlink" title="7： 圣杯双飞翼布局"></a>7： 圣杯双飞翼布局</h1><p>左右两栏固定中间自适应的布局，圣杯布局实现左右两栏固宽中间自适应的方案是:在三栏的最外层包裹一个div，然后通过浮动以及定位的方式将所有栏放置到相应的位置从而达到中间自适应左右两边固定的布局。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        .box&#123;</span><br><span class="line">            border:1px solid red;</span><br><span class="line">            width: 90%;</span><br><span class="line">            min-width: 600px;</span><br><span class="line">            background: gray;                       </span><br><span class="line">            padding-bottom: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        .box::after&#123;</span><br><span class="line">            content:&quot;&quot;;</span><br><span class="line">            display:block;</span><br><span class="line">            clear:both;</span><br><span class="line">        &#125;</span><br><span class="line">        .center&#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            float:left;</span><br><span class="line">        &#125;</span><br><span class="line">        .left&#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            background: yellow;</span><br><span class="line">            float:left;</span><br><span class="line">            /*左浮动盒子往左边空出100%的宽度*/</span><br><span class="line">            margin-left:-100%;</span><br><span class="line">        &#125;</span><br><span class="line">        .right&#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            background: purple;</span><br><span class="line">            float:left;</span><br><span class="line">            /*右侧盒子往左边空出盒子本身的宽度*/    </span><br><span class="line">            margin-left:-200px;</span><br><span class="line">        &#125;</span><br><span class="line">        .middle&#123;</span><br><span class="line">            background: pink;</span><br><span class="line">            margin-left: 210px;</span><br><span class="line">            margin-right:210px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;center&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;middle&quot;&gt;中间栏&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;左边栏&lt;br&gt;&lt;br&gt;&lt;/div&gt;     </span><br><span class="line">        &lt;div class=&quot;right&quot;&gt;右边栏&lt;br&gt;&lt;br&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>双飞翼布局<br>left、center、right三种都设置左浮动<br>设置center宽度为100%<br>设置负边距，left设置负边距为100%，right设置负边距为自身宽度<br>设置content的margin值为左右两个侧栏留出空间，margin值大小为left和right宽度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#left, #right, #center &#123;</span><br><span class="line">   float: left;</span><br><span class="line"> &#125;</span><br><span class="line"> #center &#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   background: rgb(206, 201, 201);</span><br><span class="line"> &#125;</span><br><span class="line"> #left &#123;</span><br><span class="line">   width: 200px;</span><br><span class="line">   margin-left: -100%;</span><br><span class="line">   background: rgba(95, 179, 235, 0.972);</span><br><span class="line"> &#125;</span><br><span class="line"> #right &#123;</span><br><span class="line">   width: 150px;</span><br><span class="line">   margin-left: -150px;</span><br><span class="line">   background: rgb(231, 105, 2);</span><br><span class="line"> &#125;</span><br><span class="line"> .content &#123;</span><br><span class="line">   margin: 0 150px 0 200px;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="8：get请求传参长度的误区、get和post请求在缓存方面的区别"><a href="#8：get请求传参长度的误区、get和post请求在缓存方面的区别" class="headerlink" title="8：get请求传参长度的误区、get和post请求在缓存方面的区别"></a>8：get请求传参长度的误区、get和post请求在缓存方面的区别</h1><p>  误区：我们经常说get请求参数的大小存在限制，而post请求的参数大小是无限制的。<br>  实际上HTTP 协议从未规定 GET/POST 的请求长度限制是多少。对get请求参数的限制是来源与浏览器或web服务器，浏览器或web服务器限制了url的长度。为了明确这个概念，我们必须再次强调下面几点:</p>
+<p>  HTTP 协议 未规定 GET 和POST的长度限制<br>  GET的最大长度显示是因为 <strong>浏览器和 web服务器限制了 URI的长度</strong><br>  不同的浏览器和WEB服务器，限制的最大长度不一样<br>  要支持IE，则最大长度为2083byte，若只支持Chrome，则最大长度 8182byte<br>  补充补充一个get和post在缓存方面的区别：<br>  get请求类似于查找的过程，用户获取数据，可以不用每次都与数据库连接，所以可以使用缓存。<br>  post不同，post做的一般是修改和删除的工作，所以必须与数据库交互，所以不能使用缓存。因此get请求适合于请求缓存。</p>
+<h1 id="9-ES6特性"><a href="#9-ES6特性" class="headerlink" title="9: ES6特性"></a>9: ES6特性</h1><p>  Math.trunc方法用于去除一个数的小数部分，返回整数部分<br>  Math.cbrt方法用于计算一个数的立方根</p>
+<h1 id="10-什么是CDN和CDN的好处"><a href="#10-什么是CDN和CDN的好处" class="headerlink" title="10 什么是CDN和CDN的好处"></a>10 什么是CDN和CDN的好处</h1><p> CDN:CDN是将源站内容分发至最接近用户的节点，使用户可就近取得所需内容，提高用户访问的响应速度和成功率。解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。<br>好处：<br>1、多域名加载资源<br>一般情况下，浏览器都会对单个域名下的并发请求数（文件加载）进行限制，通常最多有4个，那么第5个加载项将会被阻塞，直到前面的某一个文件加载完毕。<br>因为CDN文件是存放在不同区域（不同IP）的，所以对浏览器来说是可以同时加载页面所需的所有文件（远不止4个），从而提高页面加载速度。<br>2、文件可能已经被加载过并保存有缓存<br>一些通用的js库或者是css样式库，如jQuery，在网络中的使用是非常普遍的。当一个用户在浏览你的某一个网页的时候，很有可能他已经通过你网站使用的CDN访问过了其他的某一个网站，恰巧这个网站同样也使用了jQuery，那么此时用户浏览器已经缓存有该jQuery文件（同IP的同名文件如果有缓存，浏览器会直接使用缓存文件，不会再进行加载），所以就不会再加载一次了，从而间接的提高了网站的访问速度<br>3、高效率<br>你的网站做的再NB也不会NB过百度NB过Google吧？一个好的CDNs会提供更高的效率，更低的网络延时和更小的丢包率。<br>4、分布式的数据中心<br>假如你的站点布置在北京，当一个香港或者更远的用户访问你的站点的时候，他的数据请求势必会很慢很慢。而CDNs则会让用户从离他最近的节点去加载所需的文件，所以加载速度提升就是理所当然的了。<br>5、使用情况分析<br>一般情况下CDNs提供商（如百度云加速）都会提供数据统计功能，可以了解更多关于用户访问自己网站的情况，可以根据统计数据对自己的站点适时适当的做出些许调整。<br>6、有效防止网站被攻击<br>一般情况下CDNs提供商也是会提供网站安全服务的</p>
+<h1 id="11-如何提高首频加载速度"><a href="#11-如何提高首频加载速度" class="headerlink" title="11: 如何提高首频加载速度"></a>11: 如何提高首频加载速度</h1><p>1.js外联文件放到body底部，css外联文件放到head内<br>2.http静态资源尽量用多个子域名<br>3.服务器端提供html和http静态资源时最好开启gzip<br>4.在js,css,img等资源响应的http headers里设置expires,last-modified<br>5.尽量减少http requests的数量<br>6.js/css/html/img资源压缩<br>7.使用css spirtes，可以减少img请求次数<br>8.大图使用lazyload懒加载<br>9.避免404，减少外联js<br>10.减少cookie大小可以提高获得响应的时间<br>11.减少dom elements的数量<br>12.使用异步脚本，动态创建脚本</p>
+<h1 id="12：promise"><a href="#12：promise" class="headerlink" title="12：promise"></a>12：promise</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const promise = new Promise((resolve, reject) =&gt;&#123;</span><br><span class="line">  console.log(&apos;1&apos;)</span><br><span class="line">  resolve()</span><br><span class="line">  console.log(&apos;2&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">promise.then(() =&gt;&#123;</span><br><span class="line">  console.log(&apos;3&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">console.log(&apos;4&apos;)</span><br></pre></td></tr></table></figure>
+<p>输出结果：1  2 4 3<br>peomise 构造函数是同步执行的<br>promise.then中的函数是异步执行的</p>
+<h1 id="13-vue-click-native-原生点击事件"><a href="#13-vue-click-native-原生点击事件" class="headerlink" title="13 vue @click.native 原生点击事件"></a>13 vue @click.native 原生点击事件</h1><p>1，给vue组件绑定事件时候，必须加上native ，不然不会生效（监听根元素的原生事件，使用 .native 修饰符）<br>2，等同于在自组件中：子组件内部处理click事件然后向外发送click事件：$emit(“click”.fn)<br>  如果使用router-link标签，加上@click事件，绑定的事件会无效因为：router-link的作用是单纯的路由跳转，会阻止click事件，你可以试试只用click不用native,事件是不会触发的。此时加上.native，才会触发事件</p>
+<h1 id="14-js获取event事件（关于流浪器的差异性）"><a href="#14-js获取event事件（关于流浪器的差异性）" class="headerlink" title="14 js获取event事件（关于流浪器的差异性）"></a>14 js获取event事件（关于流浪器的差异性）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let e = event || window.event || arguments.callee.caller.arguments[0]</span><br><span class="line">window.event  // ie</span><br><span class="line">e.which  // Netscape/Firefox/Opera</span><br><span class="line">其中argments.callee就是函数体本身，arguments.callee.caller就是函数体的调用函数体 火狐</span><br></pre></td></tr></table></figure>
+<h1 id="15vue-api"><a href="#15vue-api" class="headerlink" title="15vue api"></a>15vue api</h1><p>Vue.filter(‘numfix’, =&gt;{<br>})<br>注册全局的filter方法</p>
+<h1 id="16-为什么要使用函数组件呢？"><a href="#16-为什么要使用函数组件呢？" class="headerlink" title="16 为什么要使用函数组件呢？"></a>16 为什么要使用函数组件呢？</h1><p>最重要的原因就是函数组件开销低，也就是对性能有好处，在不需要响应式和this的情况下，写成函数式组件算是一种优化方案。</p>
+<h1 id="17-关于数组的api"><a href="#17-关于数组的api" class="headerlink" title="17 关于数组的api"></a>17 关于数组的api</h1><p>push pop shift unshift some every reverse slice splice map filter reduce join concat sort forEach indexOf includes</p>
+<p>改变原数组的api：pop shift push unshift splice sort reverse</p>
+<h1 id="18-关于对象的api"><a href="#18-关于对象的api" class="headerlink" title="18 关于对象的api"></a>18 关于对象的api</h1><p>object.keys() object.prototype.toString()  object.values() object.entries() Object.is(val1,val2): 是确定两个值是否是相同的值,</p>
+<h1 id="19-Vue2-x响应式数据原理"><a href="#19-Vue2-x响应式数据原理" class="headerlink" title="19 Vue2.x响应式数据原理"></a>19 Vue2.x响应式数据原理</h1><p>Vue在初始化数据时，会使用Object.defineProperty重新定义data中的所有属性，当页面使用对应属性时，首先会进行依赖收集(收集当前组件的watcher)如果属性发生变化会通知相关依赖进行更新操作(发布订阅)。</p>
+<h1 id="20-Vue3-x响应式数据原理"><a href="#20-Vue3-x响应式数据原理" class="headerlink" title="20 Vue3.x响应式数据原理"></a>20 Vue3.x响应式数据原理</h1><p>Vue3.x改用Proxy替代Object.defineProperty。因为Proxy可以直接监听对象和数组的变化，并且有多达13种拦截方法。</p>
+<p>proxy只会代理对象的第一层，那么Vue3.0是怎么处理的呢？<br>1：判断当前返回值是不是object,<br>2: 如果是的话就通过reactive方法做代理</p>
+<p>衍生2：检测数组的时候，可能会多次触发get/set事件。怎么防止呢？<br>第一：判断key是否为当前对象的自身属性<br>第二：判断新值跟旧值是否相等</p>
+<h1 id="21-position有哪些属性？"><a href="#21-position有哪些属性？" class="headerlink" title="21 position有哪些属性？"></a>21 position有哪些属性？</h1><p>absolute relative fixed sticky(粘性定位，是fixed和relative的结合体) static（默认值 没有定位）inherit(从父元素中间继承)</p>
+<h1 id="22-typeOf-原理？"><a href="#22-typeOf-原理？" class="headerlink" title="22 typeOf 原理？"></a>22 typeOf 原理？</h1><p>js在底层存储变量的时候，为了性能考虑用低位来存储变量类型信息。<br>typeof ‘hello’ // string<br>typeof new String(‘hello’) // Object<br>为什么typeof null 时object，是因为 null 全部为0  而typeof判断机器码的前三位。<br><img src="/duzuimoye.github.io/duzuimoye.github.io/2019/07/26/mianshi/img/typeof.png" alt="图片"></p>
+<h1 id="23-0-1-0-2-0-3-吗？-为什么？"><a href="#23-0-1-0-2-0-3-吗？-为什么？" class="headerlink" title="23 0.1 + 0.2 === 0.3 吗？ 为什么？"></a>23 0.1 + 0.2 === 0.3 吗？ 为什么？</h1><p>计算机的底层都是由二进制来表示的，对于 0.1和 0.2 这种数字在用二进制储存的时候会有精度误差</p>
+<h1 id="24-img-标签间距问题的原理以及如何解决"><a href="#24-img-标签间距问题的原理以及如何解决" class="headerlink" title="24 img 标签间距问题的原理以及如何解决"></a>24 img 标签间距问题的原理以及如何解决</h1><p>上下间隙的原因：<br>img是个inline元素=&gt;inline元素会默认产生元素代码中的换行符（也称为空白符=&gt;也可以默认作为一个文本串）</p>
+<p>垂直方向上产生间隙的原因：<br>因为img内联元素在浏览器中可能会被当做字符串看待，可能受到front-size字体大小影响，line-height同时会影响空白节点=&gt;添加图片时候下面会多出来一条空白线就是空白节点的作用</p>
+<h1 id="25-vue-sync作用"><a href="#25-vue-sync作用" class="headerlink" title="25 vue sync作用"></a>25 vue sync作用</h1><p>vue 修饰符sync的功能是：当一个子组件改变了一个 prop 的值时，这个变化也会同步到父组件中所绑定。</p>
+<h1 id="26-函数表达式的优先级比函数申明高一些"><a href="#26-函数表达式的优先级比函数申明高一些" class="headerlink" title="26 函数表达式的优先级比函数申明高一些"></a>26 函数表达式的优先级比函数申明高一些</h1><h1 id="27-for-循环-和forEach循环哪个性能好一点？"><a href="#27-for-循环-和forEach循环哪个性能好一点？" class="headerlink" title="27 for 循环 和forEach循环哪个性能好一点？"></a>27 for 循环 和forEach循环哪个性能好一点？</h1><p>在千万级别之下 forEach性能高于for。在亿级以上的量级上for循环性能高于forEach<br>区别：<br>1：for循环按顺序遍历 forEach使用迭代器遍历<br>2：for循环是随机访问元素 forEach是顺序链表访问元素（数据结构）</p>
+<h1 id="28-数组原型的方法"><a href="#28-数组原型的方法" class="headerlink" title="28 数组原型的方法"></a>28 数组原型的方法</h1><p>数组原型上面的方法：map forEach filter some reduce sort splice slice includes every push unshift pop shift reverse join find findIndex set<br>其中改变数组的有：map filter sort splice slice concat push pop<br>返回新数组：concat slice</p>
+<h1 id="29-问卷总结"><a href="#29-问卷总结" class="headerlink" title="29 问卷总结"></a>29 问卷总结</h1><h1 id="30-如何转化一个类数组对象？大致原理是怎么样？"><a href="#30-如何转化一个类数组对象？大致原理是怎么样？" class="headerlink" title="30 如何转化一个类数组对象？大致原理是怎么样？"></a>30 如何转化一个类数组对象？大致原理是怎么样？</h1><p>1Array.from  2Array.prototype.slice.call() 3 定义一个新数组 通过循环push到新数组<br>Array.prototype.slice.call()原理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;</span><br><span class="line">    0: &apos;Java&apos;,</span><br><span class="line">    1: &apos;Python&apos;,</span><br><span class="line">    2: &apos;JavaScript&apos;,</span><br><span class="line">    length: 3</span><br><span class="line">&#125;;</span><br><span class="line">// 因为foo对象本身并没有slice方法，所以通过call调用</span><br><span class="line">var arr = Array.prototype.slice.call(foo); // [‘Java’,’Python’,’JavaScript’]</span><br></pre></td></tr></table></figure></p>
+<p>function ArraySlice(start, end) {<br>  CHECK_OBJECT_COERCIBLE(this, “Array.prototype.slice”);<br>  var array = TO_OBJECT(this);<br>  var len = TO_LENGTH(array.length);<br>  var start_i = TO_INTEGER(start);<br>  var end_i = len;<br>  if (!IS_UNDEFINED(end)) end_i = TO_INTEGER(end);<br>  if (start_i &lt; 0) {<br>  start_i  = len;<br>  if (start_i &lt; 0) start_i = 0;<br>  } else {<br>  if (start_i &gt; len) start_i = len;<br>  }<br>  if (end_i &lt; 0) {<br>  end_i  = len;<br>  if (end_i &lt; 0) end_i = 0;<br>  } else {<br>  if (end_i &gt; len) end_i = len;<br>  }<br>  var result = ArraySpeciesCreate(array, MaxSimple(end_i - start_i, 0)); // 先转换为数组<br>  if (end_i &lt; start_i) return result; // 如果没有任何参数，直接返回数组<br>  if (UseSparseVariant(array, len, IS_ARRAY(array), end_i - start_i)) {<br>  %NormalizeElements(array);<br>  if (IS_ARRAY(result)) %NormalizeElements(result);<br>  SparseSlice(array, start_i, end_i - start_i, len, result);<br>  } else {<br>  SimpleSlice(array, start_i, end_i - start_i, len, result);<br>  }<br>  result.length = end_i - start_i;<br>  return result;<br>}<br>当没有输入参数的时候，会创建一个新数组，然后把当前数组的所有元素扔进去，最后返回这个新数组</p>
+<h1 id="31-数据类型？以及如何存值？"><a href="#31-数据类型？以及如何存值？" class="headerlink" title="31 数据类型？以及如何存值？"></a>31 数据类型？以及如何存值？</h1><p>基本数据类型：String Null Number Undefined Boolean Symbol(es6新增) BigInt(es10新增 解决了非常大的整数的精确度问题),直接放在栈中，占据空间小，大小固定，因为经常使用，所以放入栈中储存。<br>引用类型：Object (Array, Date, function)同时存在栈和堆中，占据空间大，大小不固定。引用类型在栈中存储了指针，该指针指向堆中该实体的起始地址，当解释器寻找引用值时，先去栈中找地址，获得地址后找找到实体。<br>检查数据类型：typeof instanceof object.prototypem.toString.call()<br>typeof 原理：js在底层存储变量的时候，为了性能考虑用低位来存储变量类型信息。<br>instanceof 原理：用于测试构造函数的prototype属性是否出现在对象原型链的任何位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">instanceof (A,B) = &#123;</span><br><span class="line">    var L = A.__proto__;</span><br><span class="line">    var R = B.prototype;</span><br><span class="line">    if(L === R) &#123;</span><br><span class="line">        //A的内部属性(prototype属性)__proto__指向B的原型对象</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="32-‘1’-’2’-’3’-map-parseInt-结果讲解"><a href="#32-‘1’-’2’-’3’-map-parseInt-结果讲解" class="headerlink" title="32[‘1’,’2’,’3’].map(parseInt)结果讲解"></a>32[‘1’,’2’,’3’].map(parseInt)结果讲解</h1><p>结果：[1,Nan, Nan]<br>将数组的每个元素传递给指定的函数处理，并返回处理后的数组，所以 [‘1’,’2’,’3’].map(parseInt) 就是将字符串1，2，3作为元素；0，1，2作为下标分别调用 parseInt 函数。即分别求出 parseInt(‘1’,0), parseInt(‘2’,1), parseInt(‘3’,2)的结果。<br>parseInt函数：以第二个参数为基数来解析第一个参数字符串，通常用来做十进制的向上取整（省略小数），特点是接受二个参数，parseInt(String, radix)。<br>其中radix解析字符串的基数，基数规则如下：</p>
+<p>   1）   区间范围介于2~36之间；</p>
+<p>   2 ）  当参数为 0，parseInt() 会根据十进制来解析；</p>
+<p>   3 ）  如果忽略该参数，默认的基数规则：</p>
+<pre><code>如果 string 以 &quot;0x&quot; 开头，parseInt() 会把 string 的其余部分解析为十六进制的整数；parseInt(&quot;0xf&quot;)   //15 
+
+如果 string 以 0 开头，其后的字符解析为八进制或十六进制的数字；parseInt(&quot;08&quot;)   //8
+
+如果 string 以 1 ~ 9 的数字开头，parseInt() 将把它解析为十进制的整数；parseInt(&quot;88.99f&quot;)   //88
+
+只有字符串中的第一个数字会被返回。parseInt(&quot;10.33&quot;)   //返回10；
+
+开头和结尾的空格是允许的。parseInt(&quot; 69 10 &quot;)   //返回69
+
+如果字符串的第一个字符不能被转换为数字，返回 NaN。parseInt(&quot;f&quot;)  //返回NaN  而parseInt(&quot;f&quot;，16)  //返回15
+</code></pre><p>[‘1’,’2’,’3’].map(parseInt)即</p>
+<p>parseInt(‘1’,0);radix 为 0，parseInt() 会根据十进制来解析，所以结果为 1；</p>
+<p>parseInt(‘2’,1);radix 为 1，超出区间范围，所以结果为 NaN；</p>
+<p>parseInt(‘3’,2);radix 为 2，用2进制来解析，应以 0 和 1 开头，所以结果为 NaN。</p>
+<h1 id="33-apply-call-bind区别"><a href="#33-apply-call-bind区别" class="headerlink" title="33 apply call bind区别"></a>33 apply call bind区别</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    var xw = &#123;</span><br><span class="line">      name : &quot;小王&quot;,</span><br><span class="line">      gender : &quot;男&quot;,</span><br><span class="line">      age : 24,</span><br><span class="line">      say : function() &#123;</span><br><span class="line">          alert(this.name + &quot; , &quot; + this.gender + &quot; ,今年&quot; + this.age);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    var xh = &#123;</span><br><span class="line">      name : &quot;小红&quot;,</span><br><span class="line">      gender : &quot;女&quot;,</span><br><span class="line">      age : 18</span><br><span class="line">    &#125;</span><br><span class="line">    xw.say();</span><br><span class="line">    xw.say.call(xh)</span><br><span class="line">    xw.say.apply(xh)</span><br><span class="line">    xw.say.bind(xh)()</span><br><span class="line">call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数</span><br></pre></td></tr></table></figure>
+<h1 id="34-三栏式布局"><a href="#34-三栏式布局" class="headerlink" title="34 三栏式布局"></a>34 三栏式布局</h1><p>1：flex布局<br>.container<br>  display flex<br>  .left<br>    flex 0 0 200px<br>  .right<br>    flex 0 0 200px<br>  .center<br>    flex 1<br>2: float+margin<br>  .left<br>    float left<br>    width 200px<br>    margin-left -100%<br>  .right<br>    float left<br>    width 200px<br>    margin-left 200px<br>  .center<br>    margin-left 200px<br>    margin-right 200px</p>
+<h1 id="35-setState是同步的还是异步的？"><a href="#35-setState是同步的还是异步的？" class="headerlink" title="35 setState是同步的还是异步的？"></a>35 setState是同步的还是异步的？</h1><p>setState在原生事件和异步操作中是同步的，在生命周期函数中和合成事件中是异步的。</p>
+<h1 id="36-new的时候做了什么？"><a href="#36-new的时候做了什么？" class="headerlink" title="36 new的时候做了什么？"></a>36 new的时候做了什么？</h1><p>var obj = new Base()<br>1: 创建了一个新对象<br>2：对象obj的proto属性指向了Base的prototype上<br>3: 利用call/apply 为对象obj执行构造方法。</p>
+<h1 id="37-set-map"><a href="#37-set-map" class="headerlink" title="37 set map"></a>37 set map</h1><p>set是一种叫做集合的数据结构<br>map是键值对的数据结构</p>
+<h1 id="38-虚拟Dom"><a href="#38-虚拟Dom" class="headerlink" title="38 虚拟Dom"></a>38 虚拟Dom</h1><p>什么是虚拟dom: 用js来模拟dom的节点<br>什么是diff算法： diff算法是进行虚拟节点的对比，并返回一个patch对象，用来储存二个节点的差异，最后用patc记录的信息去局部更新dom。<br>如图所示<br><img src="https://image.fundebug.com/2019-06-26-01.png" alt="image"><br>diff算法的步骤：<br>1：用js对象表示dom树的结构，用这个树去构建一个真正的dom树。<br>2：当状态变更的时候，重新构造一个新的对象树，新的树和旧的树进行对比，记录二棵树之间的差异。<br>3：把所记录的差异应用到真正的dom树，视图更新。</p>
+<h1 id="39-vue父子组件生命周期执行顺序"><a href="#39-vue父子组件生命周期执行顺序" class="headerlink" title="39 vue父子组件生命周期执行顺序"></a>39 vue父子组件生命周期执行顺序</h1><p>加载预览过程：先后顺序为父beforeCreate-&gt;父created-&gt;父beforeMount-&gt;子beforeCreate-&gt;子created-&gt;子beforeMount-&gt;子mounted-&gt;父mounted</p>
+<p>子组件更新过程：父beforeUpdate-&gt;子beforeUpdate-&gt;子update-&gt;父update</p>
+<p>父组件更新过程： 父beofreUpdate -&gt; 父update</p>
+<p>销毁过程：父beforeDestory-&gt;子beforeDestory-&gt;子destory-&gt;父destory</p>
+<h1 id="40-Object和map的区别？"><a href="#40-Object和map的区别？" class="headerlink" title="40 Object和map的区别？"></a>40 Object和map的区别？</h1><p>key：Object的key是一些简单的数据类型（string 整数 symbol），而map的key可以是支持js的所有数据类型。也就是说可以是object。<br>元素顺序： map可以按顺序插入<br>map迭代 get set delete size属性。<br>Object 则需要借助 Object.keys() 来计算</p>
+<h1 id="41-求二个数组的交集并集"><a href="#41-求二个数组的交集并集" class="headerlink" title="41 求二个数组的交集并集"></a>41 求二个数组的交集并集</h1><p>1：filter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a  = [1,6,8,9]</span><br><span class="line">var b = [1,9,12,78]</span><br><span class="line">// 交集</span><br><span class="line">var c = a.filter(v =&gt;&#123;</span><br><span class="line">  return b.indexOf(v) &gt; -1</span><br><span class="line">&#125;)</span><br><span class="line">// a与b差集</span><br><span class="line">var d = a.filter(v =&gt;&#123;</span><br><span class="line">  return b.indexOf(v) === -1</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>2: set+filter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var aa = [1,2,3,4,5]</span><br><span class="line">var bb = [2,4,6,8,10]ss</span><br><span class="line">var sa = new Set(aa);</span><br><span class="line">var sb = new Set(bb);</span><br><span class="line">// 交集</span><br><span class="line">let intersect = aa.filter(x =&gt; sb.has(x));</span><br><span class="line">// 差集</span><br><span class="line">let minus = aa.filter(x =&gt; !sb.has(x));</span><br><span class="line">// 补集</span><br><span class="line">let complement = [...aa.filter(x =&gt; !sb.has(x)), ...bb.filter(x =&gt; !sa.has(x))];</span><br><span class="line">// 并集</span><br><span class="line">let unionSet = Array.from(new Set([...a, ...b]));</span><br><span class="line">console.log(&quot;a与b的交集：&quot;, intersect);</span><br><span class="line">console.log(&quot;a与b的差集：&quot;, minus);</span><br><span class="line">console.log(&quot;a与b的补集：&quot;, complement);</span><br><span class="line">console.log(&quot;a与b的并集：&quot;, unionSet);</span><br></pre></td></tr></table></figure></p>
+<h1 id="42-es6-gt-es5"><a href="#42-es6-gt-es5" class="headerlink" title="42 es6 -&gt; es5"></a>42 es6 -&gt; es5</h1><p>bable let const 怎么转化成var? 大概步骤？<br>es6 class可以看作是一个语法糖。 ES5 的构造函数 Person，对应 ES6 的 Person 类的 constructor 方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">  &#125;</span><br><span class="line">  sayName() &#123;</span><br><span class="line">    return &apos;my name is&apos; + this.name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var moye = new Person(&apos;moye&apos;)</span><br><span class="line">moye.sayName()</span><br></pre></td></tr></table></figure></p>
+<p>es5 写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Person(name) &#123;</span><br><span class="line">  this.name = name</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayName = function () &#123;</span><br><span class="line">  return &apos;my name is&apos; + this.name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="43-双向绑定-拦截页面更新？-setter"><a href="#43-双向绑定-拦截页面更新？-setter" class="headerlink" title="43 双向绑定 拦截页面更新？ setter?"></a>43 双向绑定 拦截页面更新？ setter?</h1><h1 id="44-this-set原理"><a href="#44-this-set原理" class="headerlink" title="44 this.$set原理"></a>44 this.$set原理</h1><p>this.$set(data, ‘isChoosw’, true)在new Vue（）时就注入到vue的原型。</p>
+<h1 id="45-webpack是如何解决二次引入的？"><a href="#45-webpack是如何解决二次引入的？" class="headerlink" title="45 webpack是如何解决二次引入的？"></a>45 webpack是如何解决二次引入的？</h1><h1 id="46-预加载"><a href="#46-预加载" class="headerlink" title="46 预加载"></a>46 预加载</h1><p>提前加载图片，当用户需要查看时直接从缓存中读取。<br>方式：<br>1：设置link标签 设置rel=prefetch<br>2:script标签<br>3：利用XMLhttpRequest</p>
+<h1 id="47-session和cookie的区别"><a href="#47-session和cookie的区别" class="headerlink" title="47 session和cookie的区别"></a>47 session和cookie的区别</h1><p>cookie 存储有户信息的一种机制，可以设置有效期，大小一般为4k，存在浏览器中。服务器性能好一点。<br>session 是有cookie进行标记的，存在服务器上。安全性能好一点。<br>storage （localStorage sessionStorage）</p>
+<h1 id="48-forEach-map的区别"><a href="#48-forEach-map的区别" class="headerlink" title="48 forEach map的区别"></a>48 forEach map的区别</h1><p>1：forEach返回的是undefined 不可以进入链式调用。<br>2: map返回的是一个新数组，不改变原数组。<br>3：不能终止forEach循环，除非抛出异常。</p>
+<h1 id="49-vue路由守卫"><a href="#49-vue路由守卫" class="headerlink" title="49 vue路由守卫"></a>49 vue路由守卫</h1><p>1：全局守卫：beforeEach/afterEach<br>beforeEach三个参数<br>to: 即将要去的路由对象<br>form: 即将要离开的对象<br>next： function</p>
+<p>2: 路由独享钩子:beforeEnter/beforeLeave</p>
+<p>3: 组件内的守卫钩子： beforeRouterEnter/beforeRouterLeave/beforeRouterUpdate</p>
+<h1 id="50-如何在es5的环境下实现let-const"><a href="#50-如何在es5的环境下实现let-const" class="headerlink" title="50 如何在es5的环境下实现let/const"></a>50 如何在es5的环境下实现let/const</h1><p>利用Object.defineProperty, 去修改属性描述符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">var __const = function __const (data, value) &#123;</span><br><span class="line">        window.data = value // 把要定义的data挂载到window下，并赋值value</span><br><span class="line">        Object.defineProperty(window, data, &#123; // 利用Object.defineProperty的能力劫持当前对象，并修改其属性描述符</span><br><span class="line">          enumerable: false,</span><br><span class="line">          configurable: false,</span><br><span class="line">          get: function () &#123;</span><br><span class="line">            return value</span><br><span class="line">          &#125;,</span><br><span class="line">          set: function (data) &#123;</span><br><span class="line">            if (data !== value) &#123; // 当要对当前属性进行赋值时，则抛出错误！</span><br><span class="line">              throw new TypeError(&apos;Assignment to constant variable.&apos;)</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">              return value</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      __const(&apos;a&apos;, 10)</span><br><span class="line">      console.log(a)</span><br><span class="line">      delete a</span><br><span class="line">      console.log(a)</span><br><span class="line">      for (let item in window) &#123; // 因为const定义的属性在global下也是不存在的，所以用到了enumerable: false来模拟这一功能</span><br><span class="line">        if (item === &apos;a&apos;) &#123; // 因为不可枚举，所以不执行</span><br><span class="line">          console.log(window[item])</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      a = 20 // 报错</span><br></pre></td></tr></table></figure></p>
+<h1 id="51-从输入url到获取页面的完整过程"><a href="#51-从输入url到获取页面的完整过程" class="headerlink" title="51 从输入url到获取页面的完整过程"></a>51 从输入url到获取页面的完整过程</h1><pre><code>1.查询NDS(域名解析),获取域名对应的IP地址
+</code></pre><p>  <code>域名解析过程</code>：<br>    第一：查询浏览器缓存，<br>    第二：检查系统缓存，检查host文件,它保存了以前访问过的域名和ip，有的话直接获取，    如果没有的话<br>    第三：检查路由器缓存，如果没有的话<br>    第四：查询DNS缓存，如果还不行的话<br>    第五：递归查询，从根域名服务器到顶级域名服务器再到极限域名服务器依次搜索哦对应    目标域名的IP。<br>    2.浏览器与服务器建立tcp链接（三次握手）<br>    3.浏览器向服务器发送http请求(请求和传输数据）<br>    4.服务器接受到这个请求后，根据路经参数，经过后端的一些处理生成html代码返回给浏览器<br>    5.浏览器拿到完整的html页面代码开始解析和渲染，如果遇到外部的css或者js，图片一样的步骤<br>    6.浏览器根据拿到的资源对页面进行渲染，把一个完整的页面呈现出来</p>
+<h1 id="52-三次握手"><a href="#52-三次握手" class="headerlink" title="52 三次握手"></a>52 三次握手</h1><p>第一次握手：客户端发送一个请求链接、服务端确认自己可以收到报文段。<br>第二次握手：服务端发送一个链接，确认客户端可以收到报文段。<br>第三次握手：服务端确认客户端收到了自己发送的报文段。</p>
+<h1 id="53-线程与进程的区别？"><a href="#53-线程与进程的区别？" class="headerlink" title="53 线程与进程的区别？"></a>53 线程与进程的区别？</h1><p>进程：是执行的一段程序，一旦程序被载入到内存中并准备执行，它就是一个进程。<br>线程：单个进程中执行每个任务就是一个线程。线程是进程中执行运算的最小单位。<br>区别：<br>一个线程只属于同一个进程。但一个进程可以有多个线程。<br><a href="https://www.cnblogs.com/sxdcgaq8080/p/9045624.html" target="_blank" rel="noopener">线程与进程的区别</a></p>
+<h1 id="54-http缓存机制"><a href="#54-http缓存机制" class="headerlink" title="54 http缓存机制"></a>54 http缓存机制</h1><p>Web缓存分为：浏览器缓存、cdn缓存、服务器缓存、数据库缓存。<br>浏览器http缓存：分为强缓存，协商缓存。<br>区别是：协商缓存会发送请求到服务器、<br>链接：<a href="https://www.cnblogs.com/ranyonsue/p/8918908.html" target="_blank" rel="noopener">https://www.cnblogs.com/ranyonsue/p/8918908.html</a></p>
+<h1 id="55"><a href="#55" class="headerlink" title="55"></a>55</h1><p>http请求头详细介绍：<br>:authority:ichoice.myweimai.com 请求的域名<br>:method: GET 请求的方法<br>:path: /usercenter/api/user/memberInfo 请求路径 也就是域名后面的ichoice.myweimai.com<br>:scheme: https 请求的协议<br>accept: application/json, text/plain, <em>/</em>  请求文件类型<br>accept-encoding: gzip, deflate, br 压缩类型 支持gzip deflate br 压缩方式<br>accept-language: zh-CN,zh;q=0.9,en;q=0.8 浏览器语言<br>origin: <a href="https://m.myweimai.com" target="_blank" rel="noopener">https://m.myweimai.com</a>  Origin 仅仅包含站点信息，不包含任何路径信息。 eg: <a href="https://baidu.com/" target="_blank" rel="noopener">https://baidu.com/</a> 错误<br>referer: <a href="https://m.myweimai.com/" target="_blank" rel="noopener">https://m.myweimai.com/</a> 参照页 来路 先前网页的地址<br>sec-fetch-dest: empty 意为如何使用返回的参数<br>sec-fetch-mode: cors 意为如何使用返回的参数<br>sec-fetch-site: same-site<br>user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 UA信息 表明浏览器的身份 内核 系统<br>http响应头详细介绍<br>cache-control: private, max-age=0  # 缓存控制：私有（缓存0秒，也就是不缓存） max-age=3600 是以秒为单位制定时间时的相应<br>Cache-Control:private<br>默认为private  响应只能够作为私有的缓存，不能再用户间共享<br>Cache-Control:public 响应会被缓存，并且在多用户间共享。正常情况, 如果要求HTTP认证,响应会自动设置为 private.Cache-Control:must-revalidate  响应在特定条件下会被重用，以满足接下来的请求，但是它必须到服务器端去验证它是不是仍然是最新的。<br>Cache-Control:no-cache  响应不会被缓存,而是实时向服务器端请求资源。Cache-Control:max-age=10 设置缓存最大的有效时间，但是这个参数定义的是时间大小（比如：60）而不是确定的时间点。单位是[秒 seconds]。<br>Cache-Control:no-store 在任何条件下，响应都不会被缓存，并且不会被写入到客户端的磁盘里，这也是基于安全考虑的某些敏感的响应才会使用这个。<br>access-control-allow-origin: <a href="https://m.myweimai.com" target="_blank" rel="noopener">https://m.myweimai.com</a> 指定哪些网站可以跨域资源共享<br>access-control-expose-headers: x-weimai-token 响应头配置</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/duzuimoye.github.io/tags/面试/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/duzuimoye.github.io/2019/07/20/vue.huodongye/" rel="next" title="vue活动页">
+                <i class="fa fa-chevron-left"></i> vue活动页
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/duzuimoye.github.io/2019/08/05/summarize/" rel="prev" title="日常总结">
+                日常总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+
+  
+  
+  
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1339527586,531210284&fm=26&gp=0.jpg"
+                alt="独醉莫邪" />
+            
+              <p class="site-author-name" itemprop="name">独醉莫邪</p>
+              <p class="site-description motion-element" itemprop="description">coder learning</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/duzuimoye.github.io/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/duzuimoye.github.io/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/duzuimoye" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/xiexianfei" target="_blank" title="SegmentFault">
+                      
+                        <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5ac1806c5188255c887bc8d1" target="_blank" title="Juejin">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Juejin</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/mo-xie-47-94/activities" target="_blank" title="ZhiHu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：说一下对call、apply、bind三个区别？自己实现一下bind方法"><span class="nav-number">1.</span> <span class="nav-text">1：说一下对call、apply、bind三个区别？自己实现一下bind方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：数组求和"><span class="nav-number">2.</span> <span class="nav-text">2：数组求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：setstate是同步的还是异步的"><span class="nav-number">3.</span> <span class="nav-text">3：setstate是同步的还是异步的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预加载的原理"><span class="nav-number">4.</span> <span class="nav-text">4: 预加载的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：BFC布局"><span class="nav-number">5.</span> <span class="nav-text">5：BFC布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-你了解过tcp-ip协议吗？"><span class="nav-number">6.</span> <span class="nav-text">6: 你了解过tcp ip协议吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7：-圣杯双飞翼布局"><span class="nav-number">7.</span> <span class="nav-text">7： 圣杯双飞翼布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8：get请求传参长度的误区、get和post请求在缓存方面的区别"><span class="nav-number">8.</span> <span class="nav-text">8：get请求传参长度的误区、get和post请求在缓存方面的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-ES6特性"><span class="nav-number">9.</span> <span class="nav-text">9: ES6特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-什么是CDN和CDN的好处"><span class="nav-number">10.</span> <span class="nav-text">10 什么是CDN和CDN的好处</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-如何提高首频加载速度"><span class="nav-number">11.</span> <span class="nav-text">11: 如何提高首频加载速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12：promise"><span class="nav-number">12.</span> <span class="nav-text">12：promise</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-vue-click-native-原生点击事件"><span class="nav-number">13.</span> <span class="nav-text">13 vue @click.native 原生点击事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-js获取event事件（关于流浪器的差异性）"><span class="nav-number">14.</span> <span class="nav-text">14 js获取event事件（关于流浪器的差异性）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15vue-api"><span class="nav-number">15.</span> <span class="nav-text">15vue api</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-为什么要使用函数组件呢？"><span class="nav-number">16.</span> <span class="nav-text">16 为什么要使用函数组件呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-关于数组的api"><span class="nav-number">17.</span> <span class="nav-text">17 关于数组的api</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-关于对象的api"><span class="nav-number">18.</span> <span class="nav-text">18 关于对象的api</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-Vue2-x响应式数据原理"><span class="nav-number">19.</span> <span class="nav-text">19 Vue2.x响应式数据原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-Vue3-x响应式数据原理"><span class="nav-number">20.</span> <span class="nav-text">20 Vue3.x响应式数据原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-position有哪些属性？"><span class="nav-number">21.</span> <span class="nav-text">21 position有哪些属性？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-typeOf-原理？"><span class="nav-number">22.</span> <span class="nav-text">22 typeOf 原理？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-0-1-0-2-0-3-吗？-为什么？"><span class="nav-number">23.</span> <span class="nav-text">23 0.1 + 0.2 === 0.3 吗？ 为什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-img-标签间距问题的原理以及如何解决"><span class="nav-number">24.</span> <span class="nav-text">24 img 标签间距问题的原理以及如何解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25-vue-sync作用"><span class="nav-number">25.</span> <span class="nav-text">25 vue sync作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26-函数表达式的优先级比函数申明高一些"><span class="nav-number">26.</span> <span class="nav-text">26 函数表达式的优先级比函数申明高一些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27-for-循环-和forEach循环哪个性能好一点？"><span class="nav-number">27.</span> <span class="nav-text">27 for 循环 和forEach循环哪个性能好一点？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28-数组原型的方法"><span class="nav-number">28.</span> <span class="nav-text">28 数组原型的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#29-问卷总结"><span class="nav-number">29.</span> <span class="nav-text">29 问卷总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#30-如何转化一个类数组对象？大致原理是怎么样？"><span class="nav-number">30.</span> <span class="nav-text">30 如何转化一个类数组对象？大致原理是怎么样？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31-数据类型？以及如何存值？"><span class="nav-number">31.</span> <span class="nav-text">31 数据类型？以及如何存值？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32-‘1’-’2’-’3’-map-parseInt-结果讲解"><span class="nav-number">32.</span> <span class="nav-text">32[‘1’,’2’,’3’].map(parseInt)结果讲解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#33-apply-call-bind区别"><span class="nav-number">33.</span> <span class="nav-text">33 apply call bind区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34-三栏式布局"><span class="nav-number">34.</span> <span class="nav-text">34 三栏式布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#35-setState是同步的还是异步的？"><span class="nav-number">35.</span> <span class="nav-text">35 setState是同步的还是异步的？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#36-new的时候做了什么？"><span class="nav-number">36.</span> <span class="nav-text">36 new的时候做了什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#37-set-map"><span class="nav-number">37.</span> <span class="nav-text">37 set map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#38-虚拟Dom"><span class="nav-number">38.</span> <span class="nav-text">38 虚拟Dom</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#39-vue父子组件生命周期执行顺序"><span class="nav-number">39.</span> <span class="nav-text">39 vue父子组件生命周期执行顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#40-Object和map的区别？"><span class="nav-number">40.</span> <span class="nav-text">40 Object和map的区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#41-求二个数组的交集并集"><span class="nav-number">41.</span> <span class="nav-text">41 求二个数组的交集并集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#42-es6-gt-es5"><span class="nav-number">42.</span> <span class="nav-text">42 es6 -&gt; es5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#43-双向绑定-拦截页面更新？-setter"><span class="nav-number">43.</span> <span class="nav-text">43 双向绑定 拦截页面更新？ setter?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#44-this-set原理"><span class="nav-number">44.</span> <span class="nav-text">44 this.$set原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#45-webpack是如何解决二次引入的？"><span class="nav-number">45.</span> <span class="nav-text">45 webpack是如何解决二次引入的？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#46-预加载"><span class="nav-number">46.</span> <span class="nav-text">46 预加载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#47-session和cookie的区别"><span class="nav-number">47.</span> <span class="nav-text">47 session和cookie的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#48-forEach-map的区别"><span class="nav-number">48.</span> <span class="nav-text">48 forEach map的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#49-vue路由守卫"><span class="nav-number">49.</span> <span class="nav-text">49 vue路由守卫</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#50-如何在es5的环境下实现let-const"><span class="nav-number">50.</span> <span class="nav-text">50 如何在es5的环境下实现let/const</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#51-从输入url到获取页面的完整过程"><span class="nav-number">51.</span> <span class="nav-text">51 从输入url到获取页面的完整过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#52-三次握手"><span class="nav-number">52.</span> <span class="nav-text">52 三次握手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#53-线程与进程的区别？"><span class="nav-number">53.</span> <span class="nav-text">53 线程与进程的区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#54-http缓存机制"><span class="nav-number">54.</span> <span class="nav-text">54 http缓存机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#55"><span class="nav-number">55.</span> <span class="nav-text">55</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">独醉莫邪</span>
+
+  
+</div>
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共25.1k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/duzuimoye.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/duzuimoye.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/duzuimoye.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/duzuimoye.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
